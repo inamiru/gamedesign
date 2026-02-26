@@ -1,41 +1,62 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<title>あなたのＨＰタイトル</title>
-<meta name="keywords" content="ページのキーワードA,B,C">
-<meta name="description" content="ページの説明">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="./style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDB Ch.2 | 体験</title>
+
+```
+<!-- フォント -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@700&display=swap" rel="stylesheet">
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- 外部CSS -->
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
+
 <body>
-<div id="outer">
-<header>
-<div class="header-inner">
-<h1>あなたのＨＰタイトル</h1>
-<p>あなたのＨＰの説明文</p>
-</div>
-</header>
-<div id="content">
-<div class="inner">
-<h2>記事ページ見出し・大</h2>
-<p>文章あれこれ</p>
-<h3>記事ページ見出し・中</h3>
-<p>文章あれこれ</p>
-<h4>記事ページ見出し・小</h4>
-<p>文章あれこれ</p>
-</div>
-<aside>
-<div class="left-title">サイドバータイトル</div>
-<div class="link">
-<ul>
-<li>記事ページへのリンク</li>
-<li>記事ページへのリンク</li>
-</ul>
-</div>
-</aside>
-</div>
-<footer>© 2010 あなたのホームページ</footer>
-</div>
+
+```
+<!-- オーバーレイ -->
+<div id="overlay"></div>
+
+<!-- モバイルメニューボタン -->
+<button id="mobile-menu-btn">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<!-- サイドバー -->
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <h2>
+            <i class="fa-solid fa-list-ul"></i> 目次
+        </h2>
+
+        <button class="close-sidebar-btn" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <ul class="toc-list" id="tocList">
+        <!-- JSで生成 -->
+    </ul>
+</nav>
+
+<!-- メイン -->
+<main id="main-wrapper">
+    <div id="container">
+        <!-- JSでスライド生成 -->
+    </div>
+</main>
+
+<!-- 外部JS -->
+<script src="script.js"></script>
+```
+
 </body>
 </html>
