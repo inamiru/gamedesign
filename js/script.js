@@ -1,4 +1,3 @@
-<script>
 // ==========================================
     //  コンテンツデータ編集エリア (SLIDES_DATA)
     // ==========================================
@@ -390,4 +389,3 @@
     document.addEventListener('DOMContentLoaded', () => {
         new SlideRenderer('container', 'tocList').render(SLIDES_DATA);
     });
-</script>
