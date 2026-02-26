@@ -1,1 +1,55 @@
+body {
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #0f172a;
+    color: white;
+}
 
+#main-wrapper {
+    padding: 40px;
+}
+
+.slide {
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+#sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    width: 260px;
+    height: 100%;
+    background: #020617;
+    transition: 0.3s;
+    padding: 20px;
+    z-index: 1000;
+}
+
+#sidebar.open {
+    left: 0;
+}
+
+#mobile-menu-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+}
+
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+
+#overlay.show {
+    display: block;
+}
