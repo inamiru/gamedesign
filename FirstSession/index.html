@@ -1,36 +1,684 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GDB Ch.2 | 体験</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <title>GDB Ch.2 | 体験 </title>
     
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <style>
+        :root {
+            --bg-color: #E2E8F0;
+            --sidebar-bg: #FFFFFF;
+            --sidebar-width: 280px;
+            --card-bg: #FFFFFF;
+            --text-main: #2D3748;
+            --text-sub: #4A5568;
+            --accent-pink: #FF4081;
+            --accent-cyan: #00BCD4;
+            --accent-purple: #7C4DFF;
+            --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+        }
+
+        /* --- サイドバー（目次） --- */
+        #sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--sidebar-bg);
+            border-right: 1px solid #CBD5E0;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid #EDF2F7;
+            background: #F7FAFC;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .sidebar-header h2 {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+        }
+
+        .close-sidebar-btn {
+            display: none; /* PCでは非表示 */
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-sub);
+            cursor: pointer;
+        }
+
+        .toc-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+            list-style: none;
+        }
+        
+        .toc-item {
+            padding: 10px 15px;
+            margin-bottom: 4px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            line-height: 1.3;
+        }
+        .toc-item:hover { background: #EDF2F7; color: var(--accent-purple); }
+        .toc-item.active { background: #EBF4FF; color: #5A67D8; font-weight: bold; border-left: 4px solid #5A67D8; }
+        .toc-num { font-size: 0.75rem; opacity: 0.6; min-width: 18px; }
+
+        /* --- メインコンテンツ --- */
+        #main-wrapper {
+            flex: 1;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--bg-color);
+            padding: 20px;
+            width: 100%;
+        }
+
+        /* モバイル用メニューボタン */
+        #mobile-menu-btn {
+            display: none;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 900;
+            background: var(--card-bg);
+            border: none;
+            border-radius: 8px;
+            padding: 10px 15px;
+            box-shadow: var(--shadow);
+            color: var(--text-main);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* オーバーレイ */
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 950;
+        }
+
+        #container {
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
+            max-height: 750px;
+            position: relative;
+        }
+
+        /* スライド共通 */
+        .slide {
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 40px 60px;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.4s ease;
+            position: relative;
+            overflow-y: auto;
+        }
+        .slide.active { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .slide-title {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 2.0rem;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.3;
+        }
+
+        .content-text { font-size: 1.15rem; line-height: 1.8; max-width: 850px; text-align: center; margin-bottom: 30px; color: var(--text-sub); }
+        
+        /* タイトルスライド */
+        .title-slide h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .title-slide p { font-size: 1.5rem; color: var(--text-sub); }
+
+        /* リスト */
+        .bullet-list { list-style: none; width: 100%; max-width: 850px; }
+        .bullet-list li { margin-bottom: 15px; padding: 15px 20px 15px 45px; position: relative; font-size: 1.2rem; line-height: 1.5; background: #F8FAFC; border-radius: 12px; transition: var(--transition); }
+        .bullet-list li:hover { background: #EDF2F7; transform: translateX(5px); }
+        .bullet-list li::before { content: "\f058"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 15px; top: 15px; color: var(--accent-cyan); font-size: 1.2em; }
+        .agenda-list li::before { color: var(--accent-pink); content: "\f005"; }
+
+        /* グリッド・カード */
+        .tiled-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; width: 100%; }
+        .card { background: #F7FAFC; padding: 20px; border-radius: 16px; transition: var(--transition); border: 1px solid #EDF2F7; display: flex; flex-direction: column; align-items: flex-start; }
+        .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--accent-purple); }
+        .card i { font-size: 2.0rem; margin-bottom: 10px; color: var(--accent-purple); }
+        .card h3 { margin-bottom: 8px; color: var(--text-main); font-size: 1.2rem; }
+        .card p { font-size: 0.95rem; color: var(--text-sub); line-height: 1.5; }
+
+        /* その他コンポーネント */
+        .quote-box { font-size: 1.6rem; font-style: italic; border-left: 6px solid var(--accent-pink); padding: 30px; margin: 20px 0; background: #FFF5F7; border-radius: 0 16px 16px 0; width: 100%; max-width: 900px; }
+        .lens-box { background: #F3E5F5; padding: 30px; border-radius: 20px; width: 100%; max-width: 850px; border: 3px dashed var(--accent-purple); text-align: left; }
+        .lens-box h3 { color: var(--accent-purple); margin-bottom: 20px; font-size: 1.6rem; display: flex; align-items: center; gap: 15px; }
+        .lens-box ul { list-style: none; }
+        .lens-box li { font-size: 1.2rem; margin-bottom: 15px; padding-left: 30px; position: relative; line-height: 1.5; }
+        .lens-box li::before { content: "💎"; position: absolute; left: -5px; top: 2px; font-size: 0.8em; }
+
+        /* ナビゲーションUI */
+        .nav-buttons { position: absolute; bottom: 25px; right: 30px; display: flex; gap: 15px; z-index: 10; }
+        .nav-btn { background: var(--text-main); color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer; transition: var(--transition); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .nav-btn:hover { background: var(--accent-pink); transform: scale(1.1); }
+        .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; background: #CBD5E0; }
+
+        .slide-number { position: absolute; bottom: 25px; left: 30px; font-size: 1.1rem; color: var(--text-sub); font-weight: bold; }
+        
+        .progress-bar { position: absolute; bottom: 0; left: 0; height: 6px; background: var(--accent-gradient); transition: width 0.3s ease; }
+
+        /* =========================================
+           レスポンシブ対応 (Mobile / Tablet)
+           ========================================= */
+        @media (max-width: 768px) {
+            /* レイアウト変更 */
+            #sidebar {
+                position: fixed;
+                top: 0;
+                left: -300px;
+                height: 100%;
+                width: 280px;
+            }
+            #sidebar.open { left: 0; }
+            
+            #main-wrapper { padding: 10px; height: 100vh; }
+            #container { height: 90vh; max-height: none; }
+            
+            #mobile-menu-btn { display: block; }
+            .close-sidebar-btn { display: block; }
+
+            /* スライド内の調整 */
+            .slide { padding: 30px 20px; justify-content: flex-start; padding-top: 60px; }
+            
+            /* フォントサイズ縮小 */
+            .title-slide h1 { font-size: 2.2rem; }
+            .title-slide p { font-size: 1.1rem; }
+            .slide-title { font-size: 1.5rem; margin-top: 10px; }
+            .content-text { font-size: 1.0rem; }
+            
+            /* グリッドを1列に */
+            .tiled-grid { grid-template-columns: 1fr; gap: 15px; }
+            
+            /* リスト調整 */
+            .bullet-list li, .lens-box li { font-size: 1.0rem; padding: 10px 10px 10px 35px; }
+            .lens-box h3 { font-size: 1.3rem; }
+            
+            /* カード・ボックス調整 */
+            .card { padding: 15px; }
+            .card i { font-size: 1.5rem; }
+            .quote-box { font-size: 1.2rem; padding: 20px; margin: 10px 0; }
+            
+            /* ナビゲーションボタン調整 */
+            .nav-buttons { bottom: 20px; right: 20px; gap: 10px; }
+            .nav-btn { width: 45px; height: 45px; font-size: 1rem; opacity: 0.8; }
+            .slide-number { bottom: 20px; left: 20px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
 <body>
 
 <div id="overlay"></div>
 
-<button id="mobile-menu-btn">☰</button>
+<button id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
 
 <nav id="sidebar">
     <div class="sidebar-header">
-        <h2>目次</h2>
-        <button class="close-sidebar-btn" id="closeSidebar">×</button>
+        <h2><i class="fa-solid fa-list-ul"></i> 目次</h2>
+        <button class="close-sidebar-btn" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
     </div>
-
-    <ul class="toc-list" id="tocList"></ul>
+    <ul class="toc-list" id="tocList">
+        </ul>
 </nav>
 
 <main id="main-wrapper">
-    <div id="container"></div>
+    <div id="container">
+        </div>
 </main>
 
-<script src="../js/script.js"></script>
+<script>
+// ==========================================
+    //  コンテンツデータ編集エリア (SLIDES_DATA)
+    // ==========================================
+    const SLIDES_DATA = [
+        
+        // --- 1. タイトルスライド ---
+        {
+            type: 'title',
+            title: 'CH2 | 体験を創り出す',
+            intro: '',
+            icon: 'fa-gamepad'
+        },
+
+        // --- 2. アジェンダ ---
+        {
+            type: 'list',
+            title: '本日のポイント',
+            intro: '',
+            listClass: 'agenda-list',
+            items: [
+                '定義：体験を作る',
+                'アプローチ：3つの視点',
+                '武器：内観',
+                '解決策：4つの分析法',
+                '実践：体験の核'
+            ]
+        },
+
+        // --- 3. ---
+        {
+            type: 'list',
+            title: 'ゲームは体験ではない',
+            intro: 'ゲームと体験の関係性',
+            items: [
+                'ゲームデザイナーが作るのは「ゲーム」ですが<br>プレイヤーが求めているのは「体験」です',
+                'ゲームはただの媒介に過ぎません',
+                '体験はプレイヤーの心の中で起こる個人的な出来事です'
+            ]
+        },
+
+        // --- 4. ---
+        {
+            type: 'quote',
+            title: 'ゲームの体験',
+            quote: 'ゲームは体験ではない<br>ゲームは体験を可能にするものだが、体験そのものではない',
+            footer: 'これがゲームデザインにおける最も難しい部分です<br>間接的にしかコントロールできないものを作らなければなりません'
+        },
+
+        // --- 5. ---
+        {
+            type: 'list',
+            title: '体験の矛盾',
+            intro: '同じゲームを遊んでも、人によって体験は異なります',
+            items: [
+                '体験は「主観」的なものであり、直接触れることも見ることもできません',
+                '「体験そのもの」を作ることはできず、体験を生み出す「構造」しか作れません'
+            ],
+            footer: ''
+        },
+
+        // --- 6. ---
+        {
+            type: 'tiled-grid',
+            title: '3つの視点',
+            intro: 'ゲーム + プレイヤー = 体験',
+            tiles: [
+                {
+                    icon: 'fa-gamepad',
+                    title: 'ゲーム',
+                    text: 'ルール、メカニクス、システム<br>体験を引き起こすための装置'
+                },
+                {
+                    icon: 'fa-person',
+                    title: 'プレイヤー',
+                    text: '独自の感情、背景、スキルを持つ人間<br>体験の主体'
+                },
+                {
+                    icon: 'fa-frog',
+                    title: '体験',
+                    text: 'ゲームとプレイヤーが出会い生まれる'
+                }
+            ]
+        },
+
+        // --- 7. 内観の重要性 ---
+        {
+            type: 'list',
+            title: '内観',
+            intro: '体験は目に見えないため、自分自身の体験を深く観察する「内観」が必要です',
+            items: [
+                '「なぜ私は今、楽しいと感じたのか？」',
+                '「どの瞬間にイライラしたのか？」'
+            ],
+            footer: '自分の感情を分解する習慣が、目を養います'
+        },
+
+        // --- 8. 内観の危険性1 ---
+        {
+            type: 'tiled-grid',
+            title: '内観の危険性 1',
+            intro: '主観と現実',
+            tiles: [
+                {
+                    icon: 'fa-scale-unbalanced',
+                    title: '主観の罠',
+                    text: '「自分が楽しい＝皆も楽しい」？'
+                },
+                {
+                    icon: 'fa-person-falling',
+                    title: '現実',
+                    text: '自分の感情だけが唯一の現実'
+                }
+            ]
+        },
+
+        // --- 9. 内観の危険性2 ---
+        {
+            type: 'quote',
+            title: '内観の危険性 2',
+            quote: '自分の体験で正しいことも<br>他人の体験では正しくないかもしれない',
+            footer: '人の趣味嗜好は人それぞれです<br>他人の声を聴きましょう'
+        },
+
+        // --- 10. ---
+        {
+            type: 'quote',
+            title: '内観の目標',
+            quote: 'どんな感情になり、何を考え、何をしたか<br>分析した内容を、明確に言葉で表現できること',
+            footer: '感情は抽象的ですが、言葉は具体的です<br>自分が作りたいと思っている体験を、他人に伝えるためには、言葉による具体性が必要です'
+        },
+
+        // --- 11. レンズ1 ---
+        {
+            type: 'exercise',
+            title: 'レンズ #1：喜怒哀楽',
+            lensTitle: '意図したとおりに喜怒哀楽を作るために',
+            questions: [
+                'プレイヤーに体験してほしいのは、喜怒哀楽のどれか？<br>その理由は？',
+                'プレイヤーは喜怒哀楽のどの状態でゲームを遊び始めるだろうか？<br>その理由は？',
+                'そのときのプレイヤーの喜怒哀楽の状態から、<br>自分がプレイヤーに感じてほしいと思っている喜怒哀楽の状態に変えるには、<br>どうすればよいか？',
+            ]
+        },
+
+        // --- 12. ---
+        {
+            type: 'tiled-grid',
+            title: 'ハイゼンベルクの原理を克服する',
+            intro: '自分の体験を観察しようとすると、その体験自体が変わってしまう（楽しくなくなる）',
+            tiles: [
+                {
+                    icon: 'fa-brain',
+                    title: '1. 記憶を分析する',
+                    text: '体験が終わった直後に、<br>その記憶を思い出して分析する'
+                },
+                {
+                    icon: 'fa-repeat',
+                    title: '2. 2回やる',
+                    text: '同じものを2回経験する'
+                },
+                {
+                    icon: 'fa-stopwatch',
+                    title: '3. チラ見',
+                    text: '体験の途中に素早く自分の感情を観察する'
+                },
+                {
+                    icon: 'fa-user-ninja',
+                    title: '4. 静かに観察',
+                    text: '体験している自分自身を客観的に観察する'
+                },
+            ]
+        },
+
+        // --- 13. 本質の重要性 ---
+        {
+            type: 'quote',
+            title: '体験の核',
+            quote: '記憶に残る体験には、何かしらの重要な特徴がある',
+            footer: '実際の体験を完全に再現しなくても優れたゲームが作れます<br>必要なのは、ゲームで作ろうとしている「体験の核」をつかむことです'
+        },
+
+        // --- 14. 事例研究 ---
+        {
+            type: 'list',
+            title: '体験の核の定義',
+            intro: '実体験の記憶をたどると、さまざまなことが思い浮かぶはずです<br>そのうちのいくつかは、その体験に不可欠だと思う要素であるはずです',
+            items: [
+                'アートで表現する',
+                'ルールを利用する',
+            ],
+            footer: '生み出したい体験を定義するための核となる要素を見つけ出し<br>ゲームデザインに組み込む方法を考え出すことです'
+        },
+
+        // --- 15. レンズ（演習） ---
+        {
+            type: 'exercise',
+            title: 'レンズ #2：体験の核',
+            lensTitle: 'プレイヤーの体験について考えます',
+            questions: [
+                'プレイヤーにどんな体験をして欲しいのか？',
+                'その体験の核は何か？',
+                'その核をゲームで表現するにはどうすれば良いか？',
+            ]
+        },
+
+        // --- 16. 全体のまとめ ---
+        {
+            type: 'list',
+            title: '第2章 まとめ',
+            intro: '体験を創り出す',
+            items: [
+                'ゲームではなく体験を作る意識を持つ',
+                '自分の感情を観察し、分析する',
+                '体験の核となる感情を見極める'
+            ]
+        }
+    ];
+    // ==========================================
+    //  データ編集エリア 終了
+    // ==========================================
+
+    // --- レンダリングロジック ---
+    class SlideRenderer {
+        constructor(containerId, sidebarId) {
+            this.container = document.getElementById(containerId);
+            this.tocList = document.getElementById(sidebarId);
+            this.currentSlide = 0;
+            this.initResponsiveUI();
+        }
+
+        initResponsiveUI() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            const openBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('closeSidebar');
+
+            const toggleMenu = () => {
+                sidebar.classList.toggle('open');
+                overlay.style.display = sidebar.classList.contains('open') ? 'block' : 'none';
+            };
+
+            openBtn.onclick = toggleMenu;
+            closeBtn.onclick = toggleMenu;
+            overlay.onclick = toggleMenu;
+        }
+
+        render(data) {
+            this.slides = data;
+            this.container.innerHTML = '';
+            this.tocList.innerHTML = '';
+            
+            data.forEach((s, index) => {
+                const slideDiv = document.createElement('div');
+                slideDiv.className = `slide ${index === 0 ? 'active' : ''}`;
+                
+                const pageNum = document.createElement('div');
+                pageNum.className = 'slide-number';
+                pageNum.innerText = `${index + 1} / ${data.length}`;
+                
+                slideDiv.innerHTML = this.getSlideHTML(s);
+                slideDiv.appendChild(pageNum);
+                this.container.appendChild(slideDiv);
+
+                const li = document.createElement('li');
+                li.className = `toc-item ${index === 0 ? 'active' : ''}`;
+                li.onclick = () => {
+                    this.jumpToSlide(index);
+                    if (window.innerWidth <= 768) {
+                        document.getElementById('sidebar').classList.remove('open');
+                        document.getElementById('overlay').style.display = 'none';
+                    }
+                };
+                
+                let plainTitle = s.title.replace(/<br>/g, ' ').replace(/<[^>]*>/g, '');
+                li.innerHTML = `<span class="toc-num">${index + 1}.</span> <span>${plainTitle}</span>`;
+                this.tocList.appendChild(li);
+            });
+
+            this.addNavigation();
+            this.updateProgress();
+        }
+
+        getSlideHTML(s) {
+            switch (s.type) {
+                case 'title':
+                    return `
+                        <div class="title-slide" style="text-align:center;">
+                            <i class="fa-solid ${s.icon}" style="font-size:5rem; color:var(--accent-pink); margin-bottom:30px;"></i>
+                            <h1 class="slide-title">${s.title}</h1>
+                            <p>${s.intro}</p>
+                        </div>`;
+                case 'list':
+                    const listClass = s.listClass || 'bullet-list';
+                    const items = s.items.map(i => `<li>${i}</li>`).join('');
+                    return `
+                        <h2 class="slide-title">${s.title}</h2>
+                        <p class="content-text">${s.intro}</p>
+                        <ul class="${listClass}">${items}</ul>`;
+                case 'tiled-grid':
+                    const tilesHTML = s.tiles.map(t => `
+                        <div class="card">
+                            <i class="fa-solid ${t.icon}"></i>
+                            <h3>${t.title}</h3>
+                            <p>${t.text}</p>
+                        </div>`).join('');
+                    return `
+                        <h2 class="slide-title">${s.title}</h2>
+                        <p class="content-text">${s.intro}</p>
+                        <div class="tiled-grid">${tilesHTML}</div>`;
+                case 'quote':
+                    return `
+                        <h2 class="slide-title">${s.title}</h2>
+                        <div class="quote-box"><blockquote>${s.quote}</blockquote></div>
+                        <p style="text-align:center; opacity:0.8; margin-top:20px; max-width:800px;">${s.footer}</p>`;
+                case 'exercise':
+                    const qs = s.questions.map(q => `<li>${q}</li>`).join('');
+                    return `
+                        <h2 class="slide-title">${s.title}</h2>
+                        <div class="lens-box">
+                            <h3><i class="fa-solid fa-magnifying-glass"></i> ${s.lensTitle}</h3>
+                            <ul>${qs}</ul>
+                        </div>`;
+                default:
+                    return `<h2>${s.title}</h2>`;
+            }
+        }
+
+        addNavigation() {
+            const navDiv = document.createElement('div');
+            navDiv.className = 'nav-buttons';
+            navDiv.innerHTML = `
+                <button class="nav-btn" id="prevBtn"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="nav-btn" id="nextBtn"><i class="fa-solid fa-arrow-right"></i></button>
+            `;
+            this.container.appendChild(navDiv);
+
+            const progressBar = document.createElement('div');
+            progressBar.className = 'progress-bar';
+            progressBar.id = 'progressBar';
+            this.container.appendChild(progressBar);
+
+            document.getElementById('prevBtn').onclick = () => this.changeSlide(-1);
+            document.getElementById('nextBtn').onclick = () => this.changeSlide(1);
+
+            document.addEventListener('keydown', (e) => {
+                if(e.key === 'ArrowRight' || e.key === ' ') this.changeSlide(1);
+                if(e.key === 'ArrowLeft') this.changeSlide(-1);
+            });
+        }
+
+        jumpToSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            const tocItems = document.querySelectorAll('.toc-item');
+
+            if (index >= 0 && index < slides.length) {
+                slides[this.currentSlide].classList.remove('active');
+                tocItems[this.currentSlide].classList.remove('active');
+                
+                this.currentSlide = index;
+                
+                slides[this.currentSlide].classList.add('active');
+                tocItems[this.currentSlide].classList.add('active');
+                
+                slides[this.currentSlide].scrollTop = 0;
+                
+                tocItems[this.currentSlide].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                this.updateProgress();
+            }
+        }
+
+        changeSlide(dir) {
+            this.jumpToSlide(this.currentSlide + dir);
+        }
+
+        updateProgress() {
+            const bar = document.getElementById('progressBar');
+            if (!bar) return;
+            
+            const pct = ((this.currentSlide + 1) / this.slides.length) * 100;
+            bar.style.width = `${pct}%`;
+            
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            if(prevBtn) prevBtn.disabled = this.currentSlide === 0;
+            if(nextBtn) nextBtn.disabled = this.currentSlide === this.slides.length - 1;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        new SlideRenderer('container', 'tocList').render(SLIDES_DATA);
+    });
+</script>
 
 </body>
 </html>
