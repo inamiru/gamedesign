@@ -1,4 +1,5 @@
 // js/renderer.js
+
 class SlideRenderer {
   constructor(containerId, sidebarId) {
     this.container = document.getElementById(containerId);
@@ -24,23 +25,20 @@ class SlideRenderer {
   }
 
   render(data) {
-    if (!this.container || !this.tocList) {
-      console.error('container/tocList が見つかりません');
-      return;
-    }
+    if (!this.container || !this.tocList) return;
 
-    this.slides = data || [];
+    this.slides = data;
     this.currentSlide = 0;
     this.container.innerHTML = '';
     this.tocList.innerHTML = '';
 
-    this.slides.forEach((s, index) => {
+    data.forEach((s, index) => {
       const slideDiv = document.createElement('div');
       slideDiv.className = `slide ${index === 0 ? 'active' : ''}`;
 
       const pageNum = document.createElement('div');
       pageNum.className = 'slide-number';
-      pageNum.innerText = `${index + 1} / ${this.slides.length}`;
+      pageNum.innerText = `${index + 1} / ${data.length}`;
 
       slideDiv.innerHTML = this.getSlideHTML(s);
       slideDiv.appendChild(pageNum);
@@ -48,18 +46,13 @@ class SlideRenderer {
 
       const li = document.createElement('li');
       li.className = `toc-item ${index === 0 ? 'active' : ''}`;
-      li.onclick = () => {
-        this.jumpToSlide(index);
-        if (window.innerWidth <= 768) {
-          document.getElementById('sidebar')?.classList.remove('open');
-          const overlay = document.getElementById('overlay');
-          if (overlay) overlay.style.display = 'none';
-        }
-      };
+      li.onclick = () => this.jumpToSlide(index);
 
-      const rawTitle = (s.title ?? '').toString();
-      const plainTitle = rawTitle.replace(/<br>/g, ' ').replace(/<[^>]*>/g, '');
-      li.innerHTML = `<span class="toc-num">${index + 1}.</span> <span>${plainTitle}</span>`;
+      const plainTitle = (s.title || '')
+        .replace(/<br>/g, ' ')
+        .replace(/<[^>]*>/g, '');
+
+      li.innerHTML = `<span class="toc-num">${index + 1}.</span><span>${plainTitle}</span>`;
       this.tocList.appendChild(li);
     });
 
@@ -68,102 +61,54 @@ class SlideRenderer {
   }
 
   getSlideHTML(s) {
-    const type = s.type || 'list';
-
-    switch (type) {
+    switch (s.type) {
       case 'title':
         return `
-          <div class="title-slide" style="text-align:center;">
-            <i class="fa-solid ${s.icon || 'fa-gamepad'}" style="font-size:5rem; color:var(--accent-pink); margin-bottom:30px;"></i>
+          <div class="title-slide">
             <h1 class="slide-title">${s.title || ''}</h1>
             <p>${s.intro || ''}</p>
-          </div>`;
-
-      case 'list': {
-        const listClass = s.listClass || 'bullet-list';
-        const items = (s.items || []).map(i => `<li>${i}</li>`).join('');
+          </div>
+        `;
+      case 'list':
         return `
           <h2 class="slide-title">${s.title || ''}</h2>
-          <p class="content-text">${s.intro || ''}</p>
-          <ul class="${listClass}">${items}</ul>
-          ${s.footer ? `<p style="text-align:center; opacity:0.8; margin-top:20px; max-width:800px;">${s.footer}</p>` : ''}`;
-      }
-
-      case 'tiled-grid': {
-        const tilesHTML = (s.tiles || []).map(t => `
-          <div class="card">
-            <i class="fa-solid ${t.icon || 'fa-circle'}"></i>
-            <h3>${t.title || ''}</h3>
-            <p>${t.text || ''}</p>
-          </div>`).join('');
-        return `
-          <h2 class="slide-title">${s.title || ''}</h2>
-          <p class="content-text">${s.intro || ''}</p>
-          <div class="tiled-grid">${tilesHTML}</div>`;
-      }
-
-      case 'quote':
-        return `
-          <h2 class="slide-title">${s.title || ''}</h2>
-          <div class="quote-box"><blockquote>${s.quote || ''}</blockquote></div>
-          ${s.footer ? `<p style="text-align:center; opacity:0.8; margin-top:20px; max-width:800px;">${s.footer}</p>` : ''}`;
-
-      case 'exercise': {
-        const qs = (s.questions || []).map(q => `<li>${q}</li>`).join('');
-        return `
-          <h2 class="slide-title">${s.title || ''}</h2>
-          <div class="lens-box">
-            <h3><i class="fa-solid fa-magnifying-glass"></i> ${s.lensTitle || ''}</h3>
-            <ul>${qs}</ul>
-          </div>`;
-      }
-
+          <ul class="${s.listClass || 'bullet-list'}">
+            ${(s.items || []).map(i => `<li>${i}</li>`).join('')}
+          </ul>
+        `;
       default:
         return `<h2 class="slide-title">${s.title || ''}</h2>`;
     }
   }
 
   addNavigation() {
-    const navDiv = document.createElement('div');
-    navDiv.className = 'nav-buttons';
-    navDiv.innerHTML = `
-      <button class="nav-btn" id="prevBtn"><i class="fa-solid fa-arrow-left"></i></button>
-      <button class="nav-btn" id="nextBtn"><i class="fa-solid fa-arrow-right"></i></button>
+    const nav = document.createElement('div');
+    nav.className = 'nav-buttons';
+    nav.innerHTML = `
+      <button class="nav-btn" id="prevBtn">←</button>
+      <button class="nav-btn" id="nextBtn">→</button>
     `;
-    this.container.appendChild(navDiv);
-
-    const progressBar = document.createElement('div');
-    progressBar.className = 'progress-bar';
-    progressBar.id = 'progressBar';
-    this.container.appendChild(progressBar);
+    this.container.appendChild(nav);
 
     document.getElementById('prevBtn').onclick = () => this.changeSlide(-1);
     document.getElementById('nextBtn').onclick = () => this.changeSlide(1);
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight' || e.key === ' ') this.changeSlide(1);
-      if (e.key === 'ArrowLeft') this.changeSlide(-1);
-    });
   }
 
   jumpToSlide(index) {
     const slides = document.querySelectorAll('.slide');
     const tocItems = document.querySelectorAll('.toc-item');
 
-    if (index >= 0 && index < slides.length) {
-      slides[this.currentSlide]?.classList.remove('active');
-      tocItems[this.currentSlide]?.classList.remove('active');
+    if (index < 0 || index >= slides.length) return;
 
-      this.currentSlide = index;
+    slides[this.currentSlide].classList.remove('active');
+    tocItems[this.currentSlide].classList.remove('active');
 
-      slides[this.currentSlide]?.classList.add('active');
-      tocItems[this.currentSlide]?.classList.add('active');
+    this.currentSlide = index;
 
-      if (slides[this.currentSlide]) slides[this.currentSlide].scrollTop = 0;
-      tocItems[this.currentSlide]?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    slides[this.currentSlide].classList.add('active');
+    tocItems[this.currentSlide].classList.add('active');
 
-      this.updateProgress();
-    }
+    this.updateProgress();
   }
 
   changeSlide(dir) {
@@ -172,58 +117,75 @@ class SlideRenderer {
 
   updateProgress() {
     const bar = document.getElementById('progressBar');
-    if (!bar || !this.slides?.length) return;
-
-    const pct = ((this.currentSlide + 1) / this.slides.length) * 100;
-    bar.style.width = `${pct}%`;
-
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-
-    if (prevBtn) prevBtn.disabled = this.currentSlide === 0;
-    if (nextBtn) nextBtn.disabled = this.currentSlide === this.slides.length - 1;
+    if (!bar) return;
+    bar.style.width = ((this.currentSlide + 1) / this.slides.length) * 100 + '%';
   }
 }
 
-// セッション側の data を読んで描画する入口
+/* ===============================
+   セッション自動ナビ（manifest方式）
+   =============================== */
+
 document.addEventListener('DOMContentLoaded', () => {
-  if (!window.SLIDES_DATA) return;
+  if (!window.SLIDES_DATA) {
+    console.error('SLIDES_DATA が見つかりません');
+    return;
+  }
 
   const renderer = new SlideRenderer('container', 'tocList');
   renderer.render(window.SLIDES_DATA);
 
-  // ここが自動化ポイント
-  const meta = buildNavMetaFromManifest();
-  addSessionNav(meta);
+  const navMeta = buildNavMetaFromManifest();
+  if (navMeta) addSessionNav(navMeta);
 });
 
 function buildNavMetaFromManifest() {
   const mf = window.SESSION_MANIFEST;
   const myId = window.SESSION_ID;
-
-  // manifestが無い or 自分のIDが無いなら、ナビ無しでOK
-  if (!mf || !Array.isArray(mf.sessions) || !myId) return {};
+  if (!mf || !myId) return null;
 
   const idx = mf.sessions.findIndex(s => s.id === myId);
-  if (idx === -1) return {};
+  if (idx === -1) return null;
 
   const prev = mf.sessions[idx - 1];
   const next = mf.sessions[idx + 1];
 
-  // id -> フォルダ名（FirstSession など）に変換する関数
-  const folderOf = (id) => {
-    const cap = id.charAt(0).toUpperCase() + id.slice(1);
-    return `${cap}Session/`;       // 例: third -> ThirdSession/
-  };
+  const folder = id =>
+    id.charAt(0).toUpperCase() + id.slice(1) + 'Session/';
 
   return {
-    homeTitle: mf.homeTitle || '目次へ',
     homePath: mf.homePath || '../',
-
+    prevPath: prev ? `../${folder(prev.id)}` : null,
     prevTitle: prev?.title,
-    prevPath: prev ? `../${folderOf(prev.id)}` : null,
-
-    nextTitle: next?.title,
-    nextPath: next ? `../${folderOf(next.id)}` : null,
+    nextPath: next ? `../${folder(next.id)}` : null,
+    nextTitle: next?.title
   };
-});
+}
+
+function addSessionNav(meta) {
+  const nav = document.createElement('div');
+  nav.style.position = 'fixed';
+  nav.style.top = '12px';
+  nav.style.right = '12px';
+  nav.style.display = 'flex';
+  nav.style.gap = '8px';
+  nav.style.zIndex = '1200';
+
+  const btn = (label, href) => {
+    const a = document.createElement('a');
+    a.href = href;
+    a.textContent = label;
+    a.style.padding = '8px 12px';
+    a.style.background = '#fff';
+    a.style.borderRadius = '8px';
+    a.style.boxShadow = '0 4px 10px rgba(0,0,0,.15)';
+    a.style.textDecoration = 'none';
+    return a;
+  };
+
+  if (meta.homePath) nav.appendChild(btn('目次', meta.homePath));
+  if (meta.prevPath) nav.appendChild(btn('← 前', meta.prevPath));
+  if (meta.nextPath) nav.appendChild(btn('次 →', meta.nextPath));
+
+  document.body.appendChild(nav);
+}
