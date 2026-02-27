@@ -1,12 +1,5 @@
 // js/sessions/first.js
-window.SESSION_META = {
-  homeTitle: 'UXdesign 目次',
-  homePath: '../../UXdesign/',
-
-  // 次がある場合
-  nextTitle: 'Second Session',
-  nextPath: '../../UXdesign/SecondSession/',
-};
+window.SESSION_ID = 'third';
 
 // ==========================================
     //  スライドデータ (第4章 全15枚構成)
