@@ -1,14 +1,10 @@
 // js/sessions/first.js
-window.SESSION_META = {
-  homeTitle: '目次へ',
-  homePath: '../',
-  nextTitle: 'Second Session',
-  nextPath: '../SecondSession/',
-};
+window.SESSION_ID = 'first';
 
 // ==========================================
     //  コンテンツデータ編集エリア (SLIDES_DATA)
     // ==========================================
+
     window.SLIDES_DATA = [
         
         // --- 1. タイトルスライド ---
