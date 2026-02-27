@@ -1,11 +1,9 @@
 // js/sessions/first.js
 window.SESSION_META = {
-  homeTitle: 'UXdesign 目次',
-  homePath: '../../UXdesign/',
-
-  // 次がある場合
+  homeTitle: '目次へ',
+  homePath: '../',
   nextTitle: 'Second Session',
-  nextPath: '../../UXdesign/SecondSession/',
+  nextPath: '../SecondSession/',
 };
 
 // ==========================================
