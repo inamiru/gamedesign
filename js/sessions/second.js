@@ -1,10 +1,5 @@
 // js/sessions/first.js
-window.SESSION_META = {
-  homeTitle: '目次へ',
-  homePath: '../',
-  prevTitle: 'First Session',
-  prevPath: '../FirstSession/',
-};
+window.SESSION_ID = 'first';
 
 // ==========================================
     //  コンテンツデータ編集エリア (SLIDES_DATA)
