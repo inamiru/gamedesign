@@ -1,5 +1,5 @@
-// js/sessions/first.js
-window.SESSION_ID = 'first';
+// js/sessions/second.js
+window.SESSION_ID = 'second';
 
 // ==========================================
     //  コンテンツデータ編集エリア (SLIDES_DATA)
