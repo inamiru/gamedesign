@@ -187,85 +187,44 @@ class SlideRenderer {
 
 // セッション側の data を読んで描画する入口
 document.addEventListener('DOMContentLoaded', () => {
-  if (!window.SLIDES_DATA) {
-    console.error('SLIDES_DATA が見つかりません（sessions/*.js が読み込まれていない可能性）');
-    return;
-  }
+  if (!window.SLIDES_DATA) return;
 
-  // ① スライド描画
   const renderer = new SlideRenderer('container', 'tocList');
   renderer.render(window.SLIDES_DATA);
 
-  // ② セッション導線（戻る/前へ/次へ）を追加
-  const meta = window.SESSION_META || {};
+  // ここが自動化ポイント
+  const meta = buildNavMetaFromManifest();
   addSessionNav(meta);
 });
 
-// ===== 導線UIを追加する関数 =====
-function addSessionNav(meta) {
-  // meta: { homeTitle, homePath, prevTitle, prevPath, nextTitle, nextPath }
+function buildNavMetaFromManifest() {
+  const mf = window.SESSION_MANIFEST;
+  const myId = window.SESSION_ID;
 
-  // すでにあるなら二重生成しない
-  if (document.getElementById('sessionNav')) return;
+  // manifestが無い or 自分のIDが無いなら、ナビ無しでOK
+  if (!mf || !Array.isArray(mf.sessions) || !myId) return {};
 
-  const nav = document.createElement('div');
-  nav.id = 'sessionNav';
-  nav.style.position = 'fixed';
-  nav.style.top = '12px';
-  nav.style.right = '12px';
-  nav.style.zIndex = '1200';
-  nav.style.display = 'flex';
-  nav.style.gap = '10px';
-  nav.style.flexWrap = 'wrap';
+  const idx = mf.sessions.findIndex(s => s.id === myId);
+  if (idx === -1) return {};
 
-  const mkBtn = (label, href, iconClass) => {
-    const a = document.createElement('a');
-    a.href = href;
-    a.style.textDecoration = 'none';
-    a.style.display = 'inline-flex';
-    a.style.alignItems = 'center';
-    a.style.gap = '8px';
-    a.style.padding = '10px 14px';
-    a.style.borderRadius = '10px';
-    a.style.background = 'var(--card-bg)';
-    a.style.boxShadow = 'var(--shadow)';
-    a.style.color = 'var(--text-main)';
-    a.style.fontSize = '0.9rem';
-    a.style.fontWeight = '700';
+  const prev = mf.sessions[idx - 1];
+  const next = mf.sessions[idx + 1];
 
-    const icon = document.createElement('i');
-    icon.className = iconClass;
-    a.appendChild(icon);
-
-    const span = document.createElement('span');
-    span.textContent = label;
-    a.appendChild(span);
-
-    return a;
+  // id -> フォルダ名（FirstSession など）に変換する関数
+  const folderOf = (id) => {
+    const cap = id.charAt(0).toUpperCase() + id.slice(1);
+    return `${cap}Session/`;       // 例: third -> ThirdSession/
   };
 
-  // 戻る（目次）
-  if (meta.homePath) {
-    nav.appendChild(
-      mkBtn(meta.homeTitle || '目次へ', meta.homePath, 'fa-solid fa-list')
-    );
-  }
+  return {
+    homeTitle: mf.homeTitle || '目次へ',
+    homePath: mf.homePath || '../',
 
-  // 前へ
-  if (meta.prevPath) {
-    nav.appendChild(
-      mkBtn(meta.prevTitle || '前のセッション', meta.prevPath, 'fa-solid fa-chevron-left')
-    );
-  }
+    prevTitle: prev?.title,
+    prevPath: prev ? `../${folderOf(prev.id)}` : null,
 
-  // 次へ
-  if (meta.nextPath) {
-    nav.appendChild(
-      mkBtn(meta.nextTitle || '次のセッション', meta.nextPath, 'fa-solid fa-chevron-right')
-    );
-  }
-
-  document.body.appendChild(nav);
-  }
-
+    nextTitle: next?.title,
+    nextPath: next ? `../${folderOf(next.id)}` : null,
+  };
+}
 });
