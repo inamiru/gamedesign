@@ -226,5 +226,4 @@ function buildNavMetaFromManifest() {
     nextTitle: next?.title,
     nextPath: next ? `../${folderOf(next.id)}` : null,
   };
-}
 });
