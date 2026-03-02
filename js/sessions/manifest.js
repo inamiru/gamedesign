@@ -6,9 +6,9 @@ window.SESSION_MANIFEST = {
 
   // 表示名と、セッションの「識別子（id）」を並べる
   sessions: [
-    { id: 'first',  title: 'First Session'  },
-    { id: 'second', title: 'Second Session' },
-    { id: 'third',  title: 'Third Session'  },
-    { id: 'fourth', title: 'Fourth Session' },
+    { id: 'first',  title: '第1回'  },
+    { id: 'second', title: '第2回' },
+    { id: 'third',  title: '第3回'  },
+    { id: 'fourth', title: '第4回' },
   ]
 };
