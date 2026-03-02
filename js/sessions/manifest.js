@@ -17,11 +17,11 @@ window.SESSION_MANIFEST = {
       homePath: '../', // UXdesign/FirstSession/ から UXdesign/ へ戻る
 
       sessions: [
-        { sessionId: 'ux-1', title: '第1回',  path: '../FirstSession/' },
+        { sessionId: 'ux-1', title: '第1回', path: '../FirstSession/' },
         { sessionId: 'ux-2', title: '第2回', path: '../SecondSession/' },
         { sessionId: 'ux-3', title: '第3回', path: '../ThirdSession/' },
         { sessionId: 'ux-4', title: '第4回', path: '../FourthSession/' },
-        { sessionId: 'ux-4', title: '第4回', path: '../FifthSession/' },
+        { sessionId: 'ux-5', title: '第5回', path: '../FifthSession/' },
         // 追加するたびにここへ1行
         // { sessionId: 'ux-3', title: 'Third Session',  path: '../ThirdSession/' },
       ],
