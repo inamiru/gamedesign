@@ -1,4 +1,5 @@
-    window.SESSION_ID = 'fourth';
+window.SESSION_CATEGORY_ID = 'ux';
+window.SESSION_ID = 'ux-4';
   
     // ==========================================
     //  スライドデータ (第5章 全15枚構成)
