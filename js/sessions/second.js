@@ -1,5 +1,5 @@
-// js/sessions/second.js
-window.SESSION_ID = 'second';
+window.SESSION_CATEGORY_ID = 'ux';
+window.SESSION_ID = 'ux-2';
 
 // ==========================================
     //  コンテンツデータ編集エリア (SLIDES_DATA)
