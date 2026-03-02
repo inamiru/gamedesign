@@ -281,7 +281,7 @@ function addSessionNav(meta) {
   };
 
   if (meta.homePath) {
-    nav.appendChild(mkBtn(meta.homeTitle || '目次へ', meta.homePath, 'fa-solid fa-list'));
+    nav.appendChild(mkBtn(meta.homeTitle || '一覧へ', meta.homePath, 'fa-solid fa-list'));
   }
   if (meta.prevPath) {
     nav.appendChild(mkBtn(meta.prevTitle || '前へ', meta.prevPath, 'fa-solid fa-chevron-left'));
