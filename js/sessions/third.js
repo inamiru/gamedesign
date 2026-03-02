@@ -1,5 +1,5 @@
-// js/sessions/first.js
-window.SESSION_ID = 'third';
+window.SESSION_CATEGORY_ID = 'ux';
+window.SESSION_ID = 'ux-3';
 
 // ==========================================
     //  スライドデータ (第4章 全15枚構成)
