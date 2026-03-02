@@ -10,7 +10,7 @@ window.SESSION_ID = 'ux-1';
         // --- 1. タイトルスライド ---
         {
             type: 'title',
-            title: 'CH2 | 体験を創り出す',
+            title: '体験を創り出す',
             intro: '',
             icon: 'fa-gamepad'
         },
