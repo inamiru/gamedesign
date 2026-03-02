@@ -1,6 +1,7 @@
 // js/renderer.js
 // ==========================================
-// 共通スライドレンダラ（GDB_2全対応） + manifest方式のセッション導線
+// 共通スライドレンダラ（GDB_2全対応）
+// + カテゴリ対応manifest方式のセッション導線（前/次/目次）自動生成
 // ==========================================
 
 class SlideRenderer {
@@ -154,7 +155,6 @@ class SlideRenderer {
     document.getElementById('nextBtn').onclick = () => this.changeSlide(1);
 
     document.addEventListener('keydown', (e) => {
-      // 入力フォーム等があれば邪魔しない（将来用）
       const tag = (document.activeElement?.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea') return;
 
@@ -204,39 +204,41 @@ class SlideRenderer {
 }
 
 // ==========================================
-// セッション導線（manifest方式で自動生成）
+// セッション導線（カテゴリ対応manifest方式）
 // 期待するグローバル：
-// - window.SESSION_MANIFEST = { homeTitle, homePath, sessions:[{id,title},...] }
-// - window.SESSION_ID = 'first' など
+// - window.SESSION_MANIFEST
+// - window.SESSION_CATEGORY_ID 例: 'ux'
+// - window.SESSION_ID          例: 'ux-1'
 // ==========================================
 
-function buildSessionNavMetaFromManifest() {
+function getCategoryFromManifest() {
   const mf = window.SESSION_MANIFEST;
-  const myId = window.SESSION_ID;
+  const catId = window.SESSION_CATEGORY_ID;
+  if (!mf || !Array.isArray(mf.categories) || !catId) return null;
+  return mf.categories.find(c => c.categoryId === catId) || null;
+}
 
-  if (!mf || !Array.isArray(mf.sessions) || !myId) return null;
+function buildSessionNavMeta() {
+  const cat = getCategoryFromManifest();
+  const mySessionId = window.SESSION_ID;
 
-  const idx = mf.sessions.findIndex(s => s.id === myId);
+  if (!cat || !Array.isArray(cat.sessions) || !mySessionId) return null;
+
+  const idx = cat.sessions.findIndex(s => s.sessionId === mySessionId);
   if (idx === -1) return null;
 
-  const prev = mf.sessions[idx - 1] || null;
-  const next = mf.sessions[idx + 1] || null;
-
-  // id -> フォルダ名変換（例: third -> ThirdSession/）
-  const folderOf = (id) => {
-    const cap = id.charAt(0).toUpperCase() + id.slice(1);
-    return `${cap}Session/`;
-  };
+  const prev = cat.sessions[idx - 1] || null;
+  const next = cat.sessions[idx + 1] || null;
 
   return {
-    homeTitle: mf.homeTitle || '目次へ',
-    homePath: mf.homePath || '../',
+    homeTitle: cat.homeTitle || '一覧へ',
+    homePath: cat.homePath || '../',
 
     prevTitle: prev?.title || '',
-    prevPath: prev ? `../${folderOf(prev.id)}` : null,
+    prevPath: prev?.path || null,
 
     nextTitle: next?.title || '',
-    nextPath: next ? `../${folderOf(next.id)}` : null,
+    nextPath: next?.path || null,
   };
 }
 
@@ -298,14 +300,13 @@ function addSessionNav(meta) {
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
   if (!window.SLIDES_DATA) {
-    console.error('SLIDES_DATA が見つかりません（sessions/*.js の読み込み順を確認してください）');
+    console.error('SLIDES_DATA が見つかりません（sessions/*.js の読み込み順を確認）');
     return;
   }
 
   const renderer = new SlideRenderer('container', 'tocList');
   renderer.render(window.SLIDES_DATA);
 
-  // セッション導線（manifest方式）
-  const meta = buildSessionNavMetaFromManifest();
+  const meta = buildSessionNavMeta();
   addSessionNav(meta);
 });
