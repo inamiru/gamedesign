@@ -32,7 +32,7 @@ window.SESSION_ID = 'ux-7';
         // --- 2. アジェンダ ---
         {
             type: 'list',
-            title: '本日のアジェンダ',
+            title: '本日のポイント',
             intro: '「選択」と「繰り返し」の重要性',
             listClass: 'agenda-list',
             items: [
