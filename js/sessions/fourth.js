@@ -29,7 +29,7 @@ window.SESSION_ID = 'ux-4';
         // --- 3. アジェンダ ---
         {
             type: 'list',
-            title: '本日のアジェンダ',
+            title: '本日のポイント',
             intro: 'ゲームを構成する4つの柱',
             listClass: 'agenda-list',
             items: [
