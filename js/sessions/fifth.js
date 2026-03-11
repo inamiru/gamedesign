@@ -30,7 +30,7 @@ window.SESSION_ID = 'ux-5';
         // --- 3. アジェンダ ---
         {
             type: 'list',
-            title: '本日のアジェンダ',
+            title: '本日のポイント',
             intro: '体験を一つに束ねる力',
             listClass: 'agenda-list',
             items: [
