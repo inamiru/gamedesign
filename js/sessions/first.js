@@ -209,7 +209,7 @@ window.SESSION_ID = 'ux-1';
         // --- 16. 全体のまとめ ---
         {
             type: 'list',
-            title: '第2章 まとめ',
+            title: 'まとめ',
             intro: '体験を創り出す',
             items: [
                 'ゲームではなく体験を作る意識を持つ',
