@@ -50,11 +50,11 @@ window.SESSION_ID = 'ux-2';
 {
             type: 'tiled-grid',
             title: '私的なプレイ環境',
-            intro: 'リビング、作業場、寝室',
+            intro: 'リビング、作業場、読書スペース',
             tiles: [
                 { icon: 'fa-users', title: 'リビング', text: '複数人で楽しめる、見て楽しむゲーム<br>歌ったり踊ったりできるゲーム' },
                 { icon: 'fa-desktop', title: '作業場', text: 'MMOなど一人で遊ぶ<br>難易度が高めで緊張感があり、1回のプレイに数時間を要するゲーム' },
-                { icon: 'fa-bed', title: '寝室', text: '静かな部屋の隅で遊ぶ<br>簡単で単純で癒されるゲーム' }
+                { icon: 'fa-bed', title: '読書スペース', text: '静かな部屋の隅で遊ぶ<br>簡単で単純で癒されるゲーム' }
             ]
         },
 
