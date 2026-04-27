@@ -46,10 +46,10 @@ window.SESSION_ID = 'ux-3';
             title: 'ゲームとは何か？',
             intro: 'The Story Machine',
             tiles: [
-                { icon: 'fa-gears', title: 'ゲームとは人が遊ぶもの', text: 'ゲームはおもちゃと違う<br>ゲームはおもちゃよりも複雑で、遊び方も異なる' },
-                { icon: 'fa-gears', title: 'おもちゃとは、人が遊ぶ対象', text: '人は友達とも遊べますが、友達はおもちゃではない<br>おもちゃとは物を指す' },
-                { icon: 'fa-gears', title: 'よいおもちゃとは、遊ぶとおもしろいもの', text: '楽しさはおもしろさの一部ですが、おもしろさは楽しさとイコールか？' },
-                { icon: 'fa-gears', title: 'おもしろさとは、鵞きを伴う楽しさ', text: '驚きとおもしろさはゲームデザインの重要な部分' }
+                { icon: 'fa-gamepad', title: 'ゲームとは人が遊ぶもの', text: 'ゲームはおもちゃと違う<br>ゲームはおもちゃよりも複雑で、遊び方も異なる' },
+                { icon: 'fa-children', title: 'おもちゃとは、人が遊ぶ対象', text: '人は友達とも遊べますが、友達はおもちゃではない<br>おもちゃとは物を指す' },
+                { icon: 'fa-face-grin-squint-tears', title: 'よいおもちゃとは、遊ぶとおもしろいもの', text: '楽しさはおもしろさの一部ですが、おもしろさは楽しさとイコールか？' },
+                { icon: 'fa-face-flushed', title: 'おもしろさとは、鵞きを伴う楽しさ', text: '驚きとおもしろさはゲームデザインの重要な部分' }
             ]
         },
 
