@@ -45,9 +45,9 @@ window.SESSION_ID = 'ux-4';
             intro: 'すべての要素が等しく重要だと理解すること',
             tiles: [
                 { icon: 'fa-gears', title: 'ゲームシステム', text: 'ゲームの目標と、目標を達成するためにとれる方法と<br>とれない方法、各方法を試したときに何が起きるか、' },
-                { icon: 'fa-gears', title: 'ストーリー', text: 'ゲーム内で展開する一連の出来事' },
-                { icon: 'fa-gears', title: 'ピジュアル', text: 'ゲームの見た目、音、匂い、味、感覚など、<br>プレイヤーの五感に訴えるもの' },
-                { icon: 'fa-gears', title: '技術', text: '技術とはつまり、媒体のこと<br>その媒体の中にビジュアルが存在し、ゲームシステムが動作し、ストーリーが語られる' }
+                { icon: 'fa-book', title: 'ストーリー', text: 'ゲーム内で展開する一連の出来事' },
+                { icon: 'fa-palette', title: 'ピジュアル', text: 'ゲームの見た目、音、匂い、味、感覚など、<br>プレイヤーの五感に訴えるもの' },
+                { icon: 'fa-computer', title: '技術', text: '技術とはつまり、媒体のこと<br>その媒体の中にビジュアルが存在し、ゲームシステムが動作し、ストーリーが語られる' }
             ]
         },
 
@@ -69,10 +69,10 @@ window.SESSION_ID = 'ux-4';
             title: '『スペースインベーダー』のゲームデザイン',
             intro: '4つの基本要素の観点',
             tiles: [
-                { icon: 'fa-ban', title: '技術', text: '専用に設計された特別な技術がゲームを支えた' },
-                { icon: 'fa-bullseye', title: 'ゲームシステム', text: '堅実でバランスよく、当時は非常に革新的だった' },
-                { icon: 'fa-bullseye', title: 'ストーリー', text: '優略してくるエイリアンという新しいストーリー' },
-                { icon: 'fa-bullseye', title: 'ビジュアル', text: 'ゲーム内だけにとどまらない、魅力的な人目を惹く筐体' }
+                { icon: 'fa-computer', title: '技術', text: '専用に設計された特別な技術がゲームを支えた' },
+                { icon: 'fa-gears', title: 'ゲームシステム', text: '堅実でバランスよく、当時は非常に革新的だった' },
+                { icon: 'fa-book', title: 'ストーリー', text: '優略してくるエイリアンという新しいストーリー' },
+                { icon: 'fa-palette', title: 'ビジュアル', text: 'ゲーム内だけにとどまらない、魅力的な人目を惹く筐体' }
             ]
         },
 
