@@ -54,8 +54,8 @@ window.SESSION_ID = 'ux-5';
             title: '統ーテーマ',
             intro: '1つのテーマに基づいてゲームデザインする主な利点は、<br>ゲーム内のあらゆる要素がお互いを強化し合うこと',
             tiles: [
-                { icon: 'fa-user', title: 'ステップ1', text: 'テーマが何か決める' },
-                { icon: 'fa-person-walking', title: 'ステップ2', text: 'あらゆる手段を使ってそのテーマを強化する' }
+                { icon: 'fa-shoe-prints', title: 'ステップ1', text: 'テーマが何か決める' },
+                { icon: 'fa-stairs', title: 'ステップ2', text: 'あらゆる手段を使ってそのテーマを強化する' }
             ]
         },
 
@@ -73,10 +73,10 @@ window.SESSION_ID = 'ux-5';
             title: '事例：カリブの海賊',
             intro: '海賊についてではなく、海賊になる',
             tiles: [
-                { icon: 'fa-user', title: 'その1', text: '海賊に関する歴史的なドキュメンタリ一' },
-                { icon: 'fa-person-walking', title: 'その2', text: '海賊船同士の戦い' },
-                { icon: 'fa-person-walking', title: 'その3', text: '海賊の秘宝の探索' },
-                { icon: 'fa-person-walking', title: 'その4', text: '海賊は悪党なので倒すべき' }
+                { icon: 'fa-landmark-dome', title: 'その1', text: '海賊に関する歴史的なドキュメンタリ一' },
+                { icon: 'fa-battle-net', title: 'その2', text: '海賊船同士の戦い' },
+                { icon: 'fa-gem', title: 'その3', text: '海賊の秘宝の探索' },
+                { icon: 'fa-book-skull', title: 'その4', text: '海賊は悪党なので倒すべき' }
             ]
         },
 
@@ -111,8 +111,8 @@ window.SESSION_ID = 'ux-5';
             title: '共感',
             intro: 'テーマにも、よいものとそうでないものがある',
             tiles: [
-                { icon: 'fa-eye', title: '共感できるテーマ', text: 'プレイヤーのファンタジーや欲望に共感する体験なら、<br>プレイヤーはすぐにその体験を重要なものと見なす' },
-                { icon: 'fa-volume-high', title: '真実に基づくテーマ', text: '真実に基づくテーマは、見つけるのがとても難しい<br>深く隠されているからこそ、力が宿る' }
+                { icon: 'fa-brain', title: '共感できるテーマ', text: 'プレイヤーのファンタジーや欲望に共感する体験なら、<br>プレイヤーはすぐにその体験を重要なものと見なす' },
+                { icon: 'fa-timeline', title: '真実に基づくテーマ', text: '真実に基づくテーマは、見つけるのがとても難しい<br>深く隠されているからこそ、力が宿る' }
             ]
         },
 
