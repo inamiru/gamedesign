@@ -253,3 +253,76 @@
             .nav-btn { width: 45px; height: 45px; font-size: 1rem; opacity: 0.8; }
             .slide-number { bottom: 20px; left: 20px; font-size: 0.9rem; }
         }
+
+/* =========================================
+   画像表示用
+   ========================================= */
+
+.slide-image-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.slide-image {
+  max-width: 90%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  background: #fff;
+}
+
+.tile-image {
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 850px;
+}
+
+.image-grid-item {
+  background: #F7FAFC;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.image-grid-item img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.image-grid-item p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: var(--text-sub);
+}
+
+@media (max-width: 768px) {
+  .slide-image {
+    max-width: 100%;
+    max-height: 320px;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tile-image {
+    max-height: 140px;
+  }
+}
