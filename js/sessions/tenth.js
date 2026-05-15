@@ -65,7 +65,7 @@ window.SESSION_ID = 'ux-10';
           src: '../../assets/images/ux/Maslow.jpg',
           alt: '参考画像',
           footer: '補足説明'
-        }
+        },
 
         // --- 4. マズローの階層 (1) ---
         {
