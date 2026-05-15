@@ -1,7 +1,8 @@
 // js/renderer.js
 // ==========================================
-// 共通スライドレンダラ（GDB_2全対応）
-// + カテゴリ対応manifest方式のセッション導線（前/次/目次）自動生成
+// 共通スライドレンダラ
+// 画像表示対応版
+// + カテゴリ対応manifest方式
 // ==========================================
 
 class SlideRenderer {
@@ -57,8 +58,10 @@ class SlideRenderer {
 
       const li = document.createElement('li');
       li.className = `toc-item ${index === 0 ? 'active' : ''}`;
+
       li.onclick = () => {
         this.jumpToSlide(index);
+
         if (window.innerWidth <= 768) {
           document.getElementById('sidebar')?.classList.remove('open');
           const overlay = document.getElementById('overlay');
@@ -68,6 +71,7 @@ class SlideRenderer {
 
       const rawTitle = (s.title ?? '').toString();
       const plainTitle = rawTitle.replace(/<br>/g, ' ').replace(/<[^>]*>/g, '');
+
       li.innerHTML = `<span class="toc-num">${index + 1}.</span> <span>${plainTitle}</span>`;
       this.tocList.appendChild(li);
     });
@@ -76,8 +80,26 @@ class SlideRenderer {
     this.updateProgress();
   }
 
+  getImageHTML(s) {
+    if (!s.image && !s.src) return '';
+
+    const src = s.image || s.src;
+    const alt = s.alt || '';
+
+    return `
+      <div class="slide-image-wrap">
+        <img
+          class="slide-image"
+          src="${src}"
+          alt="${alt}"
+        >
+      </div>
+    `;
+  }
+
   getSlideHTML(s) {
     const type = s?.type || 'list';
+    const imageHTML = this.getImageHTML(s);
 
     switch (type) {
       case 'title':
@@ -87,63 +109,120 @@ class SlideRenderer {
                style="font-size:5rem; color:var(--accent-pink); margin-bottom:30px;"></i>
             <h1 class="slide-title">${s.title || ''}</h1>
             <p>${s.intro || ''}</p>
-          </div>`;
+            ${imageHTML}
+          </div>
+        `;
+
+      case 'image':
+        return `
+          <h2 class="slide-title">${s.title || ''}</h2>
+          <p class="content-text">${s.intro || ''}</p>
+          ${this.getImageHTML({
+            image: s.src || s.image,
+            alt: s.alt || ''
+          })}
+          ${s.footer ? `<p style="text-align:center; opacity:0.8; margin-top:20px; max-width:800px;">${s.footer}</p>` : ''}
+        `;
 
       case 'list': {
         const listClass = s.listClass || 'bullet-list';
         const items = (s.items || []).map(i => `<li>${i}</li>`).join('');
+
         return `
           <h2 class="slide-title">${s.title || ''}</h2>
           <p class="content-text">${s.intro || ''}</p>
           <ul class="${listClass}">${items}</ul>
-          ${s.footer ? `<p style="text-align:center; opacity:0.8; margin-top:20px; max-width:800px;">${s.footer}</p>` : ''}`;
+          ${imageHTML}
+          ${s.footer ? `<p style="text-align:center; opacity:0.8; margin-top:20px; max-width:800px;">${s.footer}</p>` : ''}
+        `;
       }
 
       case 'tiled-grid': {
-        const tilesHTML = (s.tiles || []).map(t => `
-          <div class="card">
-            <i class="fa-solid ${t.icon || 'fa-circle'}"></i>
-            <h3>${t.title || ''}</h3>
-            <p>${t.text || ''}</p>
-          </div>`).join('');
+        const tilesHTML = (s.tiles || []).map(t => {
+          const tileImage = t.image
+            ? `
+              <img
+                class="tile-image"
+                src="${t.image}"
+                alt="${t.alt || ''}"
+              >
+            `
+            : '';
+
+          return `
+            <div class="card">
+              ${tileImage}
+              <i class="fa-solid ${t.icon || 'fa-circle'}"></i>
+              <h3>${t.title || ''}</h3>
+              <p>${t.text || ''}</p>
+            </div>
+          `;
+        }).join('');
 
         return `
           <h2 class="slide-title">${s.title || ''}</h2>
           <p class="content-text">${s.intro || ''}</p>
-          <div class="tiled-grid">${tilesHTML}</div>`;
+          <div class="tiled-grid">${tilesHTML}</div>
+          ${imageHTML}
+        `;
       }
 
       case 'quote':
         return `
           <h2 class="slide-title">${s.title || ''}</h2>
           <div class="quote-box"><blockquote>${s.quote || ''}</blockquote></div>
-          ${s.footer ? `<p style="text-align:center; opacity:0.8; margin-top:20px; max-width:800px;">${s.footer}</p>` : ''}`;
+          ${imageHTML}
+          ${s.footer ? `<p style="text-align:center; opacity:0.8; margin-top:20px; max-width:800px;">${s.footer}</p>` : ''}
+        `;
 
       case 'exercise': {
         const qs = (s.questions || []).map(q => `<li>${q}</li>`).join('');
+
         return `
           <h2 class="slide-title">${s.title || ''}</h2>
           <div class="lens-box">
             <h3><i class="fa-solid fa-magnifying-glass"></i> ${s.lensTitle || ''}</h3>
             <ul>${qs}</ul>
-          </div>`;
+          </div>
+          ${imageHTML}
+        `;
+      }
+
+      case 'image-grid': {
+        const imagesHTML = (s.images || []).map(img => `
+          <div class="image-grid-item">
+            <img src="${img.src}" alt="${img.alt || ''}">
+            ${img.caption ? `<p>${img.caption}</p>` : ''}
+          </div>
+        `).join('');
+
+        return `
+          <h2 class="slide-title">${s.title || ''}</h2>
+          <p class="content-text">${s.intro || ''}</p>
+          <div class="image-grid">${imagesHTML}</div>
+          ${s.footer ? `<p style="text-align:center; opacity:0.8; margin-top:20px; max-width:800px;">${s.footer}</p>` : ''}
+        `;
       }
 
       default:
-        return `<h2 class="slide-title">${s.title || ''}</h2>`;
+        return `
+          <h2 class="slide-title">${s.title || ''}</h2>
+          ${imageHTML}
+        `;
     }
   }
 
   addSlideNavigationUI() {
-    // 二重生成防止
     if (document.getElementById('prevBtn') || document.getElementById('nextBtn')) return;
 
     const navDiv = document.createElement('div');
     navDiv.className = 'nav-buttons';
+
     navDiv.innerHTML = `
       <button class="nav-btn" id="prevBtn"><i class="fa-solid fa-arrow-left"></i></button>
       <button class="nav-btn" id="nextBtn"><i class="fa-solid fa-arrow-right"></i></button>
     `;
+
     this.container.appendChild(navDiv);
 
     const progressBar = document.createElement('div');
@@ -204,17 +283,15 @@ class SlideRenderer {
 }
 
 // ==========================================
-// セッション導線（カテゴリ対応manifest方式）
-// 期待するグローバル：
-// - window.SESSION_MANIFEST
-// - window.SESSION_CATEGORY_ID 例: 'ux'
-// - window.SESSION_ID          例: 'ux-1'
+// セッション導線
 // ==========================================
 
 function getCategoryFromManifest() {
   const mf = window.SESSION_MANIFEST;
   const catId = window.SESSION_CATEGORY_ID;
+
   if (!mf || !Array.isArray(mf.categories) || !catId) return null;
+
   return mf.categories.find(c => c.categoryId === catId) || null;
 }
 
@@ -231,7 +308,7 @@ function buildSessionNavMeta() {
   const next = cat.sessions[idx + 1] || null;
 
   return {
-    homeTitle: cat.homeTitle || '一覧へ',
+    homeTitle: cat.homeTitle || '目次へ',
     homePath: cat.homePath || '../',
 
     prevTitle: prev?.title || '',
@@ -248,6 +325,7 @@ function addSessionNav(meta) {
 
   const nav = document.createElement('div');
   nav.id = 'sessionNav';
+
   nav.style.position = 'fixed';
   nav.style.top = '12px';
   nav.style.right = '12px';
@@ -259,6 +337,7 @@ function addSessionNav(meta) {
   const mkBtn = (label, href, iconClass) => {
     const a = document.createElement('a');
     a.href = href;
+
     a.style.textDecoration = 'none';
     a.style.display = 'inline-flex';
     a.style.alignItems = 'center';
@@ -283,11 +362,13 @@ function addSessionNav(meta) {
   };
 
   if (meta.homePath) {
-    nav.appendChild(mkBtn(meta.homeTitle || '一覧へ', meta.homePath, 'fa-solid fa-list'));
+    nav.appendChild(mkBtn(meta.homeTitle || '目次へ', meta.homePath, 'fa-solid fa-list'));
   }
+
   if (meta.prevPath) {
     nav.appendChild(mkBtn(meta.prevTitle || '前へ', meta.prevPath, 'fa-solid fa-chevron-left'));
   }
+
   if (meta.nextPath) {
     nav.appendChild(mkBtn(meta.nextTitle || '次へ', meta.nextPath, 'fa-solid fa-chevron-right'));
   }
@@ -298,6 +379,7 @@ function addSessionNav(meta) {
 // ==========================================
 // 起動
 // ==========================================
+
 document.addEventListener('DOMContentLoaded', () => {
   if (!window.SLIDES_DATA) {
     console.error('SLIDES_DATA が見つかりません（sessions/*.js の読み込み順を確認）');
