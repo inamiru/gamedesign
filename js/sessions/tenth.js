@@ -63,8 +63,7 @@ window.SESSION_ID = 'ux-10';
           title: 'マズローの欲求5(6)段階',
           intro: '人間の「欲求のピラミッド」',
           src: '../../assets/images/ux/Maslow.jpg',
-          alt: '参考画像',
-          footer: '補足説明'
+          alt: ''
         },
 
         // --- 4. マズローの階層 (1) ---
