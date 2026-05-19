@@ -9,7 +9,7 @@ window.SESSION_ID = 'ux-10';
         // --- 1. タイトル ---
         {
             type: 'title',
-            title: 'プレイヤーの脳はモチベーションによって動かされる',
+            title: 'プレイヤーの脳とモチベーション',
             intro: '',
             icon: 'fa-brain'
         },
