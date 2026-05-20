@@ -74,7 +74,7 @@ window.SESSION_ID = 'ux-5';
             intro: '海賊についてではなく、海賊になる',
             tiles: [
                 { icon: 'fa-landmark-dome', title: 'その1', text: '海賊に関する歴史的なドキュメンタリ一' },
-                { icon: 'fa-battle-net', title: 'その2', text: '海賊船同士の戦い' },
+                { icon: 'fa-hand-fist', title: 'その2', text: '海賊船同士の戦い' },
                 { icon: 'fa-gem', title: 'その3', text: '海賊の秘宝の探索' },
                 { icon: 'fa-book-skull', title: 'その4', text: '海賊は悪党なので倒すべき' }
             ]
