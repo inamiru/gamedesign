@@ -106,11 +106,11 @@ window.SESSION_ID = 'ux-8';
             title: 'ゲームに男性が期待する5つのこと',
             intro: '傾向としての違い（個人差あり）',
             tiles: [
-                { icon: 'fa-get-pocket', title: '習得', text: '重要なものや役立つものである必要がなく、そこに挑戦があれば十分' },
+                { icon: 'fa-circle-arrow-down', title: '習得', text: '重要なものや役立つものである必要がなく、そこに挑戦があれば十分' },
                 { icon: 'fa-person-running', title: '競争', text: '自分が最高だと証明するために人と競争することを楽しむ' },
                 { icon: 'fa-bridge-circle-xmark', title: '破壊', text: '男の子がブロックで遊ぶとき、最もワクワクするのは組み立てではなく、できあがったものを壊すことにある' },
                 { icon: 'fa-puzzle-piece', title: '立体パズル', text: '3D空間の操作を伴うパズルは男性の興味を強く引く' },
-                { icon: 'fa-leanpub', title: '試行錯誤', text: '男性は、試行錯誤して物事を学びたがる傾向があり、実際に試さないと理解できないインタフェースを好む' }
+                { icon: 'fa-chalkboard', title: '試行錯誤', text: '試行錯誤して物事を学びたがる傾向があり、実際に試さないと理解できないインタフェースを好む' }
             ]
         },
 
