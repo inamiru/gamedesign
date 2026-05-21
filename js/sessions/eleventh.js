@@ -60,6 +60,24 @@ window.SESSION_ID = 'ux-11';
 
         // --- 5. 空間 ---
         {
+            type: 'quote',
+            title: 'ゲームシステム',
+            quote: 'ビジュアルや技術、ストーリーをゲームから全部はぎ取った後に残る、インタラクションや関係性です。'
+        },
+
+        // --- 6. オブジェクト ---
+        {
+            type: 'tiled-grid',
+            title: 'ゲームシステムの分類',
+            intro: '7つの主要カテゴリ',
+            tiles: [
+                { icon: 'fa-border-all', title: '空間', text: 'あらゆるゲームは何かしらの空間で行われる' },
+                { icon: 'fa-cube', title: '時間', text: '。ゲームの世界では、人が神のように時間を操れる' },
+                { icon: 'fa-cube', title: '時間', text: '。ゲームの世界では、人が神のように時間を操れる' },
+            ]
+        },        
+
+        {
             type: 'tiled-grid',
             title: '1. 空間 (Space)',
             intro: 'ゲームの魔法円',
