@@ -172,9 +172,8 @@ window.SESSION_ID = 'ux-11';
           type: 'image',
           title: 'ステータス図',
           intro: 'どのステータスがどのステータスとつながっていて、何がステータス変化を引き起こすかを理解しやすい',
-          src: '../../assets/images/sample.png',
-          alt: '',
-          footer: 'あらゆる複雑な関係を整理整頓して、デバッグを容易にしてくれる'
+          src: '../../assets/images/ux/state.png',
+          alt: 'あらゆる複雑な関係を整理整頓して、デバッグを容易にしてくれる',
         },
         
         
