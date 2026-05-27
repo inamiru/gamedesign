@@ -149,7 +149,7 @@ window.SESSION_ID = 'ux-11';
             title: 'オブジェクトとアトリビュート、ステータス',
             intro: 'ゲームシステムを表すための「名詞」と「形容詞」',
             tiles: [
-                { icon: 'fa-hand-pointer', title: 'オブジェクト', text: 'キャラクターや小道具、収集物、スコア表示など、ゲームで見たり操作できるもの',image: '../../assets/images/sample.png' },
+                { icon: 'fa-hand-pointer', title: 'オブジェクト', text: 'キャラクターや小道具、収集物、スコア表示など、ゲームで見たり操作できるもの',image: '../../assets/images/ux/state.png' },
                 { icon: 'fa-chess-knight', title: 'アトリビュート（属性）', text: 'オブジェクトは通常、1つ以上のアトリビュート（属性）を持つ' }
             ]
         },
