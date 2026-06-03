@@ -45,15 +45,11 @@ window.SESSION_ID = 'ux-11';
         {
             type: 'list',
             title: '本日のポイント',
-            intro: 'ゲームを構成する6つの要素',
+            intro: 'ゲームを構成する要素',
             listClass: 'agenda-list',
             items: [
-                '1. ゲームシステムの分類',
-                '2. オブジェクト (Objects)',
-                '3. アクション (Actions)',
-                '4. ルール (Rules)',
-                '5. スキル (Skill)',
-                '6. 運 (Chance)'
+                '1. ゲームシステムとは？',
+                '2. ゲームシステムの分類'
             ]
         },
 
