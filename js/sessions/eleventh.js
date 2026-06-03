@@ -66,7 +66,7 @@ window.SESSION_ID = 'ux-11';
         {
             type: 'image',
             title: 'ゲームシステムの分類',
-            intro: 'ゲームは7つの視点で分解できる',
+            intro: 'ゲームはいくつかの視点で分解できる',
             src: '../../assets/images/ux/map.png',
             alt: '',
         },
