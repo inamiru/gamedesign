@@ -58,10 +58,10 @@ window.SESSION_ID = 'ux-7';
             title: '8つのフィルター (1/2)',
             intro: 'アイデアを検証するチェックリスト',
             tiles: [
-                { icon: 'fa-palette', title: '直感', text: '重要な賃問：「このゲームは、しっくりくるか？」' },
-                { icon: 'fa-users', title: 'ターゲット', text: '重妻な賃問：「ターゲットユーザーは、このゲームをちゃんと気に入るか？」' },
-                { icon: 'fa-hand-holding-dollar', title: '体験', text: '重璽な貫問：「このゲームは適切にゲームデザインされているか？」' },
-                { icon: 'fa-lightbulb', title: '革新性', text: '重妻な貫問：「このゲームは、十分に革新的と言えるか？」' }
+                { icon: 'fa-palette', title: '直感', text: '重要な質問：「このゲームは、しっくりくるか？」' },
+                { icon: 'fa-users', title: 'ターゲット', text: '重要な質問：「ターゲットユーザーは、このゲームをちゃんと気に入るか？」' },
+                { icon: 'fa-hand-holding-dollar', title: '体験', text: '重要な質問：「このゲームは適切にゲームデザインされているか？」' },
+                { icon: 'fa-lightbulb', title: '革新性', text: '重要な質問：「このゲームは、十分に革新的と言えるか？」' }
             ]
         },
 
