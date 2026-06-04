@@ -171,7 +171,7 @@ window.SESSION_ID = 'ux-8';
             tiles: [
                 { icon: 'fa-users', title: '仲間', text: '他者との交流、協力、社会性' },
                 { icon: 'fa-magnifying-glass', title: '発見', text: '新しいものを見つける' },
-                { icon: 'fa-palette', title: '表現', text: 'ア自分を表現する喜びと、ものを生み出す' },
+                { icon: 'fa-palette', title: '表現', text: '自分を表現する喜びと、ものを生み出す' },
                 { icon: 'fa-chess-pawn', title: '没入', text: '現実世界を離れ、もっと楽しい、新しいルールと意味を持つ世界に足を踏み入れる' }
             ]
         },
@@ -212,7 +212,7 @@ window.SESSION_ID = 'ux-8';
             items: [
                 '<strong>成果に対する誇り</strong>：成果を上げた後にも長く続く喜び',
                 '<strong>驚き</strong>：脳は驚きが好き',
-                '<strong>スリル</strong>：。恐怖を体験しながらも、身の安全を感じている状態',
+                '<strong>スリル</strong>：恐怖を体験しながらも、身の安全を感じている状態',
                 '<strong>逆境を乗り越えた勝利</strong>：大きな賭けだとわかっていたことを達成したとき',
                 '<strong>驚順</strong>：畏怖や驚異に圧倒される感覚'
             ]
