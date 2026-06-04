@@ -80,7 +80,7 @@ window.SESSION_ID = 'ux-11';
             tiles: [
                 { icon: 'fa-border-all', title: '三目並べ', text: '見た目は3×3の盤だが、システムとしての空間は9個のマス' },
                 { icon: 'fa-cube', title: 'モノポリー', text: '見た目は四角い盤面だが、40マスの一本道のループ' },
-                { icon: 'fa-cube', title: 'サッカー', text: '広い1つのピッチの中に、ゴール、中央、サイドなどのエリアが存在する' }
+                { icon: 'fa-futbol', title: 'サッカー', text: '広い1つのピッチの中に、ゴール、中央、サイドなどのエリアが存在する' }
             ]
         },
    
@@ -101,7 +101,7 @@ window.SESSION_ID = 'ux-11';
             tiles: [
                 { icon: 'fa-border-all', title: '非連続的／連続的', text: 'マス目や地点のように「決まった場所」だけが意味を持つなら非連続的<br>ビリヤード台のように、任意の位置が意味を持つなら連続的' },
                 { icon: 'fa-cube', title: '次元', text: '見た目ではなく、ルール上どの方向・位置が意味を持つかが重要' },
-                { icon: 'fa-cube', title: '境界と接続', text: '隣接関係や移動可能な関係がゲーム性を作る' },
+                { icon: 'fa-connectdevelop', title: '境界と接続', text: '隣接関係や移動可能な関係がゲーム性を作る' },
             ]
         },
 
@@ -139,9 +139,9 @@ window.SESSION_ID = 'ux-11';
             title: '時間',
             intro: '止まったり、振り返ったり、進みを遅くしたり速くしたり',
             tiles: [
-                { icon: 'fa-cube', title: '非連続的と連続的', text: '非連続的な時間の単位を「ターン」と呼び<br>スポーツなどは連続的な時間（リアルタイム）の中で動く' },
-                { icon: 'fa-tag', title: '時計とレース', text: '絶対的な時間計測によってゲームプレイを制限する<br>レースに固定の時間制限はない' },
-                { icon: 'fa-tag', title: '時間の操作', text: '「一時停止」ボタンを押したときのように、時間を完全に停止でき、ときには、時間の経過速度を上げることもある' }
+                { icon: 'fa-border-all', title: '非連続的と連続的', text: '非連続的な時間の単位を「ターン」と呼び<br>スポーツなどは連続的な時間（リアルタイム）の中で動く' },
+                { icon: 'fa-clock', title: '時計とレース', text: '絶対的な時間計測によってゲームプレイを制限する<br>レースに固定の時間制限はない' },
+                { icon: 'fa-bars-staggered', title: '時間の操作', text: '「一時停止」ボタンを押したときのように、時間を完全に停止でき、ときには、時間の経過速度を上げることもある' }
             ]
         },
         
@@ -151,11 +151,11 @@ window.SESSION_ID = 'ux-11';
             title: '制限時間・レース・テンポ',
             intro: '時間は難易度を上げる装置でもあり、テンポを整える装置でもある',
             tiles: [
-                { icon: 'fa-cube', title: '制限時間', text: '急がせる、焦らせる' },
-                { icon: 'fa-tag', title: 'レース', text: '他者や状況と競わせる' },
-                { icon: 'fa-tag', title: 'クールタイム', text: '使うタイミングを考えさせる' },
-                { icon: 'fa-tag', title: 'ラウンド制', text: '区切りとリズムを作る' },
-                { icon: 'fa-tag', title: '一時停止・巻き戻し', text: '考える余地ややり直しを作る' },
+                { icon: 'fa-clock', title: '制限時間', text: '急がせる、焦らせる' },
+                { icon: 'fa-flag-checkered', title: 'レース', text: '他者や状況と競わせる' },
+                { icon: 'fa-angles-down', title: 'クールタイム', text: '使うタイミングを考えさせる' },
+                { icon: 'fa-circle-notch', title: 'ラウンド制', text: '区切りとリズムを作る' },
+                { icon: 'fa-repeat', title: '一時停止・巻き戻し', text: '考える余地ややり直しを作る' },
             ]
         },
 
@@ -180,9 +180,9 @@ window.SESSION_ID = 'ux-11';
             title: 'オブジェクトとアトリビュート、ステータス',
             intro: 'ゲームシステムを表すための「名詞」と「形容詞」',
             tiles: [
-                { icon: 'fa-hand-pointer', title: 'オブジェクト', text: 'キャラクターや小道具、収集物、スコア表示など、ゲームで見たり操作できるもの' },
-                { icon: 'fa-chess-knight', title: 'アトリビュート（属性）', text: 'アトリピュートはオブジェクトに関する情報の種類<br>オブジェクトは通常、1つ以上のアトリビュート（属性）を持つ' },
-                { icon: 'fa-chess-knight', title: 'ステータス（状態）', text: '各アトリピュートには、現在のステータス（状態）がある' }
+                { icon: 'fa-cube', title: 'オブジェクト', text: 'キャラクターや小道具、収集物、スコア表示など、ゲームで見たり操作できるもの' },
+                { icon: 'fa-creative-commons-by', title: 'アトリビュート（属性）', text: 'アトリピュートはオブジェクトに関する情報の種類<br>オブジェクトは通常、1つ以上のアトリビュート（属性）を持つ' },
+                { icon: 'fa-bars-progress', title: 'ステータス（状態）', text: '各アトリピュートには、現在のステータス（状態）がある' }
             ]
         },
 
@@ -226,10 +226,10 @@ window.SESSION_ID = 'ux-11';
             title: '秘密',
             intro: 'ゲームは、情報の見せ方で大きく変わる',
             tiles: [
-                { icon: 'fa-hand-pointer', title: '全員が知っている', text: 'チェスの盤面など「読み合い」が発生する' },
-                { icon: 'fa-chess-knight', title: '自分だけが知っている', text: 'カードゲームの手札など「駆け引き」が生まれる' },
-                { icon: 'fa-chess-knight', title: 'ゲームだけが知っている', text: '敵の出現位置など「驚きや不安」が生まれる' },
-                { icon: 'fa-chess-knight', title: '誰も知らない', text: 'サイコロの出目など「運や期待」が生まれる' }
+                { icon: 'fa-people-line', title: '全員が知っている', text: 'チェスの盤面など「読み合い」が発生する' },
+                { icon: 'fa-person', title: '自分だけが知っている', text: 'カードゲームの手札など「駆け引き」が生まれる' },
+                { icon: 'fa-gamepad', title: 'ゲームだけが知っている', text: '敵の出現位置など「驚きや不安」が生まれる' },
+                { icon: 'fa-circle-question', title: '誰も知らない', text: 'サイコロの出目など「運や期待」が生まれる' }
             ]
         },
         
@@ -265,8 +265,8 @@ window.SESSION_ID = 'ux-11';
             title: 'アクション',
             intro: 'ゲーム内の「動詞」',
             tiles: [
-                { icon: 'fa-hand-pointer', title: '基本アクション', text: 'プレイヤーがルール上できること<br>「ジャンプする」「撃つ」「カードを出す」' },
-                { icon: 'fa-chess-knight', title: '戦略アクション', text: '基本アクションを使って狙うこと<br>「待ち伏せする」「おとりを使う」' }
+                { icon: 'fa-pushed', title: '基本アクション', text: 'プレイヤーがルール上できること<br>「ジャンプする」「撃つ」「カードを出す」' },
+                { icon: 'fa-bullseye', title: '戦略アクション', text: '基本アクションを使って狙うこと<br>「待ち伏せする」「おとりを使う」' }
             ]
         },
         
@@ -277,11 +277,11 @@ window.SESSION_ID = 'ux-11';
             title: 'エマージェントゲームプレイ',
             intro: 'ゲームを遊ぶ中で生まれる偶発的な遊び',
             tiles: [
-                { icon: 'fa-hand-pointer', title: '基本アクションの追加', text: '基本的には、まあまあの基本アクションをたくさん追加するより、優れた基本アクションを1つ追加するほうが、よい結果につながる' },
-                { icon: 'fa-chess-knight', title: '多くのオブジェクトに対して作用できる', text: '基本アクションは1つのまま、できる数を増やすことで、有効な戦略アクションの数も増える' },
-                { icon: 'fa-chess-knight', title: '複数の方法で達成できる目標', text: '目標達成のために、たくさんの選択肢があれば、ゲームプレイは強力になる' },
-                { icon: 'fa-chess-knight', title: '多くの対象物', text: '戦略アクションの数は、（動詞の）対象物の数 x 動詞の数 x オブジェクトの数で大まかに計算できる' },
-                { icon: 'fa-chess-knight', title: '制約の変更による副次効果', text: '基本アクションを行うたびに、ゲームのさまざまな側面を強制的に変更することで、戦略アクションが突如出現する可能性が高まる' }
+                { icon: 'fa-pushed', title: '基本アクションの追加', text: '基本的には、まあまあの基本アクションをたくさん追加するより、優れた基本アクションを1つ追加するほうが、よい結果につながる' },
+                { icon: 'fa-cube', title: '多くのオブジェクトに対して作用できる', text: '基本アクションは1つのまま、できる数を増やすことで、有効な戦略アクションの数も増える' },
+                { icon: 'fa-circle-check', title: '複数の方法で達成できる目標', text: '目標達成のために、たくさんの選択肢があれば、ゲームプレイは強力になる' },
+                { icon: 'fa-cubes-stacked', title: '多くの対象物', text: '戦略アクションの数は、（動詞の）対象物の数 x 動詞の数 x オブジェクトの数で大まかに計算できる' },
+                { icon: 'fa-hurricane', title: '制約の変更による副次効果', text: '基本アクションを行うたびに、ゲームのさまざまな側面を強制的に変更することで、戦略アクションが突如出現する可能性が高まる' }
             ]
         },
 
@@ -335,9 +335,9 @@ window.SESSION_ID = 'ux-11';
             title: 'ゲームの目標',
             intro: '目標が簡単に理解できるほど、その目標を達成するイメージを容易に想像でき、ゲームを遊んでみたいと思ってくれる',
             tiles: [
-                { icon: 'fa-dumbbell', title: '具体的', text: '目標を理解して、何を達成すればよいかを明快に言葉にできる' },
-                { icon: 'fa-brain', title: '達成可能', text: '目標が十分に達成可能だとプレイヤーに思わせる必要がある' },
-                { icon: 'fa-brain', title: '見返りがある', text: '目標を達成したプレイヤーに価値あるものを与えれば、目標へのやりがいを高められる' }
+                { icon: 'fa-circle-check', title: '具体的', text: '目標を理解して、何を達成すればよいかを明快に言葉にできる' },
+                { icon: 'fa-thumbs-up', title: '達成可能', text: '目標が十分に達成可能だとプレイヤーに思わせる必要がある' },
+                { icon: 'fa-trophy', title: '見返りがある', text: '目標を達成したプレイヤーに価値あるものを与えれば、目標へのやりがいを高められる' }
             ]
         },
 
@@ -377,9 +377,9 @@ window.SESSION_ID = 'ux-11';
             title: 'スキル',
             intro: 'プレイヤーに求める能力',
             tiles: [
-                { icon: 'fa-dumbbell', title: '身体的スキル', text: '強さや器用さ、調整力（必要に応じた動き）、持久力など' },
+                { icon: 'fa-child-reaching', title: '身体的スキル', text: '強さや器用さ、調整力（必要に応じた動き）、持久力など' },
                 { icon: 'fa-brain', title: '知的スキル', text: '記憶力や観察力、パズル解きなど' },
-                { icon: 'fa-brain', title: '社会的スキル', text: '対戦相手を読み（何を考えているかを推測し）、対戦相手をだます、チームメイトと協力するなど' }
+                { icon: 'fa-battle-net', title: '社会的スキル', text: '対戦相手を読み（何を考えているかを推測し）、対戦相手をだます、チームメイトと協力するなど' }
             ]
         },
 
@@ -406,7 +406,7 @@ window.SESSION_ID = 'ux-11';
             intro: '確率は不確実性を意味し、不確実性は驚きを意味する',
             tiles: [
                 { icon: 'fa-dice', title: '役割', text: '未来を予測不可能にし、初心者にも勝つチャンスを与える' },
-                { icon: 'fa-scale-unbalanced', title: 'バランス', text: '運が強すぎると「ただのくじ引き」になる<br>スキルとのバランスが重要' }
+                { icon: 'fa-scale-balanced', title: 'バランス', text: '運が強すぎると「ただのくじ引き」になる<br>スキルとのバランスが重要' }
             ]
         },
 
@@ -430,10 +430,10 @@ window.SESSION_ID = 'ux-11';
             intro: '確率とスキルの間には、無視できない重要なインタラクションがある',
             tiles: [
                 { icon: 'fa-dice', title: '確率の推測はスキル', text: '次に何が起こるかを推測する能力' },
-                { icon: 'fa-scale-unbalanced', title: 'スキルには成功確率がある', text: 'あらゆる行動には何らかのリスクが伴う<br>プレイヤーは常に期待値から判断して、安全な行動とリスクをとるべき行動のタイミングを決めている' },
-                { icon: 'fa-scale-unbalanced', title: '対戦相手のスキルの推測もスキル', text: '相手の能力と自分の能力は、どちらが上かを推測する能力' },
-                { icon: 'fa-scale-unbalanced', title: '純粋な運要素の推測は想像上のスキル', text: '人は意識的にも無意識的にも、次に何が起こるかを推測するときの判断材料として、パターンを探す' },
-                { icon: 'fa-scale-unbalanced', title: '純粋な運要素のコントロールは想像上のスキル', text: '人間の脳は積極的にパターンを探そうとするだけでなく、因果関係も必死に探そうとする' }
+                { icon: 'fa-diagram-successor', title: 'スキルには成功確率がある', text: 'あらゆる行動には何らかのリスクが伴う<br>プレイヤーは常に期待値から判断して、安全な行動とリスクをとるべき行動のタイミングを決めている' },
+                { icon: 'fa-person', title: '対戦相手のスキルの推測もスキル', text: '相手の能力と自分の能力は、どちらが上かを推測する能力' },
+                { icon: 'fa-patreon', title: '純粋な運要素の推測は想像上のスキル', text: '人は意識的にも無意識的にも、次に何が起こるかを推測するときの判断材料として、パターンを探す' },
+                { icon: 'fa-clover', title: '純粋な運要素のコントロールは想像上のスキル', text: '人間の脳は積極的にパターンを探そうとするだけでなく、因果関係も必死に探そうとする' }
             ]
         },
 
