@@ -71,9 +71,9 @@ window.SESSION_ID = 'ux-10';
             title: '自己決定理論',
             intro: '人間には、生理的欲求と同じくらい、精神的欲求もある',
             tiles: [
-                { icon: 'fa-burger', title: '有能感', text: '何かに優れている、得意だと感じたい' },
-                { icon: 'fa-shield-halved', title: '自律性', text: '物事を自分の好きなように行う自由が欲しい' },
-                { icon: 'fa-shield-halved', title: '関係性', text: '他者と結び付いていたい' }
+                { icon: 'fa-arrow-up', title: '有能感', text: '何かに優れている、得意だと感じたい' },
+                { icon: 'fa-person', title: '自律性', text: '物事を自分の好きなように行う自由が欲しい' },
+                { icon: 'fa-arrows-down-to-people', title: '関係性', text: '他者と結び付いていたい' }
             ]
         },
 
@@ -97,7 +97,6 @@ window.SESSION_ID = 'ux-10';
             intro: 'モチベーションの2つのエンジン',
             icon: 'fa-battery-full'
         },
-
         
         // --- 8. 外発的動機 ---
         {
@@ -105,8 +104,8 @@ window.SESSION_ID = 'ux-10';
             title: '『したい』と『しなければならない』',
             intro: '「本当の自分」から来るモチベーションほど、内的の度合いが強まる',
             tiles: [
-                { icon: 'fa-burger', title: '外発的動機', text: '「外部からの刺激」によって行動を引き起こすこと' },
-                { icon: 'fa-shield-halved', title: '内発的動機', text: '自身の内面から湧き起こる感情や興味によって、行動が引き起こされること' }
+                { icon: 'fa-burst', title: '外発的動機', text: '「外部からの刺激」によって行動を引き起こすこと' },
+                { icon: 'fa-heart-circle-bolt', title: '内発的動機', text: '自身の内面から湧き起こる感情や興味によって、行動が引き起こされること' }
             ]
         },
 
