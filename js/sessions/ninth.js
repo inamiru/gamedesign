@@ -69,9 +69,10 @@ window.SESSION_ID = 'ux-9';
             title: 'モデル化のプロセス',
             intro: '脳はいかにして世界を理解するか',
             tiles: [
-                { icon: 'fa-image', title: '視覚', text: '目に入った光の信号を、脳が「顔」「木」「車」といった<br>意味のあるオブジェクトに変換する', image:'../../assets/images/ux/CharlieBrown.jpg' },
+                { icon: 'fa-image', title: '視覚', text: '目に入った光の信号を、脳が「顔」「木」「車」といった<br>意味のあるオブジェクトに変換する' },
                 { icon: 'fa-gamepad', title: 'ゲーム', text: 'ゲームの特徴は単純なルールで、人が容易に理解して扱えるように調整されている' }
-            ]
+            ],
+             image:'../../assets/images/ux/CharlieBrown.jpg'
         },
 
         // --- 5. フォーカス ---
