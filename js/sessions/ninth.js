@@ -104,17 +104,13 @@ window.SESSION_ID = 'ux-9';
         
          // --- 10. フローチャンネル ---
         {
-            type: 'list',
+            type: 'image',
             title: 'フロー活動',
             intro: '退屈と不安の間の狭い範囲内のチャレンジに居続ける必要がある',
-            items: [
-                'フロー活動が成長と発見につながる',
-                '人は長い間、同じことを同じレベルで楽しみ続けられない',
-                'また楽しみたいという願望が、スキルの向上や、スキルを利用するための新しい機会を発見させようとする'
-            ],
-            image: '../../assets/images/ux/flowchannel.png'
+            src: '../../assets/images/ux/flowchannel.png',
+            alt: '',
         },
-
+        
         // --- 11. スキルとチャレンジ ---
         {
             type: 'image',
