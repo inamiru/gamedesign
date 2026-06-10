@@ -164,16 +164,8 @@ window.SESSION_ID = 'ux-9';
 
         // --- 15. 想像力 ---
         {
-            type: 'title',
-            title: '想像力 (Imagination)',
-            intro: 'ゲームをプレイヤーに放り込むことで、プレイヤーをゲームに放り込む',
-            icon: 'fa-solid fa-circle-user'
-        },
-
-        // --- 16. 想像力 ---
-        {
             type: 'tiled-grid',
-            title: '想像力の機能',
+            title: '想像力',
             intro: '隙間を埋める力',
             tiles: [
                 { icon: 'fa-users', title: 'コミュニケーション', text: 'プレイヤーの想像力を引き込む方法を理解しておく必要がある' },
@@ -181,7 +173,7 @@ window.SESSION_ID = 'ux-9';
             ]
         },
 
-        // --- 17. まとめ ---
+        // --- 16. まとめ ---
         {
             type: 'list',
             title: 'まとめ',
