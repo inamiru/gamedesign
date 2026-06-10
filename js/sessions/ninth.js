@@ -2,7 +2,7 @@ window.SESSION_CATEGORY_ID = 'ux';
 window.SESSION_ID = 'ux-9';
 
     // ==========================================
-    //  スライドデータ (第10章 全17枚構成)
+    //  スライドデータ (第10章 全16枚構成)
     // ==========================================
     window.SLIDES_DATA = [
         
@@ -102,16 +102,7 @@ window.SESSION_ID = 'ux-9';
             ]
         },
         
-        // --- 10. 画像サンプル ---
-        {
-            type: 'image',
-            title: 'ゲーム画面の例',
-            intro: '',
-            src: '../../assets/images/ux/flowsample.png',
-            alt: '',
-        },
-        
-         // --- 11. フローチャンネル ---
+         // --- 10. フローチャンネル ---
         {
             type: 'list',
             title: 'フロー活動',
@@ -124,7 +115,7 @@ window.SESSION_ID = 'ux-9';
             image: '../../assets/images/ux/flowchannel.png'
         },
 
-        // --- 12. スキルとチャレンジ ---
+        // --- 11. スキルとチャレンジ ---
         {
             type: 'image',
             title: 'スキルとチャンレジ',
@@ -133,7 +124,7 @@ window.SESSION_ID = 'ux-9';
             alt: '',
         },
 
-        // --- 13. 緊張と緩和 ---
+        // --- 12. 緊張と緩和 ---
         {
             type: 'quote',
             title: '緊張と緩和',
@@ -142,7 +133,7 @@ window.SESSION_ID = 'ux-9';
             footer: '緊張が強すぎると疲弊し、リラックスしすぎると退屈します'
         },
 
-        // --- 14. レンズ：フロー ---
+        // --- 13. レンズ：フロー ---
         {
             type: 'exercise',
             title: 'レンズ #21：フロー',
@@ -156,7 +147,7 @@ window.SESSION_ID = 'ux-9';
             ]
         },
 
-        // --- 15. 共感の仕組み ---
+        // --- 14. 共感の仕組み ---
         {
             type: 'list',
             title: '共感力',
@@ -168,7 +159,7 @@ window.SESSION_ID = 'ux-9';
             ]
         },
 
-        // --- 16. 想像力 ---
+        // --- 15. 想像力 ---
         {
             type: 'tiled-grid',
             title: '想像力',
@@ -179,7 +170,7 @@ window.SESSION_ID = 'ux-9';
             ]
         },
 
-        // --- 17. まとめ ---
+        // --- 16. まとめ ---
         {
             type: 'list',
             title: 'まとめ',
