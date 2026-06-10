@@ -63,27 +63,33 @@ window.SESSION_ID = 'ux-9';
             footer: ''
         },
 
-        // --- 6. モデリングの例 ---
+        // --- 6. モデリング ---
         {
-            type: 'tiled-grid',
-            title: 'モデル化のプロセス',
-            intro: '脳はいかにして世界を理解するか',
-            tiles: [
-                { icon: 'fa-image', title: '視覚', text: '目に入った光の信号を、脳が「顔」「木」「車」といった<br>意味のあるオブジェクトに変換する' },
-                { icon: 'fa-gamepad', title: 'ゲーム', text: 'ゲームの特徴は単純なルールで、人が容易に理解して扱えるように調整されている' }
-            ],
-             image:'../../assets/images/ux/CharlieBrown.jpg'
+            type: 'image',
+            title: 'チャーリー・ブラウンの例',
+            intro: '「意識して考えるまでは自然に感じている物事」を探す',
+            src: '../../assets/images/ux/CharlieBrown.jpg',
+            alt: '',
         },
 
-        // --- 7. 集中 ---
+        // --- 7. モデリングの例 ---
+        {
+            type: 'image',
+            title: 'モデリング',
+            intro: 'ゲームは、現実よりも単純化されたモデル。だからプレイヤーは、短時間でルールを理解し、試行錯誤できる。',
+            src: '../../assets/images/ux/compare.png',
+            alt: '',
+        },
+        
+        // --- 8. 集中 ---
         {
             type: 'quote',
             title: '集中',
-            quote: '私たちの目標は、プレイヤーの集中をできるだけ長く<br>できるだけ強くつなぎとめられるような、魅力的な体験を生み出すこと',
+            quote: 'プレイヤーの集中をできるだけ長く<br>できるだけ強くつなぎとめられるような、魅力的な体験を生み出すこと',
             footer: '人は、自らの注意と想像力が長い時間、あるものに完全にとらえ続けられたとき、興味深い精神状態に入ります'
         },
 
-        // --- 8. フロー ---
+        // --- 9. フロー ---
         {
             type: 'tiled-grid',
             title: 'フロー状態',
@@ -95,6 +101,16 @@ window.SESSION_ID = 'ux-9';
                 { icon: 'fa-award', title: '絶え間ないチャレンジ', text: '達成可能だと思えるチャレンジ（挑戦）を用意する' }                
             ]
         },
+        
+        // --- 10. 画像サンプル ---
+        {
+            type: 'image',
+            title: 'ゲーム画面の例',
+            intro: '',
+            src: '../../assets/images/ux/flowsample.png',
+            alt: '',
+        },
+        
 
          // --- 9. フローチャンネル ---
         {
