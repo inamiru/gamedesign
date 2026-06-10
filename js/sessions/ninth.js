@@ -75,15 +75,7 @@ window.SESSION_ID = 'ux-9';
              image:'../../assets/images/ux/CharlieBrown.jpg'
         },
 
-        // --- 5. フォーカス ---
-        {
-            type: 'title',
-            title: 'フォーカス (Focus)',
-            intro: '脳のスポットライト',
-            icon: 'fa-crosshairs'
-        },
-
-        // --- 6. 集中 ---
+        // --- 5. 集中 ---
         {
             type: 'quote',
             title: '集中',
@@ -91,7 +83,7 @@ window.SESSION_ID = 'ux-9';
             footer: '人は、自らの注意と想像力が長い時間、あるものに完全にとらえ続けられたとき、興味深い精神状態に入ります'
         },
 
-        // --- 7. フロー ---
+        // --- 6. フロー ---
         {
             type: 'tiled-grid',
             title: 'フロー状態 (Flow)',
@@ -104,7 +96,7 @@ window.SESSION_ID = 'ux-9';
             ]
         },
 
-        // --- 8. フロー活動 ---
+        // --- 7. フロー活動 ---
         {
             type: 'list',
             title: 'フロー活動',
@@ -116,7 +108,7 @@ window.SESSION_ID = 'ux-9';
             ]
         },
 
-        // --- 9. フローチャンネル ---
+        // --- 8. フローチャンネル ---
         {
             type: 'quote',
             title: '緊張と緩和',
@@ -124,7 +116,7 @@ window.SESSION_ID = 'ux-9';
             footer: '緊張が強すぎると疲弊し、リラックスしすぎると退屈します'
         },
 
-        // --- 10. レンズ：フォーカス ---
+        // --- 9. レンズ：フロー ---
         {
             type: 'exercise',
             title: 'レンズ #21：フロー',
@@ -140,15 +132,7 @@ window.SESSION_ID = 'ux-9';
             ]
         },
 
-        // --- 11. 共感 ---
-        {
-            type: 'title',
-            title: '共感 (Empathy)',
-            intro: '他人のモデルを脳内に作る',
-            icon: 'fa-heart-circle-bolt'
-        },
-
-        // --- 12. 共感の仕組み ---
+        // --- 10. 共感の仕組み ---
         {
             type: 'list',
             title: '共感力',
@@ -160,7 +144,7 @@ window.SESSION_ID = 'ux-9';
             ]
         },
 
-        // --- 13. 想像力 ---
+        // --- 11. 想像力 ---
         {
             type: 'title',
             title: '想像力 (Imagination)',
@@ -168,7 +152,7 @@ window.SESSION_ID = 'ux-9';
             icon: 'fa-solid fa-circle-user'
         },
 
-        // --- 13. 想像力 ---
+        // --- 12. 想像力 ---
         {
             type: 'tiled-grid',
             title: '想像力の機能',
@@ -179,7 +163,7 @@ window.SESSION_ID = 'ux-9';
             ]
         },
 
-        // --- 14. まとめ ---
+        // --- 13. まとめ ---
         {
             type: 'list',
             title: 'まとめ',
