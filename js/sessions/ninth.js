@@ -56,20 +56,20 @@ window.SESSION_ID = 'ux-9';
 
         // --- 5. 導入：モデリング ---
         {
-            type: 'quote',
-            title: '現実は存在しない？',
-            quote: 'プレイヤーは“画面そのもの”ではなく“意味”を見ている',
-            image: '../../assets/images/ux/modeling.png',
-            footer: ''
-        },
-
-        // --- 6. モデリング ---
-        {
             type: 'image',
             title: 'チャーリー・ブラウンの例',
             intro: '「意識して考えるまでは自然に感じている物事」を探す',
             src: '../../assets/images/ux/CharlieBrown.jpg',
             alt: '',
+        },
+        
+        // --- 6. モデリング ---
+        {
+            type: 'quote',
+            title: '現実は存在しない？',
+            quote: 'プレイヤーは“画面そのもの”ではなく“意味”を見ている',
+            image: '../../assets/images/ux/modeling.png',
+            footer: ''
         },
 
         // --- 7. モデリングの例 ---
