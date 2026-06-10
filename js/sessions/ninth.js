@@ -117,7 +117,16 @@ window.SESSION_ID = 'ux-9';
             ]
         },
 
-        // --- 8. フローチャンネル ---
+        // --- 11. フローチャンネル ---
+        {
+            type: 'image',
+            title: 'スキルとチャンレジ',
+            intro: '「緊張と弛緩、緊張と弛緩」というサイクル',
+            src: '../../assets/images/ux/skill&challenge.png',
+            alt: '',
+        },
+
+        // --- 12. 緊張と緩和 ---
         {
             type: 'quote',
             title: '緊張と緩和',
@@ -125,7 +134,7 @@ window.SESSION_ID = 'ux-9';
             footer: '緊張が強すぎると疲弊し、リラックスしすぎると退屈します'
         },
 
-        // --- 9. レンズ：フロー ---
+        // --- 13. レンズ：フロー ---
         {
             type: 'exercise',
             title: 'レンズ #21：フロー',
@@ -141,7 +150,7 @@ window.SESSION_ID = 'ux-9';
             ]
         },
 
-        // --- 10. 共感の仕組み ---
+        // --- 14. 共感の仕組み ---
         {
             type: 'list',
             title: '共感力',
@@ -153,7 +162,7 @@ window.SESSION_ID = 'ux-9';
             ]
         },
 
-        // --- 11. 想像力 ---
+        // --- 15. 想像力 ---
         {
             type: 'title',
             title: '想像力 (Imagination)',
@@ -161,7 +170,7 @@ window.SESSION_ID = 'ux-9';
             icon: 'fa-solid fa-circle-user'
         },
 
-        // --- 12. 想像力 ---
+        // --- 16. 想像力 ---
         {
             type: 'tiled-grid',
             title: '想像力の機能',
@@ -172,7 +181,7 @@ window.SESSION_ID = 'ux-9';
             ]
         },
 
-        // --- 13. まとめ ---
+        // --- 17. まとめ ---
         {
             type: 'list',
             title: 'まとめ',
