@@ -12,7 +12,7 @@ window.SESSION_ID = 'ux-11';
             type: 'title',
             title: '一部の要素はゲームシステムである',
             intro: '',
-            icon: 'fa-brain'
+            icon: 'fa-gears'
         },
 
         // --- 2. 今までのまとめ ---
