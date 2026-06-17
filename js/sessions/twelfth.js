@@ -12,7 +12,7 @@ window.SESSION_ID = 'ux-12';
             type: 'title',
             title: 'ゲームシステムにはバランスが必須',
             intro: '',
-            icon: 'fa-brain'
+            icon: 'fa-scale-balanced'
         },
 
         // --- 2. 今までのまとめ ---
