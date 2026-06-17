@@ -125,7 +125,6 @@ window.SESSION_ID = 'ux-9';
             type: 'quote',
             title: '緊張と緩和',
             quote: '緊張と緩和の間を行き来していると、興奮とリラックスの両方が楽しめる',
-            image: '../../assets/images/ux/stagesample.png',
             footer: '緊張が強すぎると疲弊し、リラックスしすぎると退屈します'
         },
 
