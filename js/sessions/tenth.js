@@ -174,11 +174,11 @@ window.SESSION_ID = 'ux-10';
             title: '変化を作る',
             intro: '素材を増やすよりも「同じ要素の使い方を変える」',
             tiles: [
-                { icon: 'fa-burst', title: '見た目を変える', text: '背景、色、BGM、演出' },
-                { icon: 'fa-heart-circle-bolt', title: '条件を変える', text: '時間制限、視界制限、足場制限' },
-                { icon: 'fa-burst', title: '組み合わせを変える', text: '敵の配置、数、出現順' },
-                { icon: 'fa-burst', title: '目的を変える', text: '倒す、逃げる、守る、運ぶ' },
-                { icon: 'fa-burst', title: '使い方を変える', text: '同じアクションを別目的で使わせる' }
+                { icon: 'fa-palette', title: '見た目を変える', text: '背景、色、演出' },
+                { icon: 'fa-magnifying-glass', title: '条件を変える', text: '時間制限、視界制限、足場制限' },
+                { icon: 'fa-tags', title: '組み合わせを変える', text: '敵の配置、数、出現順' },
+                { icon: 'fa-bullseye', title: '目的を変える', text: '倒す、逃げる、守る、運ぶ' },
+                { icon: 'fa-masks-theater', title: '使い方を変える', text: '同じアクションを別目的で使わせる' }
             ]
         },
 
