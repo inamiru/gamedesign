@@ -2,16 +2,18 @@
 window.SESSION_CATEGORY_ID = 'ux';
 window.SESSION_ID = 'ux-12';
 
-    // ==========================================
-    //  スライドデータ (第13章 全37枚構成)
-    // ==========================================
+// ==========================================
+// 第13章「ゲームシステムにはバランスが必須」
+// 2日間（45分×4コマ×2日）
+// 全40枚
+// ==========================================
     window.SLIDES_DATA = [
         
         // --- 1. タイトル ---
         {
             type: 'title',
             title: 'ゲームシステムにはバランスが必須',
-            intro: '',
+            intro: '強さを同じにするのではなく、狙った体験に近づける',
             icon: 'fa-scale-balanced'
         },
 
@@ -48,7 +50,7 @@ window.SESSION_ID = 'ux-12';
         {
             type: 'list',
             title: '本日のポイント',
-            intro: 'ゲームを構成する要素',
+            intro: '分析してから、調整する',
             listClass: 'agenda-list',
             items: [
                 '1. ゲームバランスとは',
@@ -76,19 +78,47 @@ window.SESSION_ID = 'ux-12';
             src: '../../assets/images/ux/balancemap.png',
             alt: '',
         },
-        
-        // --- 7. 公平性 ---
+
+        // --- 7. 数値ではなく体験 ---
         {
             type: 'tiled-grid',
-            title: '公平性',
-            intro: 'ずるいと感じさせない',
+            title: '数値変更は目的ではない',
+            intro: '数値を変えた結果、体験がどう変わるかを考える',
             tiles: [
-                { icon: 'fa-border-all', title: '対称なゲーム', text: 'すべてのプレイヤーに同じ資源と同じ力を与える' },
-                { icon: 'fa-cube', title: '非対称なゲーム', text: '各プレイヤーに異なるリソースや能力が与えられる' }
+                { icon: 'fa-heart', title: '敵HPを100→200', text: '敵が硬くなるだけでなく、戦闘時間、弾薬消費、緊張感も変わる' },
+                { icon: 'fa-bolt', title: '攻撃力を10→20', text: 'テンポは上がるが、判断や回避の意味が薄くなることもある' },
+                { icon: 'fa-clock', title: '待ち時間を3秒→1秒', text: '快適になる一方、考える時間や緊張が減る可能性がある' },
+                { icon: 'fa-bullseye', title: '判断基準', text: '変更後が、狙った体験に近づいたかで判断する' }
             ]
         },
-   
-        // --- 8. 空間 ---
+
+        // --- 8. 共通例 ---
+        {
+            type: 'tiled-grid',
+            title: '講義で使う共通例',
+            intro: '2人対戦アクションゲーム',
+            tiles: [
+                { icon: 'fa-shield-halved', title: '剣士', text: '近距離、高威力、高耐久、移動が遅い' },
+                { icon: 'fa-bullseye', title: '弓使い', text: '遠距離、低耐久、移動が速い' },
+                { icon: 'fa-trophy', title: '勝利条件', text: '先に相手を3回倒した側が勝利する' },
+                { icon: 'fa-kit-medical', title: 'ステージ', text: '中央に回復アイテムが置かれている' }
+            ]
+        },
+        
+        // --- 9. 公平性 ---
+        {
+            type: 'tiled-grid',
+            title: '公平性：同じでなくても公平',
+            intro: '公平とは、全員が同じ能力を持つことだけではない',
+            tiles: [
+                { icon: 'fa-equals', title: '対称なゲーム', text: '全員に同じ資源、能力、条件を与える' },
+                { icon: 'fa-not-equal', title: '非対称なゲーム', text: '異なる能力や役割を与え、別々の勝ち筋を作る' },
+                { icon: 'fa-route', title: '重要なのは勝ち筋', text: '不利な側にも、工夫や上達で勝てる方法があるか' },
+                { icon: 'fa-face-angry', title: '避けたい状態', text: '何をしても勝てない、理由が分からない、ずるいと感じる状態' }
+            ]
+        },
+
+        // --- 10. 空間 ---
         {
             type: 'list',
             title: '非対称でも公平にする方法',
@@ -99,16 +129,20 @@ window.SESSION_ID = 'ux-12';
             ]
         },
         
-        // --- 9. 空間 ---
+        // --- 11. 非対称の具体例 ---
         {
-            type: 'image',
-            title: 'バランス調整の例',
-            intro: '',
-            src: '../../assets/images/ux/balanceadjustment.png',
-            alt: '',
+            type: 'list',
+            title: '剣士と弓使いは、どう公平になるか',
+            intro: '能力値の合計ではなく、有利になる状況を分ける',
+            items: [
+                '剣士は、狭い場所や接近後に強い',
+                '弓使いは、広い場所や距離がある状態に強い',
+                '剣士は接近する方法、弓使いは距離を保つ方法を持つ',
+                'どちらにも長所・短所があり、状況によって有利不利が入れ替わる'
+            ]
         },
 
-        // --- 10. レンズ：公平さ ---
+        // --- 12. レンズ：公平さ ---
         {
             type: 'exercise',
             title: 'レンズ #37：公平さ',
@@ -122,7 +156,7 @@ window.SESSION_ID = 'ux-12';
             ]
         },
         
-        // --- 11. チャレンジVS成功 ---
+        // --- 13. チャレンジVS成功 ---
         {
             type: 'image',
             title: 'チャレンジVS成功',
@@ -131,7 +165,7 @@ window.SESSION_ID = 'ux-12';
             alt: '',
         },
         
-        // --- 12. 難易度 ---
+        // --- 14. 難易度 ---
         {
             type: 'tiled-grid',
             title: '難易度はプレイヤーの成長に合わせる',
@@ -141,12 +175,12 @@ window.SESSION_ID = 'ux-12';
                 { icon: 'fa-flag-checkered', title: '簡単な部分は早く通過できるようにする', text: 'どんなプレイヤーでも、やりがいを感じられる難易度にすぐ到達できる' },
                 { icon: 'fa-angles-down', title: 'チャレンジを階層化する', text: '「D」評価ならやり直し、C評価以上なら次に進める' },
                 { icon: 'fa-circle-notch', title: 'プレイヤーに難易度を選択させる', text: '自身のスキルレベルに応じて適切な難易度をすぐに見つけられる' },
-                { icon: 'fa-repeat', title: 'プレイテストしてもらう', text: '熟練と初心者の両方を混ぜてプレイテストをする' },
-                { icon: 'fa-repeat', title: '敗者にチャンスを与える', text: '公平感をもたらすとともに全員がゲームに熱中し続けられる' }
+                { icon: 'fa-repeat', title: 'プレイテストしてもらう', text: '上級者と初心者の両方を混ぜてプレイテストをする' },
+                { icon: 'fa-repeat', title: 'チャンスを与える', text: '公平感をもたらすとともに全員がゲームに熱中し続けられる' }
             ]
         },
 
-        // --- 13. レンズ：チャレンジ ---
+        // --- 15. レンズ：チャレンジ ---
         {
             type: 'exercise',
             title: 'レンズ #38：チャレンジ',
@@ -161,18 +195,20 @@ window.SESSION_ID = 'ux-12';
             ]
         },
 
-        // --- 14. スキルVS確率 ---
+        // --- 16. スキルVS確率 ---
         {
             type: 'tiled-grid',
-            title: 'スキルVS確率',
+            title: 'スキルvs確率',
             intro: '実力で勝てる部分と、運で揺れる部分のバランスを整理する',
             tiles: [
-                { icon: 'fa-pushed', title: 'スキルが重視されるゲーム', text: 'どのプレイヤーが最も優れているかを判定する' },
-                { icon: 'fa-bullseye', title: '確率を重視したゲーム', text: 'よりカジュアルでリラックスした性質を持つ' }
+                { icon: 'fa-gamepad', title: '操作スキル', text: '照準、回避、タイミング、素早い入力' },
+                { icon: 'fa-brain', title: '判断スキル', text: '観察、予測、戦略、知識、資源管理' },
+                { icon: 'fa-dice', title: '確率', text: '抽選やランダムによって、結果が揺れる' },
+                { icon: 'fa-hand', title: 'コントロール感', text: '結果に対して、自分の選択が影響したと感じられるか' }
             ]
         },
 
-        // --- 15. スキルvs確率 ---
+        // --- 17. スキルvs確率 ---
         {
             type: 'exercise',
             title: 'レンズ #41：スキルvs確率',
@@ -185,20 +221,20 @@ window.SESSION_ID = 'ux-12';
             ]
         },
         
-        // --- 16. 頭vs手 ---
+        // --- 18. 頭vs手 ---
         {
             type: 'tiled-grid',
             title: '頭vs手',
             intro: 'どれくらい体の動きを要求し、どれくらい思考を要求するか',
             tiles: [
-                { icon: 'fa-pushed', title: '頭', text: '観察、記憶、推理、パズルなど、プレイヤーに考えることを求める' },
-                { icon: 'fa-cube', title: '手', text: '反射神経、タイミング、照準、複雑なボタン操作など、体の動きを求める' },
-                { icon: 'fa-circle-check', title: '組み合わせ', text: '考えながら操作する、または考える場面と操作する場面を交互に出す' },
-                { icon: 'fa-hurricane', title: 'ターゲット層', text: '遊ぶ人が、思考と操作のどちらを期待しているか' }
+                { icon: 'fa-brain', title: '頭', text: '観察、記憶、推理、パズルなど、プレイヤーに考えることを求める' },
+                { icon: 'fa-hand-pointer', title: '手', text: '反射神経、タイミング、照準、複雑なボタン操作など、体の動きを求める' },
+                { icon: 'fa-arrows-left-right', title: '組み合わせ', text: '考えながら操作する、または考える場面と操作する場面を交互に出す' },
+                { icon: 'fa-user-group', title: 'ターゲット層', text: '遊ぶ人が、思考と操作のどちらを期待しているか' }
             ]
         },
 
-        // --- 17. レンズ：頭と手 ---
+        // --- 19. レンズ：頭と手 ---
         {
             type: 'exercise',
             title: 'レンズ #42：頭と手',
@@ -212,7 +248,7 @@ window.SESSION_ID = 'ux-12';
             ]
         },
 
-        // --- 18. 意味のある選択肢 ---
+        // --- 20. 意味のある選択肢 ---
         {
             type: 'quote',
             title: '意味のある選択肢',
@@ -220,7 +256,7 @@ window.SESSION_ID = 'ux-12';
             image: ''
         },
 
-        // --- 19. 良い選択肢 ---
+        // --- 21. 良い選択肢 ---
         {
             type: 'list',
             title: '良い選択肢',
@@ -233,7 +269,20 @@ window.SESSION_ID = 'ux-12';
             ]
         },
 
-        // --- 20. 悪い選択肢 ---
+        // --- 22. 良い選択の例 ---
+        {
+            type: 'tiled-grid',
+            title: '盾を持つ敵に、どう対処するか',
+            intro: '状況によって正解が変わる選択肢を作る',
+            tiles: [
+                { icon: 'fa-hammer', title: '強攻撃', text: '盾を壊せるが、攻撃後の隙が大きい' },
+                { icon: 'fa-person-running', title: '背後へ回る', text: '安全だが、時間がかかる' },
+                { icon: 'fa-wand-magic-sparkles', title: '魔法を使う', text: 'すぐ倒せるが、MPを消費する' },
+                { icon: 'fa-scale-balanced', title: '選ぶ理由', text: '残りHP、時間、MPによって、よい選択が変わる' }
+            ]
+        },
+
+        // --- 23. 悪い選択肢 ---
         {
             type: 'list',
             title: '悪い選択肢',
@@ -246,11 +295,11 @@ window.SESSION_ID = 'ux-12';
             ]
         },
 
-        // --- 21. 意味のある選択肢の数 ---
+        // --- 24. 意味のある選択肢の数 ---
         {
             type: 'tiled-grid',
             title: '意味のある選択肢の数',
-            intro: 'プレイヤーが希望する選択肢の数は、プレイヤーの願望の数に依存している',
+            intro: 'プレイヤーが今やりたいことに対応しているか',
             tiles: [
                 { icon: 'fa-clock', title: '選択肢＞願望', text: 'プレイヤーは困惑する' },
                 { icon: 'fa-flag-checkered', title: '選択肢＜願望', text: 'プレイヤーはイライラする' },
@@ -258,7 +307,7 @@ window.SESSION_ID = 'ux-12';
             ]
         },
         
-        // --- 22. レンズ：意味のある選択肢 ---
+        // --- 25. レンズ：意味のある選択肢 ---
         {
             type: 'exercise',
             title: 'レンズ #39：意味のある選択肢',
@@ -271,16 +320,16 @@ window.SESSION_ID = 'ux-12';
             ]
         },
         
-        // --- 23. 三角性 ---
+        // --- 26. 三角性 ---
         {
             type: 'image',
-            title: '三角性',
-            intro: '安全に進めるか危険を取るか',
+            title: 'リスクとリターン（三角性）',
+            intro: '危険を理解したうえで、挑戦したくなる状態を作る',
             src: '../../assets/images/ux/riskreturn.png',
             alt: '',
         },
 
-        // --- 24. レンズ：三角性 ---
+        // --- 27. レンズ：三角性 ---
         {
             type: 'exercise',
             title: 'レンズ #40：三角性',
