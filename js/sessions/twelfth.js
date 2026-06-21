@@ -12,7 +12,7 @@ window.SESSION_ID = 'ux-12';
         // --- 1. タイトル ---
         {
             type: 'title',
-            title: 'ゲームシステムにはバランスが必須',
+            title: 'ゲームシステムにはバランスが必須(1/2)',
             intro: '強さを同じにするのではなく、狙った体験に近づける',
             icon: 'fa-scale-balanced'
         },
