@@ -76,11 +76,11 @@ window.SESSION_ID = 'ux-11';
         {
             type: 'tiled-grid',
             title: '空間',
-            intro: 'どこで遊ぶゲームか？',
+            intro: 'どこで遊ぶゲームか',
             tiles: [
-                { icon: 'fa-border-all', title: '三目並べ', text: '見た目は3×3の盤だが、システムとしての空間は9個のマス' },
-                { icon: 'fa-cube', title: 'モノポリー', text: '見た目は四角い盤面だが、40マスの一本道のループ' },
-                { icon: 'fa-futbol', title: 'サッカー', text: '広い1つのピッチの中に、ゴール、中央、サイドなどのエリアが存在する' }
+                { icon: 'fa-border-all', title: '非連続的／連続的', text: 'マス目や地点のように「決まった場所」だけが意味を持つなら非連続的<br>ビリヤード台のように、任意の位置が意味を持つなら連続的' },
+                { icon: 'fa-cube', title: '次元', text: '見た目ではなく、ルール上どの方向・位置が意味を持つかが重要' },
+                { icon: 'fa-connectdevelop', title: '境界と接続', text: '隣接関係や移動可能な関係がゲーム性を作る' },
             ]
         },
    
@@ -94,16 +94,7 @@ window.SESSION_ID = 'ux-11';
         },
         
         // --- 9. 空間 ---
-        {
-            type: 'tiled-grid',
-            title: '空間の見方',
-            intro: '空間の確認方法',
-            tiles: [
-                { icon: 'fa-border-all', title: '非連続的／連続的', text: 'マス目や地点のように「決まった場所」だけが意味を持つなら非連続的<br>ビリヤード台のように、任意の位置が意味を持つなら連続的' },
-                { icon: 'fa-cube', title: '次元', text: '見た目ではなく、ルール上どの方向・位置が意味を持つかが重要' },
-                { icon: 'fa-connectdevelop', title: '境界と接続', text: '隣接関係や移動可能な関係がゲーム性を作る' },
-            ]
-        },
+
 
         // --- 10. 空間 ---
         {
