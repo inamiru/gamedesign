@@ -5,7 +5,7 @@ window.SESSION_ID = 'ux-13';
 // ==========================================
 // 第13章「ゲームシステムにはバランスが必須」
 // 2日間（45分×4コマ×2日）
-// 全40枚
+// 全20枚
 // ==========================================
     window.SLIDES_DATA = [
         
@@ -13,7 +13,7 @@ window.SESSION_ID = 'ux-13';
         {
             type: 'title',
             title: 'ゲームシステムにはバランスが必須(2/2)',
-            intro: '強さを同じにするのではなく、狙った体験に近づける',
+            intro: 'ゲームを続けたくなり、破綻しない状態を作る',
             icon: 'fa-scale-balanced'
         },
 
@@ -50,32 +50,46 @@ window.SESSION_ID = 'ux-13';
         {
             type: 'list',
             title: '本日のポイント',
-            intro: '分析してから、調整する',
+            intro: '問題を見つけるだけでなく、具体的な調整案へつなげる',
             listClass: 'agenda-list',
             items: [
-                '1. ゲームバランスとは',
-                '2. 公平性と難易度',
-                '3. 意味のある選択肢とリスク',
-                '4. プレイヤー同士の関係',
-                '5. 報酬・ペナルティ・複雑さ',
-                '6. バランス調整の方法'
+                '1. 競争・協力とプレイ時間',
+                '2. 報酬とペナルティ',
+                '3. 自由・複雑さ・エレガントさ',
+                '4. ゲーム内経済',
+                '5. バランス調整の進め方'
             ]
         },
 
-        // --- 25. 競争vs協力 ---
+        // --- 5. 1日目の振り返り ---
+        {
+            type: 'tiled-grid',
+            title: '前回の振り返り',
+            intro: 'プレイヤーが納得して選び、挑戦できる状態を分析した',
+            tiles: [
+                { icon: 'fa-scale-balanced', title: '公平性', text: '能力を同じにするのではなく、それぞれに勝ち筋を用意する' },
+                { icon: 'fa-arrow-trend-up', title: '難易度', text: '誰にとって、どの場面が、なぜ難しいのかを考える' },
+                { icon: 'fa-brain', title: 'スキルと確率', text: '操作、判断、知識、運が結果にどう影響するかを整理する' },
+                { icon: 'fa-route', title: '意味のある選択', text: '選ぶ理由と、選択後の違いがある状態を作る' },
+                { icon: 'fa-triangle-exclamation', title: 'リスクとリターン', text: '危険を理解したうえで、挑戦したくなる報酬を用意する' },
+                { icon: 'fa-link', title: '共通する考え方', text: '仕様、行動、結果、感情・体験をつなげて分析する' }
+            ]
+        },
+        
+        // --- 6. 競争vs協力 ---
         {
             type: 'tiled-grid',
             title: '競争vs協力',
             intro: 'プレイヤー同士の関係性をどう設計するか',
             tiles: [
-                { icon: 'fa-circle-check', title: '競争する面白さ', text: '相手に勝つ、順位を上げる、より高いスコアを取ることで、緊張感と達成感が生まれる' },
-                { icon: 'fa-thumbs-up', title: '協力する面白さ', text: '仲間と役割を分担し、助け合うことで、1人ではできない攻略や達成感が生まれる' },
-                { icon: 'fa-trophy', title: 'どちらか一方とは限らない', text: '協力して敵を倒しながら、個人スコアでは競うなど、競争と協力は組み合わせられる' },
-                { icon: 'fa-trophy', title: 'バランスの注意点', text: '誰か1人だけが活躍する、協力する意味がない、競争が強すぎて仲間割れする状態に注意する' }
+                { icon: 'fa-trophy', title: '競争する面白さ', text: '相手に勝つ、順位を上げる、より高いスコアを取ることで、緊張感と達成感が生まれる' },
+                { icon: 'fa-handshake', title: '協力する面白さ', text: '仲間と役割を分担し、助け合うことで、1人ではできない攻略や達成感が生まれる' },
+                { icon: 'fa-people-group', title: 'どちらか一方とは限らない', text: '協力して敵を倒しながら、個人スコアでは競うなど、競争と協力は組み合わせられる' },
+                { icon: 'fa-traiangle-exclamation', title: 'バランスの注意点', text: '誰か1人だけが活躍する、協力する意味がない、競争が強すぎて仲間割れする状態に注意する' }
             ]
         },
 
-        // --- 26. レンズ：競争 ---
+        // --- 7. レンズ：競争 ---
         {
             type: 'exercise',
             title: 'レンズ #43：競争',
@@ -90,7 +104,20 @@ window.SESSION_ID = 'ux-13';
             ]
         },
 
-        // --- 27. レンズ：協力 ---
+        // --- 8. 協力を成立させる条件 ---
+        {
+            type: 'list',
+            title: '協力を成立させる3つの方法',
+            intro: '複数人で遊べることと、協力が必要なことは違う',
+            items: [
+                '能力を分ける：攻撃、回復、防御などを補完関係にする',
+                '情報を分ける：一人だけが知っている情報を共有させる',
+                '作業を分ける：同時操作や複数地点への対応を必要にする',
+                '上級者一人ですべて解決できない課題を用意する'
+            ]
+        },
+
+        // --- 8. レンズ：協力 ---
         {
             type: 'exercise',
             title: 'レンズ #44：協力',
@@ -105,7 +132,7 @@ window.SESSION_ID = 'ux-13';
             ]
         },
 
-        // --- 28. レンズ：協力 ---
+        // --- 10. レンズ：競争vs協力 ---
         {
             type: 'exercise',
             title: 'レンズ #45：競争vs協力',
@@ -118,59 +145,48 @@ window.SESSION_ID = 'ux-13';
             ]
         },
         
-        // --- 29. 長期VS短期 ---
+        // --- 11 長期VS短期 ---
         {
             type: 'tiled-grid',
             title: '長期VS短期',
             intro: 'プレイ時間が短すぎても長すぎても、体験は崩れてしまう',
             tiles: [
-                { icon: 'fa-circle-check', title: '短いゲームの良さ', text: 'すぐ遊べて、すぐ結果が出る。テンポよく挑戦できるが、深い戦略が生まれにくい場合もある' },
-                { icon: 'fa-thumbs-up', title: '長いゲームの良さ', text: '計画、成長、逆転、積み重ねを作りやすい。ただし、長すぎると退屈や負担につながる' },
-                { icon: 'fa-trophy', title: '勝敗条件が長さを決める', text: '何をしたら勝ちか、いつ終わるかを変えるだけで、ゲーム全体のテンポは大きく変わる' },
-                { icon: 'fa-trophy', title: '終盤を盛り上げる', text: '最終決戦や残り時間などを用意すると、だらだら終わらず、印象的なクライマックスを作れる' }
+                { icon: 'fa-stopwatch', title: '短いゲームの良さ', text: 'すぐ遊べて、すぐ結果が出る。テンポよく挑戦できるが、深い戦略が生まれにくい場合もある' },
+                { icon: 'fa-map', title: '長いゲームの良さ', text: '計画、成長、逆転、積み重ねを作りやすい。ただし、長すぎると退屈や負担につながる' },
+                { icon: 'fa-flag-checkered', title: '勝敗条件が長さを決める', text: '何をしたら勝ちか、いつ終わるかを変えるだけで、ゲーム全体のテンポは大きく変わる' },
+                { icon: 'fa-chart-line', title: '終盤を盛り上げる', text: '最終決戦や残り時間などを用意すると、だらだら終わらず、印象的なクライマックスを作れる' }
             ]
         },
         
-        // --- 30. 報酬 ---
+        // --- 12. 報酬 ---
         {
             type: 'tiled-grid',
             title: '報酬(1/2)',
             intro: 'プレイヤーに与える報酬は、プレイヤーの欲求を満たすこと',
             tiles: [
-                { icon: 'fa-circle-check', title: '称賛', text: '特別な効果音や、キャラクターとの会話' },
-                { icon: 'fa-thumbs-up', title: '得点', text: 'プレイヤーの成功度合いを測る指標、ハイスコアランキング' },
-                { icon: 'fa-trophy', title: 'プレイの延長', text: 'ライフの追加や制限時間の延長' },
-                { icon: 'fa-trophy', title: '新エリア', text: '新しいステージや扉の鍵' },
-                { icon: 'fa-trophy', title: '壮観さ', text: '音楽やアニメーションなど' },
-                { icon: 'fa-trophy', title: '自己表現', text: '特別な衣装や装飾' }
+                { icon: 'fa-arrow-up-right-dots', title: '称賛', text: '特別な効果音や、キャラクターとの会話' },
+                { icon: 'fa-ranking-star', title: '得点', text: 'プレイヤーの成功度合いを測る指標、ハイスコアランキング' },
+                { icon: 'fa-stopwatch', title: 'プレイの延長', text: 'ライフの追加や制限時間の延長' },
+                { icon: 'fa-door-open', title: '新エリア', text: '新しいステージや扉の鍵' },
+                { icon: 'fa-volume-high', title: '壮観さ', text: '音楽やアニメーションなど' },
+                { icon: 'fa-shirt', title: '自己表現', text: '特別な衣装や装飾' }
             ]
         },
 
-        // --- 31. 報酬 ---
+        // --- 13. 報酬 ---
         {
             type: 'tiled-grid',
             title: '報酬(2/2)',
             intro: 'プレイヤーに与える報酬は、プレイヤーの欲求を満たすこと',
             tiles: [
-                { icon: 'fa-circle-check', title: '力', text: 'キャラクターのパワーアップや特殊武器' },
-                { icon: 'fa-thumbs-up', title: '資源', text: '食料や弾薬、ゲーム内通貨' },
+                { icon: 'fa-bolt', title: '力', text: 'キャラクターのパワーアップや特殊武器' },
+                { icon: 'fa-bowl-food', title: '資源', text: '食料や弾薬、ゲーム内通貨' },
                 { icon: 'fa-trophy', title: '社会的地位', text: 'リーダーボードの上位ランキングや特別な実績' },
-                { icon: 'fa-trophy', title: 'コンプリート／クリア', text: 'ゲーム内のすべての目標達成' }
+                { icon: 'fa-check-double', title: 'コンプリート／クリア', text: 'ゲーム内のすべての目標達成' }
             ]
         },
 
-        // --- 32. 報酬のバランス ---
-        {
-            type: 'tiled-grid',
-            title: '報酬のバランス',
-            intro: '2つの守るべきルール',
-            tiles: [
-                { icon: 'fa-circle-check', title: '受け取る回数', text: 'プレイヤーのゲーム進行に合わせて、報酬の価値を徐々に上げる' },
-                { icon: 'fa-thumbs-up', title: '報酬の変動', text: '毎回10点の敵より、2/3の確率で0点、1/3の確率で30点の敵と戦う方がやりがいを感じる' }
-            ]
-        },
-
-        // --- 33. レンズ：報酬 ---
+        // --- 14. レンズ：報酬 ---
         {
             type: 'exercise',
             title: 'レンズ #46：報酬',
@@ -191,10 +207,9 @@ window.SESSION_ID = 'ux-13';
             title: 'ペナルティ',
             intro: '適切なペナルティを与えるとゲームの楽しさが増すことがある',
             tiles: [
-                { icon: 'fa-circle-check', title: '価値を生む', text: '資源が没収される可能性があると、資源の価値が上がる' },
-                { icon: 'fa-thumbs-up', title: 'リスクを冒すドキドキ', text: 'ひどい結果になる可能性が示されると、成功したときの喜びは大きくなる' },
-                { icon: 'fa-thumbs-up', title: 'リスクを冒すドキドキ', text: 'ひどい結果になる可能性が示されると、成功したときの喜びは大きくなる' },
-                { icon: 'fa-thumbs-up', title: 'チャレンジの難易度を高める', text: '失敗した場合にゲーム進行が巻き戻されるなど' }
+                { icon: 'fa-eye', title: '価値を生む', text: '資源が没収される可能性があると、資源の価値が上がる' },
+                { icon: 'fa-scale-balanced', title: 'リスクを冒すドキドキ', text: 'ひどい結果になる可能性が示されると、成功したときの喜びは大きくなる' },
+                { icon: 'rotate-right', title: 'チャレンジの難易度を高める', text: '失敗した場合にゲーム進行が巻き戻されるなど' }
             ]
         },
 
@@ -217,9 +232,9 @@ window.SESSION_ID = 'ux-13';
             title: 'ゲームのペナルティ(2/2)',
             intro: 'プレイヤーが理解して回避できる物事に対して課すこと',
             tiles: [
-                { icon: 'fa-circle-check', title: '後遇', text: 'ステージの先頭や最終チェックポイントまで戻される' },
-                { icon: 'fa-thumbs-up', title: 'カの没収', text: '一定時間行動不能' },
-                { icon: 'fa-thumbs-up', title: '資源の減少', text: 'お金やアイテムの減少' }
+                { icon: 'fa-backward', title: '後遇', text: 'ステージの先頭や最終チェックポイントまで戻される' },
+                { icon: 'fa-stopwatch-20', title: 'カの没収', text: '一定時間行動不能' },
+                { icon: 'fa-down-long', title: '資源の減少', text: 'お金やアイテムの減少' }
             ]
         },
 
