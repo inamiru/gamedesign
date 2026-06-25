@@ -85,7 +85,7 @@ window.SESSION_ID = 'ux-13';
                 { icon: 'fa-trophy', title: '競争する面白さ', text: '相手に勝つ、順位を上げる、より高いスコアを取ることで、緊張感と達成感が生まれる' },
                 { icon: 'fa-handshake', title: '協力する面白さ', text: '仲間と役割を分担し、助け合うことで、1人ではできない攻略や達成感が生まれる' },
                 { icon: 'fa-people-group', title: 'どちらか一方とは限らない', text: '協力して敵を倒しながら、個人スコアでは競うなど、競争と協力は組み合わせられる' },
-                { icon: 'fa-traiangle-exclamation', title: 'バランスの注意点', text: '誰か1人だけが活躍する、協力する意味がない、競争が強すぎて仲間割れする状態に注意する' }
+                { icon: 'fa-triangle-exclamation', title: 'バランスの注意点', text: '誰か1人だけが活躍する、協力する意味がない、競争が強すぎて仲間割れする状態に注意する' }
             ]
         },
 
@@ -148,7 +148,7 @@ window.SESSION_ID = 'ux-13';
         // --- 11 長期VS短期 ---
         {
             type: 'tiled-grid',
-            title: '長期VS短期',
+            title: '長期vs短期',
             intro: 'プレイ時間が短すぎても長すぎても、体験は崩れてしまう',
             tiles: [
                 { icon: 'fa-stopwatch', title: '短いゲームの良さ', text: 'すぐ遊べて、すぐ結果が出る。テンポよく挑戦できるが、深い戦略が生まれにくい場合もある' },
@@ -209,7 +209,7 @@ window.SESSION_ID = 'ux-13';
             tiles: [
                 { icon: 'fa-eye', title: '価値を生む', text: '資源が没収される可能性があると、資源の価値が上がる' },
                 { icon: 'fa-scale-balanced', title: 'リスクを冒すドキドキ', text: 'ひどい結果になる可能性が示されると、成功したときの喜びは大きくなる' },
-                { icon: 'rotate-right', title: 'チャレンジの難易度を高める', text: '失敗した場合にゲーム進行が巻き戻されるなど' }
+                { icon: 'fa-rotate-right', title: 'チャレンジの難易度を高める', text: '失敗した場合にゲーム進行が巻き戻されるなど' }
             ]
         },
 
@@ -344,7 +344,7 @@ window.SESSION_ID = 'ux-13';
             intro: '多くの対象に適用可能な一般的なバランス調整の手法',
             tiles: [
                 { icon: 'fa-camera', title: '「レンズ14: 問題設定のレンズ」を使う', text: 'バランスの悪いゲームは、問題の明確化によって、大幅に改善できることが多い' },
-                { icon: 'fa-up-down', title: '倍増と半減', text: '。変更したい方向に、一気に倍増または半減させる' },
+                { icon: 'fa-up-down', title: '倍増と半減', text: '変更したい方向に、一気に倍増または半減させる' },
                 { icon: 'fa-exclamation', title: '具体的な推測で直感を鍛える', text: '具体的な数値を推測する訓練によって、ゲームパランスの直感を鍛える' },
             ]
         },
