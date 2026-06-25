@@ -207,7 +207,7 @@ window.SESSION_ID = 'ux-13';
             tiles: [
                 { icon: 'fa-eye', title: '価値を生む', text: '資源が没収される可能性があると、資源の価値が上がる' },
                 { icon: 'fa-scale-balanced', title: 'リスクを冒す緊張感', text: '大きな損失が生じる可能性があると、成功したときの喜びは大きくなる' },
-                { icon: 'fa-rotate-right', title: '朝鮮の難易度を高める', text: '失敗した場合にゲーム進行が巻き戻されるなど' }
+                { icon: 'fa-rotate-right', title: '挑戦の難易度を高める', text: '失敗した場合にゲーム進行が巻き戻されるなど' }
             ]
         },
 
