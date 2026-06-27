@@ -165,7 +165,7 @@ window.SESSION_ID = 'ux-12';
         // --- 14. チャレンジVS成功 ---
         {
             type: 'image',
-            title: 'チャレンジVS成功',
+            title: 'チャレンジと成功',
             intro: '難易度と成功のパランスがとれた体験を維持し続ける',
             src: '../../assets/images/ux/skill&challenge.png',
             alt: '',
@@ -204,7 +204,7 @@ window.SESSION_ID = 'ux-12';
         // --- 17. スキルVS確率 ---
         {
             type: 'tiled-grid',
-            title: 'スキルvs確率',
+            title: 'スキルと確率',
             intro: '実力で勝てる部分と、運で揺れる部分のバランスを整理する',
             tiles: [
                 { icon: 'fa-gamepad', title: '操作スキル', text: '照準、回避、タイミング、素早い入力' },
@@ -230,7 +230,7 @@ window.SESSION_ID = 'ux-12';
         // --- 19. 頭vs手 ---
         {
             type: 'tiled-grid',
-            title: '頭vs手',
+            title: '頭と手',
             intro: 'どれくらい体の動きを要求し、どれくらい思考を要求するか',
             tiles: [
                 { icon: 'fa-brain', title: '頭', text: '観察、記憶、推理、パズルなど、プレイヤーに考えることを求める' },
