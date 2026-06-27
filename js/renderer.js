@@ -45,7 +45,6 @@ class SlideRenderer {
         });
       });
     }
-  }
 
   initResponsiveUI() {
     const sidebar = document.getElementById('sidebar');
