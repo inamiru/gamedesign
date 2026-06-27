@@ -1,7 +1,7 @@
 // js/renderer.js
 // ==========================================
 // 共通スライドレンダラ
-// 画像表示対応版
+// 画像表示 + 画像クリック拡大対応版
 // + カテゴリ対応manifest方式
 // ==========================================
 
@@ -12,7 +12,6 @@ class SlideRenderer {
     this.currentSlide = 0;
     this.slides = [];
     this.initResponsiveUI();
-    }
   }
 
   initResponsiveUI() {
@@ -79,6 +78,7 @@ class SlideRenderer {
 
     this.addSlideNavigationUI();
     this.updateProgress();
+    this.enableImagePopup();
   }
 
   getImageHTML(s) {
@@ -211,6 +211,40 @@ class SlideRenderer {
           ${imageHTML}
         `;
     }
+  }
+
+  enableImagePopup() {
+    const images = document.querySelectorAll('.slide-image, .tile-image, .image-grid-item img');
+
+    images.forEach(img => {
+      img.style.cursor = 'zoom-in';
+
+      img.addEventListener('click', () => {
+        const modal = document.createElement('div');
+        modal.className = 'image-modal';
+
+        modal.innerHTML = `
+          <div class="image-modal-bg"></div>
+          <img class="image-modal-img" src="${img.src}" alt="${img.alt || ''}">
+          <button class="image-modal-close" aria-label="画像を閉じる">×</button>
+        `;
+
+        document.body.appendChild(modal);
+
+        const close = () => {
+          modal.remove();
+          document.removeEventListener('keydown', escClose);
+        };
+
+        const escClose = (e) => {
+          if (e.key === 'Escape') close();
+        };
+
+        modal.querySelector('.image-modal-bg').onclick = close;
+        modal.querySelector('.image-modal-close').onclick = close;
+        document.addEventListener('keydown', escClose);
+      });
+    });
   }
 
   addSlideNavigationUI() {
