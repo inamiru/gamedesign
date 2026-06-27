@@ -12,39 +12,8 @@ class SlideRenderer {
     this.currentSlide = 0;
     this.slides = [];
     this.initResponsiveUI();
-
-    enableImagePopup() {
-      const images = document.querySelectorAll('.slide-image, .tile-image, .image-grid-item img');
-    
-      images.forEach(img => {
-        img.style.cursor = 'zoom-in';
-    
-        img.addEventListener('click', () => {
-          const modal = document.createElement('div');
-          modal.className = 'image-modal';
-    
-          modal.innerHTML = `
-            <div class="image-modal-bg"></div>
-            <img class="image-modal-img" src="${img.src}" alt="${img.alt || ''}">
-            <button class="image-modal-close">×</button>
-          `;
-    
-          document.body.appendChild(modal);
-    
-          const close = () => modal.remove();
-    
-          modal.querySelector('.image-modal-bg').onclick = close;
-          modal.querySelector('.image-modal-close').onclick = close;
-    
-          document.addEventListener('keydown', function escClose(e) {
-            if (e.key === 'Escape') {
-              close();
-              document.removeEventListener('keydown', escClose);
-            }
-          });
-        });
-      });
     }
+  }
 
   initResponsiveUI() {
     const sidebar = document.getElementById('sidebar');
@@ -110,7 +79,6 @@ class SlideRenderer {
 
     this.addSlideNavigationUI();
     this.updateProgress();
-    this.enableImagePopup();
   }
 
   getImageHTML(s) {
