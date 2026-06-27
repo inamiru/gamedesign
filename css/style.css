@@ -326,3 +326,50 @@
     max-height: 140px;
   }
 }
+
+/* =========================================
+   画像拡大ポップアップ
+   ========================================= */
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-modal-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.image-modal-img {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  background: white;
+  z-index: 3001;
+}
+
+.image-modal-close {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  z-index: 3002;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  color: #2D3748;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
