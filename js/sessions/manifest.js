@@ -30,6 +30,7 @@ window.SESSION_MANIFEST = {
         { sessionId: 'ux-11', title: '第11回', path: '../EleventhSession/' },
         { sessionId: 'ux-12', title: '第12回', path: '../TwelfthSession/' },
         { sessionId: 'ux-13', title: '第13回', path: '../ThirteenthSession/' },
+        { sessionId: 'ux-14', title: '第14回', path: '../FourteenthSession/' },
         
         // 追加するたびにここへ1行
         // { sessionId: 'ux-3', title: 'Third Session',  path: '../ThirdSession/' },
