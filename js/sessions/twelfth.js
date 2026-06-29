@@ -274,33 +274,7 @@ window.SESSION_ID = 'ux-12';
             image: ''
         },
 
-        // --- 23. 良い選択肢 ---
-        {
-            type: 'list',
-            title: '良い選択肢',
-            intro: '',
-            items: [
-                'どれにもメリットがある',
-                'どれにもデメリットがある',
-                '状況によって正解が変わる',
-                '理由を持って選べる'
-            ]
-        },
-
-        // --- 24. 良い選択の例 ---
-        {
-            type: 'tiled-grid',
-            title: '盾を持つ敵に、どう対処するか',
-            intro: '状況によって正解が変わる選択肢を作る',
-            tiles: [
-                { icon: 'fa-hammer', title: '強攻撃', text: '盾を壊せるが、攻撃後の隙が大きい' },
-                { icon: 'fa-person-running', title: '背後へ回る', text: '安全だが、時間がかかる' },
-                { icon: 'fa-wand-magic-sparkles', title: '魔法を使う', text: 'すぐ倒せるが、MPを消費する' },
-                { icon: 'fa-scale-balanced', title: '選ぶ理由', text: '残りHP、時間、MPによって、よい選択が変わる' }
-            ]
-        },
-
-        // --- 25. 悪い選択肢 ---
+        // --- 23. 悪い選択肢 ---
         {
             type: 'list',
             title: '悪い選択肢',
@@ -313,7 +287,7 @@ window.SESSION_ID = 'ux-12';
             ]
         },
 
-        // --- 26. 意味のある選択肢の数 ---
+        // --- 24. 意味のある選択肢の数 ---
         {
             type: 'tiled-grid',
             title: '意味のある選択肢の数',
@@ -325,7 +299,7 @@ window.SESSION_ID = 'ux-12';
             ]
         },
         
-        // --- 27. レンズ：意味のある選択肢 ---
+        // --- 25. レンズ：意味のある選択肢 ---
         {
             type: 'exercise',
             title: 'レンズ #39：意味のある選択肢',
@@ -338,7 +312,7 @@ window.SESSION_ID = 'ux-12';
             ]
         },
         
-        // --- 28. 三角性 ---
+        // --- 26. 三角性 ---
         {
             type: 'image',
             title: 'リスクとリターン（三角性）',
@@ -347,7 +321,7 @@ window.SESSION_ID = 'ux-12';
             alt: '',
         },
 
-        // --- 29. レンズ：三角性 ---
+        // --- 27. レンズ：三角性 ---
         {
             type: 'exercise',
             title: 'レンズ #40：三角性',
@@ -358,7 +332,7 @@ window.SESSION_ID = 'ux-12';
             ]
         },
         
-        // --- 30. まとめ ---
+        // --- 28. まとめ ---
         {
             type: 'list',
             title: 'まとめ',
