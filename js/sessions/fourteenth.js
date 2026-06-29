@@ -1,6 +1,6 @@
 
 window.SESSION_CATEGORY_ID = 'ux';
-window.SESSION_ID = 'ux-13';
+window.SESSION_ID = 'ux-14';
 
 // ==========================================
 // 第16章「体験は感情曲線で評価できる」
