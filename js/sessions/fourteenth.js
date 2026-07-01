@@ -4,7 +4,7 @@ window.SESSION_ID = 'ux-14';
 
 // ==========================================
 // 第16章「体験は感情曲線で評価できる」
-// 全20枚
+// 全19枚
 // ==========================================
     window.SLIDES_DATA = [
         
@@ -134,35 +134,7 @@ window.SESSION_ID = 'ux-14';
                 { icon: 'fa-flag-checkered', title: '感情移入', text: '他人に起こった出来事よりも、自身に起こった出来事のほうが、興味の度合いが高くなる' }            ]
         },
         
-        // --- 12. 報酬 ---
-        {
-            type: 'tiled-grid',
-            title: '報酬(1/2)',
-            intro: '報酬は、欲求を満たして興味を高める',
-            tiles: [
-                { icon: 'fa-arrow-up-right-dots', title: '称賛', text: '特別な効果音やキャラクターとの会話' },
-                { icon: 'fa-ranking-star', title: '得点', text: 'プレイヤーの成功度合いを測る指標' },
-                { icon: 'fa-stopwatch', title: 'プレイの延長', text: 'ライフの追加や制限時間の延長' },
-                { icon: 'fa-door-open', title: '新エリア', text: '新しいステージの開放や、扉を開ける鍵' },
-                { icon: 'fa-volume-high', title: '壮観さ', text: '音楽やアニメーションによる華やかな演出' },
-                { icon: 'fa-shirt', title: '自己表現', text: '特別な衣装や装飾' }
-            ]
-        },
-
-        // --- 13. 報酬 ---
-        {
-            type: 'tiled-grid',
-            title: '報酬(2/2)',
-            intro: '報酬は、次の行動への期待を作る',
-            tiles: [
-                { icon: 'fa-bolt', title: '力', text: 'キャラクターのパワーアップや特殊武器' },
-                { icon: 'fa-bowl-food', title: '資源', text: '食料や弾薬、ゲーム内通貨' },
-                { icon: 'fa-trophy', title: '社会的地位', text: 'リーダーボード上位へのランクインや特別な実績' },
-                { icon: 'fa-check-double', title: 'コンプリート／クリア', text: 'ゲーム内のすべての目標を達成すること' }
-            ]
-        },
-
-        // --- 14. レンズ：美しさ ---
+        // --- 12. レンズ：美しさ ---
         {
             type: 'exercise',
             title: 'レンズ #70：内在的興味',
@@ -176,7 +148,7 @@ window.SESSION_ID = 'ux-14';
             ]
         },
 
-        // --- 15. レンズ：美しさ ---
+        // --- 13. レンズ：美しさ ---
         {
             type: 'exercise',
             title: 'レンズ #71：美しさ',
@@ -188,7 +160,7 @@ window.SESSION_ID = 'ux-14';
             ]
         },
         
-        // --- 16. レンズ：感情移入 ---
+        // --- 14. レンズ：感情移入 ---
         {
             type: 'exercise',
             title: 'レンズ #72：感情移入',
@@ -204,7 +176,7 @@ window.SESSION_ID = 'ux-14';
             ]
         },
 
-        // --- 17. 興味を抱かせる要素の例 ---
+        // --- 15. 興味を抱かせる要素の例 ---
         {
             type: 'image',
             title: 'ストリートパフォーマーに対する興味',
@@ -213,7 +185,7 @@ window.SESSION_ID = 'ux-14';
             alt: '',
         },
 
-        // --- 18. 興味を抱かせる要素の例 ---
+        // --- 16. 興味を抱かせる要素の例 ---
         {
             type: 'image',
             title: 'パイオリン協奏曲',
@@ -222,7 +194,7 @@ window.SESSION_ID = 'ux-14';
             alt: '',
         },
 
-        // --- 19. 興味を抱かせる要素の例 ---
+        // --- 17. 興味を抱かせる要素の例 ---
         {
             type: 'image',
             title: 'テトリス',
@@ -231,7 +203,7 @@ window.SESSION_ID = 'ux-14';
             alt: 'キャラクターや物語がなくても感情移入は生まれる',
         },
 
-        // --- 20. 異なる要素での変化 ---
+        // --- 18. 異なる要素での変化 ---
         {
             type: 'image',
             title: '異なる時点で各種類の興味の高さを測定する',
@@ -240,7 +212,7 @@ window.SESSION_ID = 'ux-14';
             alt: '',
         },
         
-        // --- 20. まとめ ---
+        // --- 19. まとめ ---
         {
             type: 'list',
             title: 'まとめ',
