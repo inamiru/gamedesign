@@ -50,14 +50,14 @@ window.SESSION_ID = 'ux-14';
         {
             type: 'list',
             title: '本日のポイント',
-            intro: '',
+            intro: 'プレイヤーの「興味の上がり下がり」を時間の流れで見る',
             listClass: 'agenda-list',
             items: [
-                '1. ',
-                '2. ',
-                '3. ',
-                '4. ',
-                '5. '
+                '1. 記憶に残る瞬間を見つける',
+                '2. 感情曲線の読み方を知る',
+                '3. 良い体験と離脱される体験を比較する',
+                '4. プレイヤーの興味を生む要素を知る',
+                '5. 感情曲線を使ってゲームを改善する'
             ]
         },
 
@@ -84,7 +84,7 @@ window.SESSION_ID = 'ux-14';
         {
             type: 'image',
             title: '感情曲線',
-            intro: '出来のよいエンターテインメント体験',
+            intro: '山と谷を繰り返しながら、終盤へ向けて高める',
             src: '../../assets/images/ux/emotionalcurve.png',
             alt: '',
         },
@@ -93,21 +93,18 @@ window.SESSION_ID = 'ux-14';
         {
             type: 'image',
             title: '感情曲線',
-            intro: '失敗しやすい体験',
+            intro: '面白くなる前に、プレイヤーが離れてしまう',
             src: '../../assets/images/ux/emotionalcurve_f.png',
             alt: '',
         },
         
         // --- 9. パターンの中のパターン ---
         {
-            type: 'tiled-grid',
+            type: 'image',
             title: 'パターンの中のパターン',
             intro: '優れた感情曲線には必ずパターンがある',
-            tiles: [
-                { icon: 'fa-stopwatch', title: 'ゲーム全体', text: 'OPで興味を徐々に高め、一連のステージが続き、盛大なクライマックスとともにエンディングを迎え、ゲームクリア' },
-                { icon: 'fa-map', title: 'ステージこと', text: '開始時に新しい要素で引き込み、連続するチャレンジに立ち向かわせて興味を高め、何かしらの「ボス戦」とともにステージクリア' },
-                { icon: 'fa-flag-checkered', title: 'チャレンジこと', text: '興味を引く導入部と、進行に比例したチャレンジ度合いの段階的な上昇が必要' }
-            ]
+            src: '../../assets/images/ux/fractal.png',
+            alt: '',
         },
         
         // --- 10. レンズ：感情曲線 ---
@@ -141,7 +138,7 @@ window.SESSION_ID = 'ux-14';
         {
             type: 'tiled-grid',
             title: '報酬(1/2)',
-            intro: 'プレイヤーに与える報酬は、プレイヤーの欲求を満たすこと',
+            intro: '報酬は、欲求を満たして興味を高める',
             tiles: [
                 { icon: 'fa-arrow-up-right-dots', title: '称賛', text: '特別な効果音やキャラクターとの会話' },
                 { icon: 'fa-ranking-star', title: '得点', text: 'プレイヤーの成功度合いを測る指標' },
@@ -156,7 +153,7 @@ window.SESSION_ID = 'ux-14';
         {
             type: 'tiled-grid',
             title: '報酬(2/2)',
-            intro: '報酬は、プレイヤーの欲求を満たすものである',
+            intro: '報酬は、次の行動への期待を作る',
             tiles: [
                 { icon: 'fa-bolt', title: '力', text: 'キャラクターのパワーアップや特殊武器' },
                 { icon: 'fa-bowl-food', title: '資源', text: '食料や弾薬、ゲーム内通貨' },
@@ -210,8 +207,8 @@ window.SESSION_ID = 'ux-14';
         // --- 17. 興味を抱かせる要素の例 ---
         {
             type: 'image',
-            title: '興味を抱かせる要素同士の関係性',
-            intro: 'ストリートパフォーマーに対する興味',
+            title: 'ストリートパフォーマーに対する興味',
+            intro: '失敗する可能性があるため、出来事そのものが気になる',
             src: '../../assets/images/ux/streetperformer.png',
             alt: '',
         },
@@ -219,8 +216,8 @@ window.SESSION_ID = 'ux-14';
         // --- 18. 興味を抱かせる要素の例 ---
         {
             type: 'image',
-            title: '興味を抱かせる要素同士の関係性',
-            intro: 'パイオリン協奏曲',
+            title: 'パイオリン協奏曲',
+            intro: '演奏行為そのものより、音色や曲の構成が興味の中心になる',
             src: '../../assets/images/ux/violin.png',
             alt: '',
         },
@@ -228,18 +225,17 @@ window.SESSION_ID = 'ux-14';
         // --- 19. 興味を抱かせる要素の例 ---
         {
             type: 'image',
-            title: '興味を抱かせる要素同士の関係性',
-            intro: 'テトリス',
+            title: 'テトリス',
+            intro: '',
             src: '../../assets/images/ux/Tetris.png',
-            alt: '',
+            alt: 'キャラクターや物語がなくても感情移入は生まれる',
         },
-
 
         // --- 20. 異なる要素での変化 ---
         {
             type: 'image',
             title: '異なる時点で各種類の興味の高さを測定する',
-            intro: 'プレイヤーがゲームの中でどんな興味を抱いているかを調査することは、体験の質を測る最善の手段',
+            intro: 'どの興味がいつ高まっているか、3つすべてが低い時間はないか',
             src: '../../assets/images/ux/LevelofInterest.png',
             alt: '',
         },
@@ -248,12 +244,12 @@ window.SESSION_ID = 'ux-14';
         {
             type: 'list',
             title: 'まとめ',
-            intro: '',
+            intro: '何を入れるかだけでなく、いつ体験させるかを設計する',
             items: [
-                '',
-                '',
-                '',
-                ''
+                '体験は、印象の強い瞬間と弱い瞬間の連続',
+                '感情曲線は、興味の変化を時間軸で表す',
+                '興味は、3つの要素から生まれる',
+                '予想と実際を比較し、体験を改善する'
             ]
         }
     ];
