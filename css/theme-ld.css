@@ -1,39 +1,45 @@
-/* css/theme-gd.css */
+/* css/theme-ld.css */
 /* =========================================
-   GameDesign Theme
+   LevelDesign Theme
    ========================================= */
 
 :root {
-  --bg-color: #F5F3FF;
+  --bg-color: #FFF7E6;
   --sidebar-bg: #FFFFFF;
   --card-bg: #FFFFFF;
-  --panel-bg: #FAF8FF;
-  --list-bg: #F7F3FF;
-  --hover-bg: #EEE7FF;
-  --active-bg: #E7DDFF;
+  --panel-bg: #FFF3D6;
+  --list-bg: #FFF8E8;
+  --hover-bg: #FFE6A8;
+  --active-bg: #FFD98A;
 
-  --text-main: #3B1F6A;
-  --text-sub: #6D5C8C;
+  --text-main: #3A2614;
+  --text-sub: #7A5A35;
   --text-invert: #FFFFFF;
 
-  --border-color: #D6C8FF;
-  --soft-border-color: #E8DEFF;
+  --border-color: #F5B85C;
+  --soft-border-color: #FAD9A5;
 
-  --accent-primary: #7C4DFF;
-  --accent-secondary: #B388FF;
-  --accent-danger: #FF4081;
-  --accent-active: #673AB7;
+  --accent-primary: #F97316;
+  --accent-secondary: #FACC15;
+  --accent-danger: #EF4444;
+  --accent-active: #EA580C;
 
-  --quote-bg: #F8F3FF;
-  --exercise-bg: #F1E8FF;
+  --quote-bg: #FFF0D1;
+  --exercise-bg: #FFE8B8;
 
-  --accent-gradient: linear-gradient(135deg, #7C4DFF 0%, #B388FF 100%);
+  --accent-gradient: linear-gradient(
+    135deg,
+    #FACC15 0%,
+    #F97316 55%,
+    #EA580C 100%
+  );
 
   --sidebar-width: 280px;
   --radius-lg: 24px;
   --radius-md: 16px;
   --radius-sm: 8px;
 
-  --shadow: 0 10px 15px -3px rgba(59, 31, 106, 0.12), 0 4px 6px -2px rgba(59, 31, 106, 0.08);
+  --shadow: 0 10px 15px -3px rgba(120, 70, 20, 0.16),
+            0 4px 6px -2px rgba(120, 70, 20, 0.08);
   --transition: all 0.3s ease;
 }
