@@ -1,0 +1,39 @@
+/* css/theme-default.css */
+/* =========================================
+   Default Theme
+   ========================================= */
+
+:root {
+  --bg-color: #E2E8F0;
+  --sidebar-bg: #FFFFFF;
+  --card-bg: #FFFFFF;
+  --panel-bg: #F7FAFC;
+  --list-bg: #F8FAFC;
+  --hover-bg: #EDF2F7;
+  --active-bg: #EBF4FF;
+
+  --text-main: #2D3748;
+  --text-sub: #4A5568;
+  --text-invert: #FFFFFF;
+
+  --border-color: #CBD5E0;
+  --soft-border-color: #EDF2F7;
+
+  --accent-primary: #7C4DFF;
+  --accent-secondary: #00BCD4;
+  --accent-danger: #FF4081;
+  --accent-active: #5A67D8;
+
+  --quote-bg: #FFF5F7;
+  --exercise-bg: #F3E5F5;
+
+  --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+  --sidebar-width: 280px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 8px;
+
+  --shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  --transition: all 0.3s ease;
+}

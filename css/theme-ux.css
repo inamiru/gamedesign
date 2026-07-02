@@ -1,0 +1,39 @@
+/* css/theme-ux.css */
+/* =========================================
+   UXdesign Theme
+   ========================================= */
+
+:root {
+  --bg-color: #EAF6FF;
+  --sidebar-bg: #FFFFFF;
+  --card-bg: #FFFFFF;
+  --panel-bg: #F6FBFF;
+  --list-bg: #F4F9FF;
+  --hover-bg: #E2F2FF;
+  --active-bg: #D6ECFF;
+
+  --text-main: #1D3557;
+  --text-sub: #4A6480;
+  --text-invert: #FFFFFF;
+
+  --border-color: #BFDDF5;
+  --soft-border-color: #D7ECFA;
+
+  --accent-primary: #0084FF;
+  --accent-secondary: #00C2FF;
+  --accent-danger: #FF4D8D;
+  --accent-active: #0066CC;
+
+  --quote-bg: #EDF8FF;
+  --exercise-bg: #E7F3FF;
+
+  --accent-gradient: linear-gradient(135deg, #00C2FF 0%, #0084FF 100%);
+
+  --sidebar-width: 280px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 8px;
+
+  --shadow: 0 10px 15px -3px rgba(29, 53, 87, 0.12), 0 4px 6px -2px rgba(29, 53, 87, 0.08);
+  --transition: all 0.3s ease;
+}
