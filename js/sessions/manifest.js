@@ -13,7 +13,7 @@ window.SESSION_MANIFEST = {
       categoryId: 'ux',
       title: 'UXdesign',
       // 「目次へ」ボタンの戻り先（セッションページから見てUXdesign/index.htmlのある場所）
-      homeTitle: '体験のデザイン一覧 ',
+      homeTitle: '体験のデザイン一覧',
       homePath: '../', // UXdesign/FirstSession/ から UXdesign/ へ戻る
 
       sessions: [
@@ -37,19 +37,15 @@ window.SESSION_MANIFEST = {
       ],
     },
 
-    // 例：GameDesignカテゴリ（将来追加する場合のサンプル）
-    // フォルダがまだ無ければ、このカテゴリブロック自体を消してOK
-    /*
+    // LevelDesignカテゴリ
     {
-      categoryId: 'gd',
-      title: 'GameDesign',
-      homeTitle: 'GameDesign 目次',
-      homePath: '../', // GameDesign/Ch01/ から GameDesign/ へ
+      categoryId: 'ld',
+      title: 'LevelDesign',
+      homeTitle: 'レベルデザイン一覧',
+      homePath: '../',
       sessions: [
-        { sessionId: 'gd-1', title: 'Chapter 1', path: '../Ch01/' },
-        { sessionId: 'gd-2', title: 'Chapter 2', path: '../Ch02/' },
+        { sessionId: 'ld-1', title: '第1回', path: '../FirstSession/' },
       ],
     },
-    */
   ],
 };
