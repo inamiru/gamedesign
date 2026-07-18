@@ -46,6 +46,8 @@ window.SESSION_MANIFEST = {
       sessions: [
         { sessionId: 'ld-1', title: '第1回', path: '../FirstSession/' },
         { sessionId: 'ld-2', title: '第2回', path: '../SecondSession/' },
+        { sessionId: 'ld-3', title: '第3回', path: '../ThirdSession/' },
+
       ],
     },
   ],
