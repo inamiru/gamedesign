@@ -27,18 +27,6 @@ window.SLIDES_DATA = [
   },
 
   {
-    type: 'tiled-grid',
-    title: '本日の内容',
-    intro: '講義と観察を往復します',
-    tiles: [
-      { icon: 'fa-door-open', title: '導入', text: '授業の目的<br>ウォームアップ分析' },
-      { icon: 'fa-chalkboard-user', title: '講義A', text: 'レベルデザインの定義<br>3つの成立条件' },
-      { icon: 'fa-route', title: '講義B', text: '行動・意味・情報を<br>空間で伝える' },
-      { icon: 'fa-magnifying-glass', title: '演習', text: '区間分析・共有<br>まとめ・課題' }
-    ]
-  },
-
-  {
     type: 'list',
     title: '14回の中で、今日はどこ？',
     intro: '第1段階「ステージを考え、図にする」の入口です',
