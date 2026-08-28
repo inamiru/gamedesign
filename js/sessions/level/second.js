@@ -140,16 +140,6 @@ window.SLIDES_DATA = [
     ]
   },
   {
-    type: 'exercise',
-    title: '確認問題｜この空間には理由があるか',
-    lensTitle: '配置した床・壁・敵・ギミックを1つ選ぶ',
-    questions: [
-      'それは、どの行動を引き出すためにあるか？',
-      '大きさ・距離・向きが変わると、行動はどう変わるか？',
-      'なくした場合、狙う体験は弱くなるか？'
-    ]
-  },
-  {
     type: 'quote',
     title: '制約は「邪魔」ではなく判断基準',
     quote: '限られた時間と素材の中で、何を優先するかを決める',
@@ -161,8 +151,8 @@ window.SLIDES_DATA = [
     intro: '',
     tiles: [
       { icon: 'fa-clock', title: '時間', text: '授業回数、制作時間、想定プレイ時間' },
-      { icon: 'fa-person-circle-check', title: 'プレイヤー能力', text: '移動、ジャンプ、攻撃、カメラで実現できる範囲' },
-      { icon: 'fa-box-open', title: '素材', text: '使用できるPrefab、敵、ギミック、音、見た目' },
+      { icon: 'fa-person-circle-check', title: 'プレイヤー能力', text: '移動、ジャンプ、カメラで実現できる範囲' },
+      { icon: 'fa-box-open', title: '素材', text: '使用できるPrefab、敵、ギミック、見た目' },
       { icon: 'fa-gears', title: '技術', text: '既存システムで実現できること、安定して動くこと' },
       { icon: 'fa-map', title: '範囲', text: 'エリア数、分岐数、チャレンジ数、作り込み量' }
     ]
@@ -199,7 +189,7 @@ window.SLIDES_DATA = [
   {
     type: 'list',
     title: 'トイボックスとは',
-    intro: 'Chapter 3では、レベル本体とは別に仕組みを構築・検証する場所として説明されています',
+    intro: 'レベル本体とは別に仕組みを構築・検証する場所',
     items: [
       'プレイヤー能力と地形の相互作用を試す',
       '敵・ギミック・アイテム同士の組み合わせを試す',
@@ -212,7 +202,7 @@ window.SLIDES_DATA = [
     title: '今回の「使用可能な要素一覧」',
     intro: 'Prefab名だけでなく、何ができるか・何を調整できるかを書きます',
     tiles: [
-      { icon: 'fa-person', title: 'プレイヤー', text: '移動、ジャンプ、ダッシュ、攻撃、インタラクト' },
+      { icon: 'fa-person', title: 'プレイヤー', text: '移動、ジャンプ、インタラクト' },
       { icon: 'fa-cubes', title: '地形', text: '床、壁、坂、階段、足場、穴、見えない壁' },
       { icon: 'fa-skull', title: '敵・危険', text: '巡回、追跡、射撃、トラップ、落下' },
       { icon: 'fa-gem', title: '進行・報酬', text: 'スタート、ゴール、チェックポイント、収集物、回復、秘密' }
