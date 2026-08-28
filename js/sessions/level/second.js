@@ -276,7 +276,7 @@ window.SLIDES_DATA = [
   },
   {
     type: 'exercise',
-    title: '授業内制作｜ステージ概要書（25分）',
+    title: '課題｜ステージ概要書（25分）',
     lensTitle: '今日の内容を1枚にまとめる',
     questions: [
       '仮タイトル、ジャンル・視点、想定プレイ時間を書く',
