@@ -12,7 +12,7 @@ window.SLIDES_DATA = [
   },
   {
     type: 'list',
-    title: '本日の到達点',
+    title: '今日のゴール',
     intro: '授業の終わりに、次の内容が図から読み取れる状態を目指します',
     listClass: 'agenda-list',
     items: [
@@ -82,7 +82,7 @@ window.SLIDES_DATA = [
   {
     type: 'list',
     title: '空間を表す5種類の図',
-    intro: 'Chapter 2では、意匠図を5つの視点に分けて説明しています',
+    intro: '意匠図（いしょうず）を5つの視点に分けます',
     items: [
       '<strong>平面図：</strong>真上から見た配置',
       '<strong>断面図：</strong>垂直に切った内部と高さ',
