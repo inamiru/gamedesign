@@ -297,17 +297,6 @@ window.SLIDES_DATA = [
     ]
   },
   {
-    type: 'tiled-grid',
-    title: '記入例｜峡谷ステージを図へ変える',
-    intro: '第2回の概要を、3つの図で同じ構造として表します',
-    tiles: [
-      { icon: 'fa-diagram-project', title: '隣接関係', text: '展望台 → 練習足場 → 分岐 → 連続足場 → ゴール' },
-      { icon: 'fa-code-branch', title: '進行', text: '安全に練習 → 寄り道を選ぶ？ → 報酬／通常進行 → 合流 → 応用' },
-      { icon: 'fa-map', title: '平面配置', text: 'メイン道の横に高所の寄り道を置き、連続足場の前で合流させる' },
-      { icon: 'fa-arrows-up-down', title: '断面', text: '寄り道は高所、メインは低所。どちらからも次の目標が見える' }
-    ]
-  },
-  {
     type: 'exercise',
     title: '図の上でプレイしてみる',
     lensTitle: '指またはペン先をプレイヤーとして、スタートから進める',
