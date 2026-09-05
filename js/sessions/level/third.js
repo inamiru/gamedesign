@@ -128,6 +128,23 @@ window.SLIDES_DATA = [
       { icon: 'fa-crosshairs', title: '有利・不利', text: '高所の敵、遮蔽物、安全地帯の関係' }
     ]
   },
+ {
+    type: 'quote',
+    title: '隣接関係図とは',
+    quote: '形を決める前に、どのエリアがどのエリアとつながるかを示す図',
+    footer: '最終的なマップの形とは違っていて構いません。接続関係の確認に集中します'
+  },
+  {
+    type: 'tiled-grid',
+    title: 'ノードと線で考える',
+    intro: '円や四角をエリア、線を移動可能な接続として描きます',
+    tiles: [
+      { icon: 'fa-circle-nodes', title: 'ノード', text: '導入、練習、発展、クライマックス、達成などのエリア' },
+      { icon: 'fa-minus', title: '線', text: 'エリア間を移動できる接続。方向がある場合は矢印にする' },
+      { icon: 'fa-code-branch', title: '分岐', text: '選択肢が生まれる場所。何を選ぶかを短く書く' },
+      { icon: 'fa-object-group', title: '合流', text: '寄り道や別ルートが、メインルートへ戻る場所' }
+    ]
+  },
   {
     type: 'tiled-grid',
     title: 'その他の図の使い分け',
