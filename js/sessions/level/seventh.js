@@ -147,7 +147,7 @@ window.SLIDES_DATA = [
     type: 'image',
     title: 'ランドマークの例：シタデル',
     intro: '遠くの塔と自分との関係が、目的地と進み具合を伝えます',
-    src: './images/level/ld07_landmark_citadel.png',
+    src: '../../assets/images/level/ld07_landmark_citadel.png',
     alt: '低い周辺建物の奥に、高いシタデルの塔が見える図'
   },
 
@@ -373,7 +373,7 @@ window.SLIDES_DATA = [
     type: 'image',
     title: 'フレーミングの例：前景と目的地',
     intro: '手前の木と枠の間に、奥の城へ続く風景が見えます',
-    src: './images/level/ld07_framing.png',
+    src: '../../assets/images/level/ld07_framing.png',
     alt: '手前の木と枠が、遠景の城とその方向への眺めを囲む図'
   },
 
