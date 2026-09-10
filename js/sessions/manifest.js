@@ -32,8 +32,6 @@ window.SESSION_MANIFEST = {
         { sessionId: 'ux-13', title: '第13回', path: '../ThirteenthSession/' },
         { sessionId: 'ux-14', title: '第14回', path: '../FourteenthSession/' },
         
-        // 追加するたびにここへ1行
-        // { sessionId: 'ux-3', title: 'Third Session',  path: '../ThirdSession/' },
       ],
     },
 
@@ -51,6 +49,8 @@ window.SESSION_MANIFEST = {
         { sessionId: 'ld-5', title: '第5回', path: '../FifthSession/' },
         { sessionId: 'ld-6', title: '第6回', path: '../SixthSession/' },
         { sessionId: 'ld-7', title: '第7回', path: '../SeventhSession/' },
+        { sessionId: 'ld-7', title: '第8回', path: '../EighthSession/' },
+
 
 
       ],
