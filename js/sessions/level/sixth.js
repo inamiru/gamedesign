@@ -104,7 +104,7 @@ window.SLIDES_DATA = [
   
   {
     type: 'tiled-grid',
-    title: '教科書のワークフロー',
+    title: 'レベルデザインのワークフロー',
     intro: '紙上の考えを、段階的に検証できる形へ変えていきます',
     tiles: [
       { icon: 'fa-lightbulb', title: 'パルティ', text: 'レベルの中心となる考えや構成を、短い言葉と図で示す' },
@@ -180,7 +180,7 @@ window.SLIDES_DATA = [
   
   {
     type: 'list',
-    title: 'Unityへ移る前の確認',
+    title: '制作へ移る前の確認',
     intro: '決まっていないことを、配置しながら考え始めないようにします',
     items: [
       'ステージの目的と、狙う体験を1文で言える',
@@ -189,60 +189,6 @@ window.SLIDES_DATA = [
       '各シーンの主要行動と、必要な地形・代理要素が決まっている',
       '第5回で採用した幅、高さ、距離の基準を確認できる'
     ]
-  },
-  
-  {
-    type: 'tiled-grid',
-    title: '作業前に守る4つのこと',
-    intro: '既存のテンプレートと共通システムを壊さないための準備です',
-    tiles: [
-      { icon: 'fa-copy', title: '指定シーンを複製', text: '授業で指定された作業用シーンを複製し、提出用の名前を付ける' },
-      { icon: 'fa-floppy-disk', title: '保存場所を確認', text: '自分の作業フォルダに保存し、共通PrefabやSceneを上書きしない' },
-      { icon: 'fa-lock', title: '共通設定を固定', text: 'プレイヤー、カメラ、GameManagerの値を勝手に変更しない' },
-      { icon: 'fa-play', title: '開始状態を確認', text: '編集前にPlayし、移動、ジャンプ、リスポーン、ゴールが動くか確認する' }
-    ]
-  },
-  
-  {
-    type: 'list',
-    title: 'Hierarchyを先に整理する',
-    intro: '置いた物をすぐ見つけ、シーン単位で動かせる状態にします',
-    items: [
-      '<strong>00_System：</strong>PlayerSpawner、GameManager、Camera、UIなど共通要素',
-      '<strong>01_Start：</strong>開始地点、最初の床、開始方向を示す要素',
-      '<strong>02_Area01〜05：</strong>各シーンの床、壁、地形、代理オブジェクト',
-      '<strong>03_SideRoute：</strong>寄り道、選択ルート、報酬の代理要素',
-      '<strong>04_Goal：</strong>ゴール地点、到着空間、Goal Prefab',
-      '<strong>90_Boundary：</strong>落下防止、見えない壁、ステージ外周'
-    ],
-    footer: '既存テンプレートに命名規則がある場合は、そちらを優先してください'
-  },
-  
-  {
-    type: 'tiled-grid',
-    title: '代理オブジェクトの共通ルール',
-    intro: '形、色、名前の3つを組み合わせ、色だけに依存しないようにします',
-    tiles: [
-      { icon: 'fa-square', title: '形', text: '床は薄い箱、壁は縦長の箱、地点は柱など用途ごとに形をそろえる' },
-      { icon: 'fa-palette', title: '色', text: '安全、危険、報酬、ギミックなど、授業の共通色を使う' },
-      { icon: 'fa-tag', title: '名前', text: 'Floor_A01、Wall_A01、Hazard_Placeholderなど役割と場所を付ける' },
-      { icon: 'fa-note-sticky', title: '注記', text: '未実装の機能は、対象名や設計記録に「何の代理か」を残す' }
-    ]
-  },
-  
-  {
-    type: 'list',
-    title: '色分けの基準',
-    intro: '配布マテリアルがある場合は、次の役割に対応させます',
-    items: [
-      '<strong>灰：</strong>床、壁、柱など基本地形',
-      '<strong>青：</strong>進行可能、安全、メインルート',
-      '<strong>赤：</strong>敵、罠、落下など危険',
-      '<strong>黄：</strong>報酬、収集物、寄り道の目的',
-      '<strong>緑：</strong>チェックポイント、回復、安全地点',
-      '<strong>紫：</strong>スイッチ、扉、動く足場などギミック'
-    ],
-    footer: '色が見分けにくい状況でも分かるよう、形とオブジェクト名も併用します'
   },
   
   {
@@ -334,7 +280,7 @@ window.SLIDES_DATA = [
     tiles: [
       { icon: 'fa-code-branch', title: '分岐点', text: '本線と寄り道が分かれ、どちらへ進めるか確認できる場所' },
       { icon: 'fa-scale-balanced', title: '選ぶ理由', text: '距離、危険、必要操作、見える報酬など、本線との違い' },
-      { icon: 'fa-gem', title: '目的', text: '黄色の箱など、到達する意味を示す代理オブジェクト' },
+      { icon: 'fa-gem', title: '目的', text: '報酬など、到達する意味を示す代理オブジェクト' },
       { icon: 'fa-code-merge', title: '復帰', text: '本線へ戻る道、合流地点、または行き止まりからの戻り方' }
     ]
   },
@@ -344,10 +290,10 @@ window.SLIDES_DATA = [
     title: '敵・ギミック・報酬は位置から試す',
     intro: '機能の調整より先に、空間との関係を確認します',
     items: [
-      '<strong>敵：</strong>赤いカプセルで、立ち位置、向き、巡回範囲を示す',
-      '<strong>ギミック：</strong>紫の箱や板で、動く範囲、接続先、必要な待機場所を示す',
-      '<strong>報酬：</strong>黄色の形で、見える位置、寄り道の終点、取得場所を示す',
-      '<strong>チェックポイント：</strong>緑の柱で、再開位置と向きを示す',
+      '<strong>敵：</strong>立ち位置、向き、巡回範囲を示す',
+      '<strong>ギミック：</strong>動く範囲、接続先、必要な待機場所を示す',
+      '<strong>報酬：</strong>見える位置、寄り道の終点、取得場所を示す',
+      '<strong>チェックポイント：</strong>再開位置を示す',
       '<strong>未実装：</strong>機能がなくても、必要な空間と前後の行動を試せる位置に置く'
     ]
   },
