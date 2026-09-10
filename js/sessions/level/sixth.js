@@ -13,7 +13,7 @@ window.SLIDES_DATA = [
   
   {
     type: 'list',
-    title: '本日の到達点',
+    title: '今日のゴール',
     intro: '授業の終わりに、次の内容を自分のグレーボックスで説明できる状態を目指します',
     listClass: 'agenda-list',
     items: [
