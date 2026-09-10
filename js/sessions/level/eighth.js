@@ -18,6 +18,7 @@ window.SLIDES_DATA = [
     type: 'list',
     title: '本日の到達点',
     intro: '授業の終わりに、自分の区間で次の内容を説明します',
+    listClass: 'agenda-list',
     items: [
       'プレイヤーが既に知っていることと、今回教える操作を分けられる',
       '対象と結果を見せ、安全に操作を試せる場所を作れる',
