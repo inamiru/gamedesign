@@ -117,12 +117,12 @@ class SlideRenderer {
       case 'image':
         return `
           <h2 class="slide-title">${s.title || ''}</h2>
-          <p class="content-text">${s.intro || ''}</p>
+          <div class="content-text">${s.intro || ''}</div>
           ${this.getImageHTML({
             image: s.src || s.image,
             alt: s.alt || ''
           })}
-          ${s.footer ? `<p style="text-align:center; opacity:0.8; margin-top:20px; max-width:800px;">${s.footer}</p>` : ''}
+          ${s.footer ? `<div class="slide-footer">${s.footer}</div>` : ''}
         `;
 
       case 'list': {
@@ -131,10 +131,10 @@ class SlideRenderer {
 
         return `
           <h2 class="slide-title">${s.title || ''}</h2>
-          <p class="content-text">${s.intro || ''}</p>
+          <div class="content-text">${s.intro || ''}</div>
           <ul class="${listClass}">${items}</ul>
           ${imageHTML}
-          ${s.footer ? `<p style="text-align:center; opacity:0.8; margin-top:20px; max-width:800px;">${s.footer}</p>` : ''}
+          ${s.footer ? `<div class="slide-footer">${s.footer}</div>` : ''}
         `;
       }
 
@@ -162,7 +162,7 @@ class SlideRenderer {
 
         return `
           <h2 class="slide-title">${s.title || ''}</h2>
-          <p class="content-text">${s.intro || ''}</p>
+          <div class="content-text">${s.intro || ''}</div>
           <div class="tiled-grid">${tilesHTML}</div>
           ${imageHTML}
         `;
@@ -173,7 +173,7 @@ class SlideRenderer {
           <h2 class="slide-title">${s.title || ''}</h2>
           <div class="quote-box"><blockquote>${s.quote || ''}</blockquote></div>
           ${imageHTML}
-          ${s.footer ? `<p style="text-align:center; opacity:0.8; margin-top:20px; max-width:800px;">${s.footer}</p>` : ''}
+          ${s.footer ? `<div class="slide-footer">${s.footer}</div>` : ''}
         `;
 
       case 'exercise': {
@@ -199,9 +199,9 @@ class SlideRenderer {
 
         return `
           <h2 class="slide-title">${s.title || ''}</h2>
-          <p class="content-text">${s.intro || ''}</p>
+          <div class="content-text">${s.intro || ''}</div>
           <div class="image-grid">${imagesHTML}</div>
-          ${s.footer ? `<p style="text-align:center; opacity:0.8; margin-top:20px; max-width:800px;">${s.footer}</p>` : ''}
+          ${s.footer ? `<div class="slide-footer">${s.footer}</div>` : ''}
         `;
       }
 
