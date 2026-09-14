@@ -272,7 +272,9 @@ window.SLIDES_DATA = [
       '白い服やオレンジ色の光が、主経路に注意を向ける手がかりになる',
       '自分のステージでは、入口と背景の明暗差を実際の画面で確かめる',
       '明るくする範囲を決め、足場や境界も判断できる状態にする'
-    ]
+    ],
+    footer: `<a href="https://youtu.be/2f6YDYPkVHU?si=GNciRh4lp5jiH05v&t=57" target="_blank" rel="noopener noreferrer" class="external-link">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>『BioShock Infinite』</a>`
   },
 
   // 18
