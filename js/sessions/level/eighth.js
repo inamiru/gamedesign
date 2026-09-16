@@ -139,7 +139,7 @@ window.SLIDES_DATA = [
   // 13
   {
     type: 'list',
-    title: '見せてから試させる例：SWARM!',
+    title: '見せてから試させる',
     intro: '敵・罠・扉の関係を、段階的に理解できるようにしています',
     items: [
       'まず、敵を直接攻撃する方法では倒せないことを伝える',
@@ -147,7 +147,8 @@ window.SLIDES_DATA = [
       'その後、プレイヤー自身が敵を罠へ誘い込む場面を用意する',
       '罠・敵・扉が同じ画面に収まる配置で、結果の関係を読み取りやすくする'
     ],
-    footer: '実演用の機能がない場合は、既存の地形・操作表示・安全な試行で伝える構成を選びます'
+    footer: `<a href="https://youtu.be/FXH_ko91ddg?si=nR30oQLmZav_TSV6&t=499" target="_blank" rel="noopener noreferrer" class="external-link">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>『SWARM!』</a>`
   },
 
   // 15
