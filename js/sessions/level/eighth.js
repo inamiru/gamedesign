@@ -321,16 +321,11 @@ window.SLIDES_DATA = [
 
   // 29
   {
-    type: 'list',
-    title: '制作例：ジャンプを学ぶ区間',
-    intro: '既存のジャンプ機能を使う、今回の授業用の配置例です',
-    items: [
-      '<strong>紹介：</strong>入力表示と、踏み切り・着地先が見える入口',
-      '<strong>練習：</strong>敵のいない足場で試し、失敗しても安全な床へ戻る',
-      '<strong>成功確認：</strong>歩行では越えられず、ジャンプで越えられる段差',
-      '<strong>応用：</strong>学んだジャンプを、既知の地形や行動と組み合わせる',
-      '<strong>報酬：</strong>成功後に本線へ進める出口や、既存の報酬を置く'
-    ]
+    type: 'image',
+    title: '制作手順との対応',
+    intro: '5つの役割と、4段階の構成は整理する観点が異なります',
+    src: '../../assets/images/level/jumppractice.png',
+    alt: '',
   },
 
   // 31
