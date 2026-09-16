@@ -304,7 +304,6 @@ window.SLIDES_DATA = [
     intro: '5つの役割と、4段階の構成は整理する観点が異なります',
     src: '../../assets/images/level/comparison.png',
     alt: '',
-    ]
   },
 
   // 28
