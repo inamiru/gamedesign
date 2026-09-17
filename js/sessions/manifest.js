@@ -51,6 +51,7 @@ window.SESSION_MANIFEST = {
         { sessionId: 'ld-7', title: '第7回', path: '../SeventhSession/' },
         { sessionId: 'ld-8', title: '第8回', path: '../EighthSession/' },
         { sessionId: 'ld-9', title: '第9回', path: '../NinthSession/' },
+        { sessionId: 'ld-10', title: '第10回', path: '../TenthSession/' },
 
 
 
