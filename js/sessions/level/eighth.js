@@ -322,8 +322,8 @@ window.SLIDES_DATA = [
   // 29
   {
     type: 'image',
-    title: '制作手順との対応',
-    intro: '5つの役割と、4段階の構成は整理する観点が異なります',
+    title: '制作例：ジャンプを学ぶ区間',
+    intro: 'ここまでの5つの役割をジャンプへ当てはめた例です',
     src: '../../assets/images/level/jumppractice.png',
     alt: '',
   },
