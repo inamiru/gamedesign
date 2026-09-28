@@ -24,6 +24,7 @@ window.SLIDES_DATA = [
     type: 'list',
     title: '今日のゴール',
     intro: '自分のステージを、次の5つの問いで確認します',
+    listClass: 'agenda-list',
     items: [
       'プレイヤーが最初に見るものは何か',
       'どちらへ進めると判断するか',
