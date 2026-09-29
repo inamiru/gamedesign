@@ -29,7 +29,7 @@ window.SLIDES_DATA = [
     "type": "list",
     "title": "今日のゴール",
     "intro": "授業の終わりに、自分のチャレンジエリアについて説明します",
-     listClass: 'agenda-list',
+    "listClass": 'agenda-list',
     "items": [
       "プレイヤー、敵、空間の条件を分けて整理できる",
       "眺望と避難、視界、高低差、広さを使って行動の選択肢を作れる",
