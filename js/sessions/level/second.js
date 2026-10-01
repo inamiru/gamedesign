@@ -34,16 +34,7 @@ window.SLIDES_DATA = [
     ],
     footer: '今回は、その流れを偶然ではなく意図して作るための準備をします'
   },
-  {
-    type: 'tiled-grid',
-    title: '今日作る3つの成果物',
-    intro: 'まだUnityで作り込みません。まず、設計の判断基準を言葉にします',
-    tiles: [
-      { icon: 'fa-file-lines', title: 'ステージ概要書', text: 'スタート、ゴール、3〜5エリア、順序、分岐を整理する' },
-      { icon: 'fa-heart', title: '狙う体験', text: 'プレイヤーにさせたい行動と、感じてほしいことを一文にする' },
-      { icon: 'fa-toolbox', title: '使用可能な要素一覧', text: '使える操作、地形、敵、ギミック、報酬と設定範囲を確定する' }
-    ]
-  },
+
   {
     type: 'quote',
     title: '最初に決めるのは「見た目」ではない',
@@ -63,7 +54,7 @@ window.SLIDES_DATA = [
     type: 'quote',
     title: '形態は機能に従う',
     quote: '空間の形は、そこで必要な行動と体験から決める',
-    footer: 'Chapter 3では、明確な体験目標をゲームプレイと空間へ落とし込む考え方として扱われています'
+    footer: '明確な体験目標をゲームプレイと空間へ落とし込む考え方として扱われています'
   },
   {
     type: 'list',
