@@ -96,6 +96,7 @@ window.SLIDES_DATA = [
     type: 'quote',
     title: '平面図とは',
     quote: '空間を真上から見て、場所同士の配置と流れを示す図',
+    image: '../../assets/images/level/floorplan.png',
     footer: '部屋、通路、壁、階段、広場などの関係を一度に確認できます'
   },
   {
@@ -132,6 +133,7 @@ window.SLIDES_DATA = [
     type: 'quote',
     title: '隣接関係図とは',
     quote: '形を決める前に、どのエリアがどのエリアとつながるかを示す図',
+    image: '../../assets/images/level/adjacent.png',
     footer: '最終的なマップの形とは違っていて構いません。接続関係の確認に集中します'
   },
   {
