@@ -148,19 +148,8 @@ window.SLIDES_DATA = [
     type: 'quote',
     title: '迷宮と迷路',
     quote: '「先が読めない一本道」と「正解を探す分岐構造」は、似ていても体験が違う',
+    image: '../../assets/images/level/labyrinthsandmazes.png',
     footer: '曲がりくねっていることと、経路選択があることを分けて考えます'
-  },
-  
-  {
-    type: 'tiled-grid',
-    title: '迷宮と迷路を比べる',
-    intro: '教科書では、経路の数によって両者を区別しています',
-    tiles: [
-      { icon: 'fa-wave-square', title: '迷宮（単一経路）', text: '道は曲がっていて先が見えにくいが、最終的な経路は1本' },
-      { icon: 'fa-route', title: '迷路（複数経路）', text: '分岐、行き止まり、回り道があり、正しい経路を探す' },
-      { icon: 'fa-question', title: '共通する効果', text: '先の情報を隠し、不安、探索、発見を作りやすい' },
-      { icon: 'fa-person-circle-question', title: '異なる負荷', text: '迷路は方向と選択を覚える負荷が高く、迷いやすい' }
-    ]
   },
   
   {
@@ -181,6 +170,7 @@ window.SLIDES_DATA = [
     type: 'quote',
     title: 'ハブ',
     quote: '中心となる場所から、複数のエリアへ出入りする構造',
+    image: '../../assets/images/level/hub.png',
     footer: '中心のハブと、その先にあるスポークを往復することで全体を整理します'
   },
   
@@ -212,6 +202,7 @@ window.SLIDES_DATA = [
     type: 'quote',
     title: 'ノードとエッジ',
     quote: '重要な遊びが起こる場所をノード、場所同士をつなぐ関係をエッジとして捉える',
+    image: '../../assets/images/level/nodeandedge.png',
     footer: '形を描き込む前に、どこで何が起き、どう移動するかを確認できます'
   },
   
