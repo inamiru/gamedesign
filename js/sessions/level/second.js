@@ -105,6 +105,7 @@ window.SLIDES_DATA = [
     type: 'quote',
     title: '能力の限界を知らずに距離は決められない',
     quote: '「届きそう」と「実際に届く」の両方を確認する',
+    image: '../../assets/images/level/jumpplan.png',
     footer: 'ジャンプ距離、移動速度、攻撃範囲、カメラの見え方は、空間サイズを決める基準です'
   },
   {
