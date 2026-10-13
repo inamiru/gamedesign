@@ -39,17 +39,6 @@ window.SLIDES_DATA = [
   },
   
   {
-    type: 'tiled-grid',
-    title: '今日作る3つの成果物',
-    intro: 'ステージ全体ではなく、重要な1エリアに絞って検証します',
-    tiles: [
-      { icon: 'fa-cubes', title: 'スケール案 A・B・C', text: '同じ目的を持つ1エリアを、広さ・高さ・距離の違う3案で作る' },
-      { icon: 'fa-clipboard-check', title: '検証記録', text: '寸法、所要時間、見え方、行動、問題を同じ項目で比較する' },
-      { icon: 'fa-map-location-dot', title: '反映したマップ', text: '採用案の寸法と、マップ第2案から変更した理由を記録する' }
-    ]
-  },
-  
-  {
     type: 'quote',
     title: '大きさは数字だけでは決まらない',
     quote: '同じ10メートルでも、移動速度、ジャンプ能力、カメラが違えば、別の空間として感じられる',
@@ -303,20 +292,7 @@ window.SLIDES_DATA = [
       { icon: 'fa-rotate-left', title: '再挑戦時間', text: '失敗してから、同じ挑戦へ戻るまでの時間' }
     ]
   },
-  
-  {
-    type: 'list',
-    title: '3〜5分を区間へ分ける',
-    intro: '全体時間の中で、この1エリアに使える時間を決めます',
-    items: [
-      '<strong>確認：</strong>このエリアは、全体の導入・発展・クライマックスのどこか',
-      '<strong>配分：</strong>このエリアへ使う目標時間を決める',
-      '<strong>分解：</strong>移動、観察、判断、実行、失敗、報酬の時間へ分ける',
-      '<strong>比較：</strong>実測時間と目標時間の差を確認する',
-      '<strong>修正：</strong>長すぎる場合、距離だけでなく、行動数や再挑戦経路も見直す'
-    ]
-  },
-  
+
   {
     type: 'quote',
     title: 'メートルではなく「場面」で置く',
