@@ -33,7 +33,7 @@ window.SLIDES_DATA = [
       '<strong>初期平面図：</strong>空間配置、地形、動線、重要要素',
       '<strong>隣接関係図：</strong>3〜5エリアの接続、分岐、合流',
       '<strong>進行フローチャート：</strong>場面、選択、条件、結果の順序',
-      '<strong>今回の問い：</strong>その接続は、狙う体験を作る構造になっているか'
+      '<strong>今回確認すること：</strong>その道の作り方は、狙う体験を作る構造になっているか'
     ],
     footer: '描き直す前に、まず「なぜこのつなぎ方なのか」を検討します'
   },
@@ -61,7 +61,7 @@ window.SLIDES_DATA = [
     title: '構造は2つの大きさで考える',
     intro: 'ステージ全体と、1つのエリア内部では、別の構造を組み合わせられます',
     tiles: [
-      { icon: 'fa-sitemap', title: 'マクロ構造', text: 'スタートからゴールまで、3〜5エリアをどう接続するか' },
+      { icon: 'fa-sitemap', title: 'マクロ構造', text: 'スタートからゴールまでのエリアをどう接続するか' },
       { icon: 'fa-vector-square', title: 'ミクロ構造', text: '1エリアの中で、敵・足場・報酬へどう近づくか' },
       { icon: 'fa-puzzle-piece', title: '組み合わせ', text: '全体は一本道、1エリアだけ分岐や小さな迷路にすることもできる' },
       { icon: 'fa-magnifying-glass', title: '今回の優先', text: 'まずマクロ構造を決め、必要な場所だけミクロ構造を変える' }
@@ -171,7 +171,7 @@ window.SLIDES_DATA = [
     title: 'ハブ',
     quote: '中心となる場所から、複数のエリアへ出入りする構造',
     image: '../../assets/images/level/hub.png',
-    footer: '中心のハブと、その先にあるスポークを往復することで全体を整理します'
+    footer: '中心のハブと、その先にあるレベルを往復することで全体を整理します'
   },
   
   {
