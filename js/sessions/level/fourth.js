@@ -95,8 +95,7 @@ window.SLIDES_DATA = [
     tiles: [
       { icon: 'fa-book-open', title: '学習', text: '操作やルールを、必要な順番で教えやすい' },
       { icon: 'fa-arrow-trend-up', title: '難易度上昇', text: '導入、練習、応用、クライマックスを並べやすい' },
-      { icon: 'fa-clapperboard', title: '演出', text: '見せ場や物語イベントの前後関係を保証しやすい' },
-      { icon: 'fa-clock', title: '時間管理', text: '3〜5分の想定プレイ時間を調整しやすい' }
+      { icon: 'fa-clapperboard', title: '演出', text: '見せ場や物語イベントの前後関係を保証しやすい' }
     ]
   },
   
@@ -163,7 +162,6 @@ window.SLIDES_DATA = [
       '迷う時間を含めても、想定プレイ時間を超えない',
       'ゴールへの到達が偶然だけに依存しない'
     ],
-    footer: '今回の3〜5分課題では、迷路は1エリア内の小規模な使用を基本とします'
   },
       
   {
@@ -231,21 +229,6 @@ window.SLIDES_DATA = [
   },
   
   {
-    type: 'list',
-    title: '接続の種類を記号にする',
-    intro: '第3回の凡例へ、接続を説明する記号を追加します',
-    items: [
-      '<strong>実線：</strong>いつでも通れる双方向の接続',
-      '<strong>片矢印：</strong>落下や扉などによる一方通行',
-      '<strong>破線：</strong>任意の寄り道、隠しルート、近道',
-      '<strong>鍵マーク：</strong>条件を満たすまで通れない接続',
-      '<strong>目の記号：</strong>移動できないが、別ノードを見通せる関係',
-      '<strong>太線：</strong>メインルートとして優先して読ませる接続'
-    ],
-    footer: '自分で記号を追加する場合も、凡例で意味を統一します'
-  },
-  
-  {
     type: 'quote',
     title: 'ノードとエッジに差をつける',
     quote: '遊びの場所と移行の場所に役割の差があると、ステージにリズムが生まれる',
@@ -256,19 +239,8 @@ window.SLIDES_DATA = [
     type: 'quote',
     title: '到着を設計する',
     quote: '空間の印象は、その場所そのものだけでなく、どのように入るかで変わる',
+    image: '../../assets/images/level/temple.png',
     footer: '入口は、前のエッジと次のノードをつなぐ重要な設計地点です'
-  },
-  
-  {
-    type: 'tiled-grid',
-    title: '到着の4段階',
-    intro: '重要な空間へ入る前後を、連続した体験として考えます',
-    tiles: [
-      { icon: 'fa-binoculars', title: '①予告', text: '遠景、音、光、シルエットで目的地の存在を知らせる' },
-      { icon: 'fa-road', title: '②アプローチ', text: '曲がり、坂、狭い通路などで期待と方向を作る' },
-      { icon: 'fa-door-open', title: '③境界', text: '扉、門、段差、素材変化などで「入った」と伝える' },
-      { icon: 'fa-eye', title: '④最初の視界', text: '入口から重要物、危険、次の目標をどの順で見せるか決める' }
-    ]
   },
   
   {
@@ -282,34 +254,10 @@ window.SLIDES_DATA = [
       { icon: 'fa-eye-slash', title: '隠す→見せる', text: '曲がり角や扉の先で、重要な対象を初めて見せる' }
     ]
   },  
-  {
-    type: 'list',
-    title: 'マップ第2案を作る順番',
-    intro: '接続図で構造を直してから、平面図へ戻します',
-    items: [
-      '<strong>1：</strong>第3回の初期案を複製し、元の案を残す',
-      '<strong>2：</strong>主構造と、その構造を選ぶ理由を書く',
-      '<strong>3：</strong>接続図でノードの役割とエッジの種類を修正する',
-      '<strong>4：</strong>接続図に合わせて、平面図の配置と動線を直す',
-      '<strong>5：</strong>変更した箇所に番号を付け、変更理由を書く'
-    ]
-  },
   
   {
     type: 'tiled-grid',
-    title: '3つの図を照合する',
-    intro: '同じステージを表す3つの図に、矛盾がないか確認します',
-    tiles: [
-      { icon: 'fa-diagram-project', title: '接続図', text: '存在するノードとエッジが、平面図にも描かれているか' },
-      { icon: 'fa-map', title: '平面図', text: '分岐、合流、一方通行、条件付き接続を実際の形で表せているか' },
-      { icon: 'fa-code-branch', title: '進行フロー', text: '必要なイベント順と、選んだ構造が矛盾していないか' },
-      { icon: 'fa-person-walking-arrow-right', title: '指でプレイ', text: 'スタートからゴールまで、選択と条件を説明しながら追えるか' }
-    ]
-  },
-  
-  {
-    type: 'tiled-grid',
-    title: '今回の案で起きやすい問題',
+    title: '起きやすい問題',
     intro: '構造を複雑にすることが、改善とは限りません',
     tiles: [
       { icon: 'fa-code-branch', title: '理由のない分岐', text: '道は増えたが、見える情報や体験に違いがない' },
