@@ -107,17 +107,15 @@ class SlideRenderer {
         return `
           <div class="title-slide" style="text-align:center;">
             <i class="fa-solid ${s.icon || 'fa-gamepad'}"
-               style="font-size:5rem; color:var(--accent-pink); margin-bottom:30px;"></i>
+               style="font-size:5rem; color:var(--accent-danger); margin-bottom:30px;"></i>
             <h1 class="slide-title">${s.title || ''}</h1>
             <p>${s.intro || ''}</p>
             ${imageHTML}
           </div>
         `;
 
-case 'image':
-  return `
-    <section class="slide">
-
+      case 'image':
+        return `
       <h2 class="slide-title">
         ${s.title || ''}
       </h2>
@@ -160,8 +158,7 @@ case 'image':
           : ''
       }
 
-    </section>
-  `;
+        `;
 
       case 'list': {
         const listClass = s.listClass || 'bullet-list';
@@ -316,7 +313,7 @@ case 'image':
   }
 
   jumpToSlide(index) {
-    const slides = document.querySelectorAll('.slide');
+    const slides = this.container.querySelectorAll(':scope > .slide');
     const tocItems = document.querySelectorAll('.toc-item');
 
     if (!slides.length || !tocItems.length) return;
