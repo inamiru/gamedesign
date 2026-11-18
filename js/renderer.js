@@ -114,16 +114,54 @@ class SlideRenderer {
           </div>
         `;
 
-      case 'image':
-        return `
-          <h2 class="slide-title">${s.title || ''}</h2>
-          <div class="content-text">${s.intro || ''}</div>
-          ${this.getImageHTML({
-            image: s.src || s.image,
-            alt: s.alt || ''
-          })}
-          ${s.footer ? `<div class="slide-footer">${s.footer}</div>` : ''}
-        `;
+case 'image':
+  return `
+    <section class="slide">
+
+      <h2 class="slide-title">
+        ${s.title || ''}
+      </h2>
+
+      ${
+        s.intro
+          ? `<div class="content-text">${s.intro}</div>`
+          : ''
+      }
+
+      <div class="slide-image-wrap">
+        <img
+          class="slide-image"
+          src="${s.src || s.image || ''}"
+          alt="${s.alt || ''}"
+        >
+      </div>
+
+      ${
+        s.link
+          ? `
+            <div class="slide-link-wrap">
+              <a
+                href="${s.link}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="external-link"
+              >
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                ${s.linkText || '外部サイトを開く'}
+              </a>
+            </div>
+          `
+          : ''
+      }
+
+      ${
+        s.footer
+          ? `<div class="slide-footer">${s.footer}</div>`
+          : ''
+      }
+
+    </section>
+  `;
 
       case 'list': {
         const listClass = s.listClass || 'bullet-list';
