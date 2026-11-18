@@ -23,7 +23,7 @@ window.SLIDES_DATA = [
   {
     type: 'list',
     title: '今日のゴール',
-    intro: '自分のステージを、次の5つの問いで確認します',
+    intro: '自分のステージを、次の5つで確認します',
     listClass: 'agenda-list',
     items: [
       'プレイヤーが最初に見るものは何か',
@@ -42,8 +42,7 @@ window.SLIDES_DATA = [
     items: [
       '<strong>見つける：</strong>目印、入口、道などが視界に入る',
       '<strong>意味を読む：</strong>進める、使える、危険などを判断する',
-      '<strong>行動する：</strong>進む、近づく、避けるなどを選ぶ',
-      '見えていても、その意味が伝わらなければ意図した行動につながらない'
+      '<strong>行動する：</strong>進む、近づく、避けるなどを選ぶ'
     ]
   },
 
@@ -84,8 +83,7 @@ window.SLIDES_DATA = [
     items: [
       '<strong>方向：</strong>どちら側に重要な場所があるかを示す',
       '<strong>現在地：</strong>目印が見える向きから、自分の位置を把握する',
-      '<strong>進み具合：</strong>目印との距離の変化から前進を感じる',
-      'グレーボックスでも、高さや形が異なる柱などで役割を試せる'
+      '<strong>進み具合：</strong>目印との距離の変化から前進を感じる'
     ]
   },
 
@@ -94,7 +92,7 @@ window.SLIDES_DATA = [
     type: 'image',
     title: 'ランドマークの例：シタデル',
     intro: '遠くの塔と自分との関係が、目的地と進み具合を伝えます',
-    src: '../../assets/images/level/ld07_landmark_citadel.png',
+    src: '../../assets/images/level/ld07_landmark.png',
     alt: '低い周辺建物の奥に、高いシタデルの塔が見える図'
   },
 
