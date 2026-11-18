@@ -93,9 +93,10 @@ window.SLIDES_DATA = [
     title: 'ランドマークの例',
     intro: '遠くの城と自分との関係が、現在地と目的地を伝えます',
     src: '../../assets/images/level/ld07_landmark.jpg',
- 
+    alt: '',
     link: 'https://docs.google.com/presentation/d/1qtIvO_Lk9IJvUPyCcDdDYr1nXxUjsA20KGz0OEExq8g/edit?slide=id.g2977d5dda23_1_327#slide=id.g2977d5dda23_1_327',
     linkText: 'Googleスライドを見る',
+    footer: ''
   },
 
   // 09
