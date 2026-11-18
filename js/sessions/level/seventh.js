@@ -90,10 +90,11 @@ window.SLIDES_DATA = [
   // 08
   {
     type: 'image',
-    title: 'ランドマークの例：シタデル',
-    intro: '遠くの塔と自分との関係が、目的地と進み具合を伝えます',
+    title: 'ランドマークの例',
+    intro: '遠くの城と自分との関係が、現在地と目的地を伝えます',
     src: '../../assets/images/level/ld07_landmark.png',
-    alt: '低い周辺建物の奥に、高いシタデルの塔が見える図'
+    alt: '<a href="https://docs.google.com/presentation/d/1qtIvO_Lk9IJvUPyCcDdDYr1nXxUjsA20KGz0OEExq8g/edit?slide=id.g2977d5dda23_1_327#slide=id.g2977d5dda23_1_327" target="_blank" rel="noopener noreferrer" class="external-link">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>『ディズニーランド』'
   },
 
   // 09
